@@ -3,5 +3,5 @@
 	// $conn = new DatabaseTable('properties');
 	// $data=$conn->getEvent();
 
-	$content = loadTemplate('../templates/users/userhomeTemplate.php', ['data'=>$data]);//load template
+	$content = loadTemplate('../templates/users/userhomeTemplate.php', []);//load template
 ?>

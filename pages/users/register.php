@@ -1,7 +1,14 @@
 <?php
 	$title = "Local Partners Pty Ltd";
-	// $conn = new DatabaseTable('properties');
-	// $data=$conn->getEvent();
+	$connToInsert = new DatabaseTable('users');
+	
+	if(isset($_POST['usersubmit'])){
+		var_dump($_POST);
+		// unset($_POST['usersubmit']);
+		// unset($_POST['password-re']);
+		// unset($_POST['cancelbtn']);
+		// $connToInsert-> insert($_POST);
+	}
 
-	$content = loadTemplate('../templates/users/registerTemplate.php', ['data'=>$data]);//load template
+	$content = loadTemplate('../templates/users/registerTemplate.php', []);//load template
 ?>

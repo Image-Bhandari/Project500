@@ -1,5 +1,5 @@
 <?php
-	// include '../db/connection.php';
+	include '../db/connection.php';
 	
 	require '../classes/databasetable.php';
 	require '../functions/load_template.php';
