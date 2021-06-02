@@ -10,7 +10,7 @@
 <body>
     <nav>
         <div class="logo">
-            <img src="/images/logo/logo.png" alt="Local Partners Pty Ltd">
+            <img src="../images/logo/logo.png" alt="Local Partners Pty Ltd">
         </div>
 
         <div class="login">
