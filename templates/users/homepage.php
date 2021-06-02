@@ -8,16 +8,17 @@
     <link rel="stylesheet" href="../css/styles.css">
 </head>
 <body>
-    <nav>
+    <header>
         <div class="logo">
             <img src="../images/logo/logo.png" alt="Local Partners Pty Ltd">
         </div>
 
-        <div class="login">
-            <a href="index.php?page=login">Login</a>
-        </div>
-        
-    </nav>
+        <nav>
+            <div class="login">
+                <a href="index.php?page=login">Login</a>
+            </div>
+        </nav>
+    </header>
 
     <main>
         <?php echo $content; ?>

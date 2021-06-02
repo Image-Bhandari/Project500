@@ -1,4 +1,4 @@
-<section class="property-listing">
+<article class="property-listing">
 
     <!-- <?php  
        // foreach ($data as $value) {
@@ -13,11 +13,11 @@
         </div> -->
 
         <div class="details">
-            <span>Property Name</span>
-            <span>24-28 First Avenue Blacktown NSW 2148</span>
-            <span>Details: 3 Bedroom Unit with 2 Bathroom</span>
-            <span>Price: $1400</span>
-        </div>
+                <span>Property Name</span>
+                <span>24-28 First Avenue Blacktown NSW 2148</span>
+                <span>Details: 3 Bedroom Unit with 2 Bathroom</span>
+                <span>Price: $1400</span>
+            </div>
         
         <div class="booking-options">
             <a href="#">Book Property</a>
@@ -27,4 +27,4 @@
 
     <!-- <?php //} ?> -->
 
-</section>
+</article>
