@@ -22,7 +22,7 @@
         
             <label for="psw-repeat"><b>Repeat Password</b></label>
             <input type="password" placeholder="Repeat Password" name="password-re" required>
-            <input type="text" name="role" value="user">
+            <input type="hidden" name="role" value="user">
             <div class="clearfix">
                 <input type="button" class="cancelbtn" name="cancelbtn" value="Cancel">
                 <input type="submit" class="signupbtn" name="usersubmit" value="Submit">
