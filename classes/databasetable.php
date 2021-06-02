@@ -78,16 +78,5 @@ function delete($field, $value) {//passed as array
         return $stmt;
 }
 
-//function test
-function test($a, $b){
-    global $pdo;
-    $an=intval($a);//to convert into num
-    $bn=(string)$b;//string
-    $stmt = $pdo->prepare('SELECT * FROM `furniture`  WHERE `item_condition` = "'.$bn.'" AND `categoryId` ='.$an);//selects the value
-     $stmt->execute();//execute
-
-    return $stmt;    
-}
-
 }
 ?>
