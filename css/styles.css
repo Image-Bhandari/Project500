@@ -1,45 +1,45 @@
 * {
-    padding: 0;
-    margin: 0;
+  padding: 0;
+  margin: 0;
 }
 
 nav {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 0.5rem;
-    background: #767676;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 0.5rem;
+  background: #767676;
 }
 
 .login a{
-    font-size: 1.2rem;
-    text-decoration: none;
-    padding: 0 0.5rem;
+  font-size: 1.2rem;
+  text-decoration: none;
+  padding: 0 0.5rem;
 }
 
 .property {
-    font-size: 1.2rem;
-    border: #000 solid 2px;
-    display: flex;
-    justify-content: space-between;
-    background: red;
-    margin: 1rem 0.5rem;
+  font-size: 1.2rem;
+  border: #000 solid 2px;
+  display: flex;
+  justify-content: space-between;
+  background: red;
+  margin: 1rem 0.5rem;
 }
 
 .property span{
-    display: block;
+  display: block;
 }
 
 .booking-options {
-    background: rebeccapurple;
-    width: 30%;
+  background: rebeccapurple;
+  width: 30%;
 }
 
 .booking-options a{
-    display: block;
-    text-decoration: none;
-    padding: 0 0.5rem;
+  display: block;
+  text-decoration: none;
+  padding: 0 0.5rem;
 }
 
 
@@ -48,76 +48,76 @@ nav {
 
 /* Bordered form */
 form {
-    border: 3px solid #f1f1f1;
+  border: 3px solid #f1f1f1;
 }
 
 /* Add padding to containers */
 .login-container {
-    padding: 1rem;
+  padding: 1rem;
 }
-  
-  /* Full-width inputs */
+
+/* Full-width inputs */
 input[type=text], input[type="email"], input[type=password] {
-    width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    box-sizing: border-box;
-  }
-  
-  /* Set a style for all buttons */
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+/* Set a style for all buttons */
 button {
-    background-color: #8a30d3;
-    color: white;
-    padding: 14px 20px;
-    margin: 0.5rem 0;
-    border: none;
-    cursor: pointer;
-    width: 100%;
-  }
-  
-  /* Add a hover effect for buttons */
-  button:hover {
-    opacity: 0.8;
-  }
-  
-  /* Extra style for the cancel button (red) */
-  .new-user {
-    width: auto;
-    padding: 0.62rem 1.2rem;
-    background-color: #fff;
-  }
+  background-color: #8a30d3;
+  color: white;
+  padding: 14px 20px;
+  margin: 0.5rem 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+/* Add a hover effect for buttons */
+button:hover {
+  opacity: 0.8;
+}
+
+/* Extra style for the cancel button (red) */
+.new-user {
+  width: auto;
+  padding: 0.62rem 1.2rem;
+  background-color: #fff;
+}
 
 
 /* Sign up container */
 /* Full-width input fields */
 
 input[type=text]:focus, input[type=email]:focus, input[type=password]:focus {
-    background-color: #ddd;
-    outline: none;
-  }
-  
-  /* Extra styles for the cancel button */
-  .cancelbtn {
-    padding: 14px 20px;
-    background-color: #f44336;
-  }
-  
-  /* Float cancel and signup buttons and add an equal width */
-  .cancelbtn, .signupbtn {
-    float: left;
-    width: 50%;
-  }
-  
-  /* Add padding to container elements */
-  .container {
-    padding: 16px;
-  }
-  
-  /* Clear floats */
-  .clearfix::after {
-    content: "";
-    clear: both;
-    display: table;
-  }
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Extra styles for the cancel button */
+.cancelbtn {
+  padding: 14px 20px;
+  background-color: #f44336;
+}
+
+/* Float cancel and signup buttons and add an equal width */
+.cancelbtn, .signupbtn {
+  float: left;
+  width: 50%;
+}
+
+/* Add padding to container elements */
+.container {
+  padding: 16px;
+}
+
+/* Clear floats */
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
