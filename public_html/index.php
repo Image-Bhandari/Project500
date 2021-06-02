@@ -18,4 +18,4 @@
 	
 	echo loadTemplate('../templates/users/homepage.php', $tempVars);
 
-	?>
+?>

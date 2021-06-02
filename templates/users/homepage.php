@@ -14,7 +14,7 @@
         </div>
 
         <div class="login">
-            <a href="login.html">Login</a>
+            <a href="index.php?page=login">Login</a>
         </div>
         
     </nav>
