@@ -24,7 +24,7 @@
             <input type="password" placeholder="Repeat Password" name="password-re" required>
             <input type="text" name="role" value="user">
             <div class="clearfix">
-                <input type="button" class="cancelbtn" name="cancelbtn">Cancel</button>
+                <input type="button" class="cancelbtn" name="cancelbtn" value="Cancel">
                 <input type="submit" class="signupbtn" name="usersubmit" value="Submit">
             </div>
         </div>
