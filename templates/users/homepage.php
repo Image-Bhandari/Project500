@@ -1,3 +1,5 @@
+<?php
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,17 +12,27 @@
 <body>
     <header>
         <div class="logo">
-            <img src="../images/logo/logo.png" alt="Local Partners Pty Ltd">
+           <a href="index.php"> <img src="../images/logo/logo.png" alt="Local Partners Pty Ltd"></a>
         </div>
 
         <nav>
+        <?php
+        if(isset($_SESSION['login']) && $_SESSION['login'] == 1){
+            echo '<a href="#">'. $_SESSION['username'] .'</a>';
+?>
             <div class="login">
-                <a href="index.php?page=login">Login</a>
+                <?php
+        }
+                else{
+                   echo '<a href="index.php?page=login">Login</a>';
+                }
+                    ?>
             </div>
         </nav>
     </header>
 
     <main>
+    
         <?php echo $content; ?>
     </main>
 

@@ -11,7 +11,7 @@
             <label for="name"><b>Last Name</b></label>
             <input type="text" name="lastname" placeholder="Enter Last Name" required>
 
-            <label for="user anme temp"><b>Email</b></label>
+            <label for="user anme temp"><b>Username</b></label>
             <input type="text" placeholder="username" name="username" required>
             
             <label for="email"><b>Email</b></label>

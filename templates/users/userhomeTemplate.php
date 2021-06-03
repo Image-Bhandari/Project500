@@ -1,30 +1,26 @@
 <article class="property-listing">
 
-    <!-- <?php  
-       // foreach ($data as $value) {
-    ?> -->
+    <?php  
+       foreach ($data as $value) {
+    ?>
 
     <section class="property">
-        <!-- <div class="details">
-            <span><?php echo $value["PropertyName"];?></span>
-            <span><?php echo $value["location"];?></span>
-            <span><?php echo $value["Details"];?></span>
-            <span>Price: $<?php echo $value["Price"];?></span>
-        </div> -->
-
         <div class="details">
-                <span>Property Name</span>
-                <span>24-28 First Avenue Blacktown NSW 2148</span>
-                <span>Details: 3 Bedroom Unit with 2 Bathroom</span>
-                <span>Price: $1400</span>
-            </div>
+            <span><?php echo $value["prop_name"];?></span>
+            <span><?php echo $value["prop_addr"];?></span>
+            <span><?php echo $value["prop_det"];?></span>
+            <span>Price: $<?php echo $value["price"];?></span>
+        </div>
         
         <div class="booking-options">
-            <a href="#">Book Property</a>
+        <form method="POST" action="userhome">
+            <input type="hidden" value="<?php echo $value['prop_id'];?>">
+            <input type="submit" value="Book Property" name="book_prop">
             <a href="#">Enquire</a>
+            </form>
         </div>
     </section>
 
-    <!-- <?php //} ?> -->
+    <?php } ?>
 
 </article>

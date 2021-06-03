@@ -2,6 +2,11 @@
     <form action="login" method="post">
                         
         <div class="login-container">
+        <?php
+        if($message!=""){
+            echo '<label>'. $message.'</label><br><br>';
+        }
+        ?>
             <label for="username"><b>Username</b></label>
             <input type="text" placeholder="Enter Username" name="username" required>
         
