@@ -13,8 +13,8 @@
         </div>
         
         <div class="booking-options">
-        <form method="POST" action="userhome">
-            <input type="hidden" value="<?php echo $value['prop_id'];?>">
+        <form method="POST" action="index.php?page=userhome">
+            <input type="hidden" name="pid" value="<?php echo $value['prop_id'];?>">
             <input type="submit" value="Book Property" name="book_prop">
             <a href="#">Enquire</a>
             </form>

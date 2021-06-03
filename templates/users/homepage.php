@@ -18,7 +18,7 @@
         <nav>
         <?php
         if(isset($_SESSION['login']) && $_SESSION['login'] == 1){
-            echo '<a href="#">'. $_SESSION['username'] .'</a>';
+            echo '<b>User:    </b><a href="#"> '. $_SESSION['username'] .'</a>';
 ?>
             <div class="login">
                 <?php
