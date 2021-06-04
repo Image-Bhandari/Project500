@@ -9,7 +9,7 @@
 		require '../pages/admin/'.$_GET['page']. '.php';
 	}
 	else{
-		require '../pages/admin/homepage.php';
+		require '../pages/admin/dashboard.php';
 	}
 	
 	$tempVars = [
