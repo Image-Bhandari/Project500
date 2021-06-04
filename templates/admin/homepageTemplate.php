@@ -16,8 +16,8 @@
 
         <nav>
             <div class="links">
-                <a href="index.php?page=manageproperty">View Properties</a>
-                <a href="index.php?page=findclients">Clients List</a>
+                <a href="index.php?page=manageproperty">Properties</a>
+                <a href="index.php?page=findclients">Clients</a>
             </div>
         <?php
         if(isset($_SESSION['login']) && $_SESSION['login'] == 1){
