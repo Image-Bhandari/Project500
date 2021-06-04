@@ -1,5 +1,5 @@
 <section class="login">
-    <form action="login" method="post">
+    <form action="index.php?page=login" method="post">
                         
         <div class="login-container">
         <?php
