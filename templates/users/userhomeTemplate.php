@@ -7,7 +7,7 @@
     <section class="property">
         <div class="details">
             <span><?php echo $value["prop_name"];?></span>
-            <span>Location: <?php echo $value["prop_addr"];?></span>
+            <span>Location: <?php echo $value["prop_suburb"];?></span>
             <span>Details: <?php echo $value["prop_det"];?></span>
             <span><?php echo $value["prop_occupancy"];?> Guests</span>
             <span><b>$<?php echo $value["price"];?> AUD </b>Total</span>

@@ -12,7 +12,6 @@
 				echo "User login Success";
 				$_SESSION["login"]=1;
 				$_SESSION["username"]=$_POST['username'];
-				print_r($_SESSION);
 				header('location:index.php?page=userhome');
 			}
 			elseif($value['username']==$_POST['username'] && $value['password']==$_POST['password'] && $value['role']=='staff'){
@@ -20,6 +19,7 @@
 				echo "Staff login Success";
 				$_SESSION["login"]=1;
 				$_SESSION["username"]=$_POST['username'];
+				header('location:../admin/index.php');
 			}
 			elseif($value['username']==$_POST['username'] && $value['password']==$_POST['password'] && $value['role']=='admin'){
 				$bol=1;
