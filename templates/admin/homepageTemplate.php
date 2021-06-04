@@ -21,7 +21,7 @@
             </div>
         <?php
         if(isset($_SESSION['login']) && $_SESSION['login'] == 1){
-            echo '<b>User:    </b><a href="#"> '. $_SESSION['username'] .'</a>';
+            echo '<b><a href="#">User: '. $_SESSION['username'] .'</a></b>' ;
 ?>
             <div class="login">
                 <?php

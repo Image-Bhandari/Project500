@@ -4,6 +4,31 @@
     box-sizing: border-box;
 }
 
+/* Navigation */
+nav {
+	overflow: hidden;
+	background-color: #333;
+	display: flex;
+	justify-content: space-between;
+}
+
+nav a {
+	color: #f2f2f2;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+	font-size: 17px;
+}
+
+nav a:hover {
+	background-color: #ddd;
+	color: black;
+}
+  
+nav a.active {
+	background-color: #04AA6D;
+	color: white;
+}
 
 /* form container */
 input[type=text], input[type=number], input[type=email] {
