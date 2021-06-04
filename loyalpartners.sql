@@ -116,3 +116,14 @@ UPDATE `properties` SET `price` = '550-50 = 500' WHERE `properties`.`prop_id` = 
 UPDATE `properties` SET `price` = '400' WHERE `properties`.`prop_id` = 2; 
 UPDATE `properties` SET `prop_occupancy` = '4' WHERE `properties`.`prop_id` = 1; 
 UPDATE `properties` SET `prop_occupancy` = '2' WHERE `properties`.`prop_id` = 2; 
+ALTER TABLE `properties` CHANGE `prop_addr` `prop_StreetName` VARCHAR(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL; 
+ALTER TABLE `properties` ADD `prop_suburb` VARCHAR(255) NOT NULL AFTER `prop_StreetName`; 
+ALTER TABLE `properties` ADD `prop_state` VARCHAR(255) NOT NULL AFTER `prop_suburb`; 
+ALTER TABLE `properties` ADD `prop_postCode` INT(4) NOT NULL AFTER `prop_state`; 
+UPDATE `properties` SET `prop_StreetName` = '1 street name' WHERE `properties`.`prop_id` = 1; 
+UPDATE `properties` SET `prop_suburb` = 'Blacktown' WHERE `properties`.`prop_id` = 1; 
+UPDATE `properties` SET `prop_suburb` = 'Westmead' WHERE `properties`.`prop_id` = 2; 
+UPDATE `properties` SET `prop_state` = 'NSW' WHERE `properties`.`prop_id` = 1; 
+UPDATE `properties` SET `prop_state` = 'NSW' WHERE `properties`.`prop_id` = 2; 
+UPDATE `properties` SET `prop_postCode` = '2145' WHERE `properties`.`prop_id` = 1; 
+UPDATE `properties` SET `prop_postCode` = '2148' WHERE `properties`.`prop_id` = 2; 
