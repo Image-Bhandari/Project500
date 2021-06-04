@@ -15,10 +15,10 @@
         </div>
 
         <nav>
-            <ul>
-                <li></li>
-                <li>HI</li>
-            </ul>
+            <div class="links">
+                <a href="index.php?page=manageproperty">View Properties</a>
+                <a href="index.php?page=findclients">Clients List</a>
+            </div>
         <?php
         if(isset($_SESSION['login']) && $_SESSION['login'] == 1){
             echo '<b>User:    </b><a href="#"> '. $_SESSION['username'] .'</a>';
