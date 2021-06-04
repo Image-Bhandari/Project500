@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 03, 2021 at 12:45 PM
--- Server version: 10.4.19-MariaDB
--- PHP Version: 8.0.6
+-- Generation Time: Jun 04, 2021 at 05:15 PM
+-- Server version: 10.4.18-MariaDB
+-- PHP Version: 8.0.3
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -30,8 +30,13 @@ SET time_zone = "+00:00";
 CREATE TABLE `properties` (
   `prop_id` int(255) NOT NULL,
   `prop_name` varchar(255) NOT NULL,
-  `prop_addr` varchar(255) NOT NULL,
+  `prop_type` varchar(255) NOT NULL,
+  `prop_StreetName` varchar(255) NOT NULL,
+  `prop_suburb` varchar(255) NOT NULL,
+  `prop_state` varchar(255) NOT NULL,
+  `prop_postCode` int(4) NOT NULL,
   `prop_det` varchar(255) NOT NULL,
+  `prop_occupancy` int(11) NOT NULL DEFAULT 1,
   `price` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -39,35 +44,9 @@ CREATE TABLE `properties` (
 -- Dumping data for table `properties`
 --
 
-INSERT INTO `properties` (`prop_id`, `prop_name`, `prop_addr`, `prop_det`, `price`) VALUES
-(1, 'Mama Ghar', 'Bashundhara', '3 living , 1 cooking, 1 throwing rooms', '$550-50 = 500'),
-(2, 'Arru-Bari Ghar', 'Arru-bari', '4 floor but no room sorry', '$400');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `users`
---
-
-CREATE TABLE `users` (
-  `user_id` int(255) NOT NULL,
-  `firstname` varchar(255) NOT NULL,
-  `lastname` varchar(255) NOT NULL,
-  `username` varchar(255) NOT NULL,
-  `password` varchar(255) NOT NULL,
-  `email` varchar(255) NOT NULL,
-  `role` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `users`
---
-
-INSERT INTO `users` (`user_id`, `firstname`, `lastname`, `username`, `password`, `email`, `role`) VALUES
-(1, 'ram', 'ram', 'ram', 'ram', 'ram@ram.com', 'user'),
-(2, 'staff', 'staff', 'staff', 'staff', 'staff@staff.com', 'staff'),
-(3, 'admin', 'admin', 'admin', 'admin', 'admin@admin.com', 'admin'),
-(4, 'user', 'user', 'user', 'user', 'asd@sda.fdf', 'user');
+INSERT INTO `properties` (`prop_id`, `prop_name`, `prop_type`, `prop_StreetName`, `prop_suburb`, `prop_state`, `prop_postCode`, `prop_det`, `prop_occupancy`, `price`) VALUES
+(1, 'Luxury 3 Bed FULL Ocean View Sky Suite Apartment!', 'Apartment', '1 street name', 'Westmead', 'NSW', 2145, '3 living , 1 cooking, 1 bathroom, Free Parking', 4, '550-50 = 500'),
+(2, 'Arru-Bari Ghar', 'Hotel', 'Arru-bari', 'Blacktown', 'NSW', 2148, '4 floor but no room sorry', 2, '400');
 
 --
 -- Indexes for dumped tables
@@ -80,12 +59,6 @@ ALTER TABLE `properties`
   ADD PRIMARY KEY (`prop_id`);
 
 --
--- Indexes for table `users`
---
-ALTER TABLE `users`
-  ADD PRIMARY KEY (`user_id`);
-
---
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -94,36 +67,8 @@ ALTER TABLE `users`
 --
 ALTER TABLE `properties`
   MODIFY `prop_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
---
--- AUTO_INCREMENT for table `users`
---
-ALTER TABLE `users`
-  MODIFY `user_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
-
-ALTER TABLE `properties` CHANGE `prop_id` `prop_id` INT(255) NOT NULL AUTO_INCREMENT, add PRIMARY KEY (`prop_id`)
-ALTER TABLE `properties` ADD `prop_type` VARCHAR(255) NOT NULL AFTER `prop_name`;
-ALTER TABLE `properties` ADD `prop_occupancy` INT NOT NULL AFTER `prop_det`; 
-ALTER TABLE `properties` CHANGE `prop_occupancy` `prop_occupancy` INT(11) NOT NULL DEFAULT '1'; 
-UPDATE `properties` SET `prop_type` = 'Apartment' WHERE `properties`.`prop_id` = 1; 
-UPDATE `properties` SET `prop_type` = 'Hotel' WHERE `properties`.`prop_id` = 2;
-UPDATE `properties` SET `price` = '550-50 = 500' WHERE `properties`.`prop_id` = 1; 
-UPDATE `properties` SET `price` = '400' WHERE `properties`.`prop_id` = 2; 
-UPDATE `properties` SET `prop_occupancy` = '4' WHERE `properties`.`prop_id` = 1; 
-UPDATE `properties` SET `prop_occupancy` = '2' WHERE `properties`.`prop_id` = 2; 
-ALTER TABLE `properties` CHANGE `prop_addr` `prop_StreetName` VARCHAR(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL; 
-ALTER TABLE `properties` ADD `prop_suburb` VARCHAR(255) NOT NULL AFTER `prop_StreetName`; 
-ALTER TABLE `properties` ADD `prop_state` VARCHAR(255) NOT NULL AFTER `prop_suburb`; 
-ALTER TABLE `properties` ADD `prop_postCode` INT(4) NOT NULL AFTER `prop_state`; 
-UPDATE `properties` SET `prop_StreetName` = '1 street name' WHERE `properties`.`prop_id` = 1; 
-UPDATE `properties` SET `prop_suburb` = 'Blacktown' WHERE `properties`.`prop_id` = 1; 
-UPDATE `properties` SET `prop_suburb` = 'Westmead' WHERE `properties`.`prop_id` = 2; 
-UPDATE `properties` SET `prop_state` = 'NSW' WHERE `properties`.`prop_id` = 1; 
-UPDATE `properties` SET `prop_state` = 'NSW' WHERE `properties`.`prop_id` = 2; 
-UPDATE `properties` SET `prop_postCode` = '2145' WHERE `properties`.`prop_id` = 1; 
-UPDATE `properties` SET `prop_postCode` = '2148' WHERE `properties`.`prop_id` = 2; 
