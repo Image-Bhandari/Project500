@@ -105,3 +105,10 @@ COMMIT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+ALTER TABLE `properties` CHANGE `prop_id` `prop_id` INT(255) NOT NULL AUTO_INCREMENT, add PRIMARY KEY (`prop_id`)
+ALTER TABLE `properties` ADD `prop_type` VARCHAR(255) NOT NULL AFTER `prop_name`;
+UPDATE `properties` SET `prop_type` = 'Apartment' WHERE `properties`.`prop_id` = 1; 
+UPDATE `properties` SET `prop_type` = 'Hotel' WHERE `properties`.`prop_id` = 2;
+UPDATE `properties` SET `price` = '550-50 = 500' WHERE `properties`.`prop_id` = 1; 
+UPDATE `properties` SET `price` = '400' WHERE `properties`.`prop_id` = 2; 
