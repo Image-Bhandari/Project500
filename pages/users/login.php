@@ -3,7 +3,13 @@
 	$message="";
 	$conn = new DatabaseTable('users');
 	$data=$conn->findAll();
-	
+
+	if(isset($_POST['logout'])){
+		echo "thichyo";
+		session_unset();
+		header('location:index.php?page=userhome');
+	}
+
 	if(isset($_POST['login'])){
 		$bol=0;
 		foreach($data as $value){
@@ -31,6 +37,7 @@
 			}
 			
 		}
+		
 		if($bol!=1){
 			$message="Incorrect Credentials Please Check Your Login Details Or Contact The Administration.";
 		}

@@ -9,5 +9,9 @@ foreach($data as $value){
     echo '<br>Price     '.$value['price'];
 }
 
-
 ?>
+
+<form>
+<input type>
+<input type="submit" value="Book">
+</form>
