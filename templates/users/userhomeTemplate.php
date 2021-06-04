@@ -6,11 +6,11 @@
 
     <section class="property">
         <div class="details">
-            <span>Property Name: <?php echo $value["prop_name"];?></span>
-            <span>Property Type: <?php echo $value["prop_type"];?></span>
+            <span><?php echo $value["prop_name"];?></span>
             <span>Location: <?php echo $value["prop_addr"];?></span>
             <span>Details: <?php echo $value["prop_det"];?></span>
-            <span>Price: $<?php echo $value["price"];?></span>
+            <span><?php echo $value["prop_occupancy"];?> Guests</span>
+            <span><b>$<?php echo $value["price"];?> AUD </b>Total</span>
         </div>
         
         <div class="booking-options">
