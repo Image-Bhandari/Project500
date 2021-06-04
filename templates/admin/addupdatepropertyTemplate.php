@@ -3,9 +3,15 @@
     <label for="prop_name">Property Name:</label>
     <input type="text" id="prop_name" name="prop_name" placeholder="Above HILTON Luxury Residence with Beach Views">
 
-    <label for="prop_type">Last Name</label>
-    <input type="text" id="prop_type" name="prop_type" placeholder="Apartment / Resident / Town House">
-    <!-- prop type lai ma checkbox ma convert garxu next commit ma hai  -->
+    <label for="prop_type">Type of Property:</label>
+    <div class="select">
+    <select name="prop_type" id="prop_type">
+        <option disabled selected value> -- select an option -- </option>
+        <option value="Apartment">Apartment</option>
+        <option value="Town_House">Town House</option>
+        <option value="Unit">Unit</option>
+    </select>
+    </div>
 
     <label for="prop_StreetName">Street Location:</label>
     <input type="text" id="prop_StreetName" name="prop_StreetName" placeholder="1A First Street">
@@ -17,7 +23,7 @@
     <input type="text" id="prop_state" name="prop_state" placeholder="NSW">
     
     <label for="prop_postCode">Postcode:</label>
-    <input type="number" max="4" id="prop_postCode" name="prop_postCode" placeholder="2000">
+    <input type="number" id="prop_postCode" name="prop_postCode" max="4" placeholder="2000">
     
     <label for="prop_det">Property Details:</label>
     <input type="text" id="prop_det" name="prop_det" placeholder="1A First Street">
