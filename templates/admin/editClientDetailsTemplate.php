@@ -1,4 +1,6 @@
 <section class="form_container">
+
+  <h2><h2><?php if($data){echo "Update Client Details";}?></h2></h2>
   <form action="index.php?page=editClientDetails">
     <label for="firstname">First Name</label>
     <input type="text" id="firstname" name="firstname" value="<?php if($data){echo $data['firstname'];}?>" placeholder="Client's updated first name..">

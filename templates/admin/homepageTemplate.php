@@ -20,17 +20,18 @@
                 <a href="index.php?page=findclients">Clients</a>
                 <a href="index.php?page=chat">Chat</a>
             </div>
-        <?php
-        if(isset($_SESSION['login']) && $_SESSION['login'] == 1){
-            echo '<b><a href="#">User: '. $_SESSION['username'] .'</a></b>' ;
-?>
             <div class="login">
                 <?php
-        }
-                else{
-                   echo '<a href="index.php?page=login">Login</a>';
-                }
-                    ?>
+                if(isset($_SESSION['login']) && $_SESSION['login'] == 1){
+                    echo '<b><a href="#">User: '. $_SESSION['username'] .'</a></b>' ;
+                ?>
+                    
+                <?php
+                    }
+                    else{
+                        echo '<a href="index.php?page=login">Login</a>';
+                    }
+                ?>
             </div>
         </nav>
     </header>
