@@ -66,6 +66,18 @@ function findAll() {
         return $stmt;
 }
 
+function handlingChat($mes_to,$mes_by){
+    global $pdo;
+    $stmt = $pdo->prepare('UPDATE messages SET message_to="'.$mes_to.'" WHERE message_by="'.$mes_by.'";');
+    $stmt->execute();
+    return $stmt;
+}
+function gettingChat($person1,$person2){
+    global $pdo;
+    $stmt = $pdo->prepare('SELECT * FROM messages WHERE message_to="'.$person1.'" AND message_by="'.$person2.'"OR message_to="'.$person2.'" AND message_by="'.$person1.'"');
+    $stmt->execute();
+    return $stmt;
+}
 //function delete
 function delete($field, $value) {//passed as array
     global $pdo;

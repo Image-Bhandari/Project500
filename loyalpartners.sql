@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 04, 2021 at 05:27 PM
--- Server version: 10.4.18-MariaDB
--- PHP Version: 8.0.3
+-- Generation Time: Jun 05, 2021 at 12:15 PM
+-- Server version: 10.4.19-MariaDB
+-- PHP Version: 8.0.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -20,6 +20,31 @@ SET time_zone = "+00:00";
 --
 -- Database: `loyalpartners`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `messages`
+--
+
+CREATE TABLE `messages` (
+  `message_by` varchar(255) NOT NULL,
+  `message_to` varchar(255) NOT NULL,
+  `message` varchar(255) NOT NULL,
+  `message_id` int(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `messages`
+--
+
+INSERT INTO `messages` (`message_by`, `message_to`, `message`, `message_id`) VALUES
+('ram', 'staff', 'k cha', 2),
+('ram', 'staff', 'adfasfasdfads', 3),
+('staff', 'ram', 'k cha babu? k sodhichau?', 4),
+('staff', 'ram', 'hello', 5),
+('staff', 'ram', 'k xa', 6),
+('ram', 'staff', 'hi', 7);
 
 -- --------------------------------------------------------
 
@@ -78,6 +103,12 @@ INSERT INTO `users` (`user_id`, `firstname`, `lastname`, `username`, `password`,
 --
 
 --
+-- Indexes for table `messages`
+--
+ALTER TABLE `messages`
+  ADD PRIMARY KEY (`message_id`);
+
+--
 -- Indexes for table `properties`
 --
 ALTER TABLE `properties`
@@ -92,6 +123,12 @@ ALTER TABLE `users`
 --
 -- AUTO_INCREMENT for dumped tables
 --
+
+--
+-- AUTO_INCREMENT for table `messages`
+--
+ALTER TABLE `messages`
+  MODIFY `message_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `properties`
