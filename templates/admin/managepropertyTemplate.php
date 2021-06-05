@@ -1,6 +1,10 @@
 
 <table id="listProperties">
 
+<form method="post" action="index.php?page=addupdateproperty">
+		<input type="submit" name="addpagerequest" value="Add Property">
+</form>
+
 <p> LIST OF PROPERTIES </p>
 </br>
 <tr><th>Property Name</th><th>Property Type</th><th>Property Location</th><th>Property Details</th><th>No. of guests allowed</th><th>Price per day</th><th>Edit Details</th> </tr>
