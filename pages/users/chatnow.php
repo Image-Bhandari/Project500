@@ -14,7 +14,7 @@
                 unset($_POST['send']);
                 $agent='not_allocated';
                 $newValue=[
-                    'message'=>$_POST['msg'],
+                    'message'=>$_POST['message'],
                     'message_by'=>$_SESSION['username'],
                     'message_to'=>'not_allocated'
                 ];
@@ -35,7 +35,7 @@
         else {
             unset($_POST['send']);
             $newValue=[
-                'message'=>$_POST['msg'],
+                'message'=>$_POST['message'],
                 'message_by'=>$_SESSION['username'],
                 'message_to'=>'not_allocated'
             ];

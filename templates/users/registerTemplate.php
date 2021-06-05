@@ -1,5 +1,5 @@
 <section class="registration">
-    <form action="register" method="POST">
+    <form action="index.php?page=register" method="POST">
         <div class="register-container">
             <h1>Sign Up</h1>
             <p>Please fill in this form to create an account.</p>

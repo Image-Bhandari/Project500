@@ -6,8 +6,8 @@
 		var_dump($_POST);
 		unset($_POST['usersubmit']);
 		unset($_POST['password-re']);
-		
 		$connToInsert-> insert($_POST);
+		header('location:index.php?page=login'); 
 	}
 
 	$content = loadTemplate('../templates/users/registerTemplate.php', []);//load template

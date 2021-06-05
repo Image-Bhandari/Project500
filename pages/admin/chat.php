@@ -30,7 +30,7 @@ if(isset($_GET['handle'])){
         if($handlingclient){
             echo '<script>alert("Success.!");</script>';
         }
-        header('location:index.php?page=chat.php');
+        header('location:index.php?page=chat');
     }
     else{
         echo '<script>alert("Client Already Handled By Another Staff.");</script>';
