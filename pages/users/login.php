@@ -5,7 +5,6 @@
 	$data=$conn->findAll();
 
 	if(isset($_POST['logout'])){
-		echo "thichyo";
 		session_unset();
 		header('location:index.php?page=userhome');
 	}
@@ -18,6 +17,7 @@
 				echo "User login Success";
 				$_SESSION["login"]=1;
 				$_SESSION["username"]=$_POST['username'];
+				$_SESSION["user_id"]=$value['user_id'];
 				header('location:index.php?page=userhome');
 			}
 			elseif($value['username']==$_POST['username'] && $value['password']==$_POST['password'] && $value['role']=='staff'){

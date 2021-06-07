@@ -5,7 +5,7 @@
 
 	if(isset($_POST['book_prop'])){
 		if(isset($_SESSION["login"]) && $_SESSION["login"]== True){
-			$path = 'location:index.php?page=bookandenquire&pid='.$_POST['pid'];
+			$path = 'location:index.php?page=enquire&pid='.$_POST['pid'];
 			header($path);
 		}
 		else {
