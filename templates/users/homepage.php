@@ -14,9 +14,11 @@
         </div>
 
         <nav>
+        
+        <div class="userinfo">
         <?php
         if(isset($_SESSION['login']) && $_SESSION['login'] == 1){
-            echo '<b>User:    </b><a href="#"> '. $_SESSION['username'] .'</a>';
+            echo '<b>User:</b><a href="#"> '. $_SESSION['username'] .'</a>';
 ?>  
 
             <form method="POST" action="index.php?page=login">
@@ -29,7 +31,7 @@
                    echo '<a class="login" href="index.php?page=login">Login</a>';
                 }
                     ?>
-
+            </div>
         </nav>
     </header>
 

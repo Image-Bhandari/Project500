@@ -29,6 +29,31 @@ nav {
   font-weight: 550;
 }
 
+/* login / user ID info */
+.userinfo {
+  display: inherit;
+  align-items: center;
+  font-size: 1.2rem;
+  color: #0e375e;
+}
+
+.userinfo a {
+  text-decoration: none;
+  text-transform: capitalize;
+  padding: 0.4rem;
+  opacity: 0.9;
+}
+
+.userinfo a:visited {
+  color: #0e375e;
+}
+
+.userinfo a:hover {
+  opacity: 1;
+  color: #0578e6;
+  text-decoration: underline;
+}
+
 body {
   background: #ADBEFF;
 }
@@ -168,4 +193,29 @@ input[type=text]:focus, input[type=email]:focus, input[type=password]:focus {
   content: "";
   clear: both;
   display: table;
+}
+
+/* book and enquiry page */
+.propdetails span {
+  display: block;
+  text-transform: capitalize;
+  padding: 0.5rem 0;
+}
+
+.propdetails input[type="submit"] {
+  width: 1px;
+}
+
+.book_enqiure {
+  width: 90%;
+  margin-left: 5%;
+}
+
+.book, .chat {
+  width: max-content;
+}
+
+.book input[type="submit"]{
+  padding: 0.5rem 1rem;
+  border: none;
 }

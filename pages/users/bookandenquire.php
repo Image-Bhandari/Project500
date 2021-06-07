@@ -11,15 +11,6 @@ if(isset($_SESSION['login']) && $_SESSION['login'] == 1){
     $title = "Booking And Enquiring";
     $content = loadTemplate('../templates/users/bookandenquireTemplate.php', ['data'=>$data]);//load template
 
-
-
-
-
-
-
-
-
-
 }
 else {
     header('location:index.php?page=login');
