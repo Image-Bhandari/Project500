@@ -11,7 +11,7 @@
 
 <?php
 foreach ($data as $value) {
-    echo '<tr><td>'.$value['prop_name'].'</td><td>'.$value['prop_type'].'</td><td>'.$value['prop_StreetName'].' '.$value['prop_suburb'].' '.$value['prop_state'].' '.$value['prop_postCode'].'</td><td>'.$value['prop_det'].'</td><td>'.$value['prop_occupancy'].'</td><td>$'.$value['price'].'</td><td><a href="index.php?page=addupdateproperty&pid='.$value['prop_id'].'">Edit</a></td>';
+    echo '<tr><td>'.$value['prop_name'].'</td><td>'.$value['prop_type'].'</td><td>'.$value['prop_StreetName'].' '.$value['prop_suburb'].' '.$value['prop_state'].' '.$value['prop_postCode'].'</td><td>'.$value['prop_det'].'</td><td>'.$value['prop_occupancy'].'</td><td>$'.$value['price'].'</td><td><a href="index.php?page=addupdateproperty&pid='.$value['prop_id'].'">Edit</a><a href="index.php?page=manageproperty&did='.$value['prop_id'].'" class="delete">Delete</a></td>';
 }
 ?>
 
