@@ -13,7 +13,6 @@
 		$conn = new DatabaseTable('properties');
 		unset($_POST['val_update']);
 		$conn->update($_POST,'prop_id');
-		echo $_POST['prop_id'];
 		header('Location:index.php?page=manageproperty');
 	}
 
