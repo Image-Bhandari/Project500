@@ -16,7 +16,7 @@
         <div class="booking-options">
         <form method="POST" action="index.php?page=userhome">
             <input type="hidden" name="pid" value="<?php echo $value['prop_id'];?>">
-            <input type="submit" value="Enquiry" name="book_prop">
+            <input type="submit" value="Enquiry" class="enquir" name="book_prop">
             </form>
         </div>
     </section>

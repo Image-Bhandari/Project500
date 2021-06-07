@@ -19,6 +19,16 @@ nav {
   height: 4rem;
 }
 
+/* login link */
+.login, .enquir {
+  text-decoration: none;
+  color: #0e375e;
+  background: #74d14c;
+  padding: 0.5rem 2rem;
+  font-size: 1.2rem;
+  font-weight: 550;
+}
+
 body {
   background: #ADBEFF;
 }

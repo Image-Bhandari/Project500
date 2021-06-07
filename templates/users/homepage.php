@@ -17,18 +17,19 @@
         <?php
         if(isset($_SESSION['login']) && $_SESSION['login'] == 1){
             echo '<b>User:    </b><a href="#"> '. $_SESSION['username'] .'</a>';
-?>
+?>  
+
             <form method="POST" action="index.php?page=login">
-            <input type="submit" value="LogOut" name="logout">
+            <input class ="login" type="submit" value="LogOut" name="logout">
             </form>
-            <div class="login">
+            
                 <?php
         }
                 else{
-                   echo '<a href="index.php?page=login">Login</a>';
+                   echo '<a class="login" href="index.php?page=login">Login</a>';
                 }
                     ?>
-            </div>
+
         </nav>
     </header>
 
