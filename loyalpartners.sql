@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 05, 2021 at 12:15 PM
+-- Generation Time: Jun 07, 2021 at 08:04 PM
 -- Server version: 10.4.19-MariaDB
 -- PHP Version: 8.0.6
 
@@ -20,6 +20,29 @@ SET time_zone = "+00:00";
 --
 -- Database: `loyalpartners`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `bookings`
+--
+
+CREATE TABLE `bookings` (
+  `book_id` int(255) NOT NULL,
+  `user_id` int(255) NOT NULL,
+  `prop_id` int(255) NOT NULL,
+  `start_time` date NOT NULL,
+  `end_time` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `bookings`
+--
+
+INSERT INTO `bookings` (`book_id`, `user_id`, `prop_id`, `start_time`, `end_time`) VALUES
+(3, 0, 1, '2021-06-30', '2021-07-04'),
+(4, 0, 1, '2021-06-09', '2021-06-12'),
+(5, 0, 3, '2021-06-17', '2021-06-25');
 
 -- --------------------------------------------------------
 
@@ -70,8 +93,10 @@ CREATE TABLE `properties` (
 --
 
 INSERT INTO `properties` (`prop_id`, `prop_name`, `prop_type`, `prop_StreetName`, `prop_suburb`, `prop_state`, `prop_postCode`, `prop_det`, `prop_occupancy`, `price`) VALUES
-(1, 'Luxury 3 Bed FULL Ocean View Sky Suite Apartment!', 'Apartment', '1 street name', 'Westmead', 'NSW', 2145, '3 living , 1 cooking, 1 bathroom, Free Parking', 4, '550-50 = 500'),
-(2, 'Arru-Bari Ghar', 'Hotel', 'Arru-bari', 'Blacktown', 'NSW', 2148, '4 floor but no room sorry', 2, '400');
+(1, 'Luxury 3 Bed FULL Ocean View Sky Suite Apartment!', 'Apartment', '1 street name', 'Westmead', 'NSW', 2145, '3 living , 1 cooking, 1 bathroom, Free Parking', 4, '500'),
+(2, 'Arru-Bari Ghar', 'Hotel', 'Arru-bari', 'Blacktown', 'NSW', 2148, '4 floor but no room sorry', 2, '500'),
+(3, 'saf', 'Apartment', 'adsf', 'asfd', 'asdf', 4545, 'asdf', 2, '500'),
+(4, '', '', '', '', '', 0, '', 0, '');
 
 -- --------------------------------------------------------
 
@@ -94,13 +119,19 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`user_id`, `firstname`, `lastname`, `username`, `password`, `email`, `role`) VALUES
-(1, 'ram', 'ram', 'ram', 'ram', 'ram@ram.com', 'user'),
+(1, 'ram', 'ram', 'ram', 'ram', 'ram@ram.cum', 'user'),
 (2, 'staff', 'staff', 'staff', 'staff', 'staff@staff.com', 'staff'),
 (3, 'admin', 'admin', 'admin', 'admin', 'admin@admin.com', 'admin');
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `bookings`
+--
+ALTER TABLE `bookings`
+  ADD PRIMARY KEY (`book_id`);
 
 --
 -- Indexes for table `messages`
@@ -125,6 +156,12 @@ ALTER TABLE `users`
 --
 
 --
+-- AUTO_INCREMENT for table `bookings`
+--
+ALTER TABLE `bookings`
+  MODIFY `book_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
 -- AUTO_INCREMENT for table `messages`
 --
 ALTER TABLE `messages`
@@ -134,7 +171,7 @@ ALTER TABLE `messages`
 -- AUTO_INCREMENT for table `properties`
 --
 ALTER TABLE `properties`
-  MODIFY `prop_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `prop_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `users`
