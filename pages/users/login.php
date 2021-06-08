@@ -3,7 +3,7 @@
 	$message="";
 	$conn = new DatabaseTable('users');
 	$data=$conn->findAll();
-
+	
 	if(isset($_POST['logout'])){
 		session_unset();
 		header('location:index.php?page=userhome');
@@ -16,7 +16,7 @@
 				$bol=1;
 				echo "User login Success";
 				$_SESSION["login"]=1;
-				$_SESSION["username"]=$_POST['username'];
+				$_SESSION["userntame"]=$_POST['username'];
 				$_SESSION["user_id"]=$value['user_id'];
 				header('location:index.php?page=userhome');
 			}
