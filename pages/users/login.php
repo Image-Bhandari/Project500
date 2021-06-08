@@ -18,6 +18,7 @@
 				$_SESSION["login"]=1;
 				$_SESSION["username"]=$_POST['username'];
 				$_SESSION["user_id"]=$value['user_id'];
+				$_SESSION["role"]=$value['role'];	
 				header('location:index.php?page=userhome');
 			}
 			elseif($value['username']==$_POST['username'] && $value['password']==$_POST['password'] && $value['role']=='staff'){
@@ -43,8 +44,6 @@
 		}
 	}
 
-	$conn = new DatabaseTable('notification');
-	$notif=$conn->findAll();
 
-	$content = loadTemplate('../templates/users/loginTemplate.php', ['message'=>$message,'notif'=>$notif]);//load template
+	$content = loadTemplate('../templates/users/loginTemplate.php', ['message'=>$message]);//load template
 ?>

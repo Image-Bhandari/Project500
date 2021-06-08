@@ -27,6 +27,17 @@ function enable(){
         disable();
             }
 }
+function bookCancel(bid){
+    confirm("Are You Sure??? This will Cancel Your Booking.");
+    if(confirm){
+        var path = "index.php?page=history&action=cancel&bid=";
+        var fullpath = path.concat(bid);
+        window.location.href =fullpath;
+    }
+    else {
+    }
+
+}
 
 function creditInfo(bid){
     var cardnum = prompt("Please Enter Your Credit Card Number: ","");
@@ -45,6 +56,14 @@ function creditInfo(bid){
             alert("Not a valid Visa credit card number!");
         }
 
+}
+var notif;
+function setNotif(noti){
+    notif=noti;
+    alert(notif);
+}
+function getNotif(){
+    return notif;
 }
 
 function start(){

@@ -11,7 +11,8 @@ foreach($findAllBook as $value){
     '</td><td>'.$value['start_time'].' To: '.$value['end_time'].'</td><td>'.$price.
     '</td><td>';
     if($value['status']=="Not-Confirmed"){
-        echo "<a href=index.php?page=history&action=cancel>Cancel Booking</a>";
+        echo "<button onclick=\"bookCancel(".$value['book_id'].");\">Cancel Booking</button>";
+        //echo "<a href=index.php?page=history&action=cancel&bid=".$value['book_id'].">Cancel Booking</a>";
         echo "<button onclick=\"creditInfo(".$value['book_id'].");\">Confirm Booking</button>";
     }
     else{

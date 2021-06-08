@@ -47,8 +47,7 @@ if(isset($_POST['book'])){
             }
             else{
                 $inst=$conn->insert($_POST);
-                header('location:index.php?page=userhome');
-
+                header('location:index.php?page=history');
             }
         }
              }
@@ -64,7 +63,7 @@ if(isset($_POST['book'])){
     }
     else{
         $inst=$conn->insert($_POST);
-                header('location:index.php?page=userhome');
+        header('location:index.php?page=history');
     }
 
 }

@@ -16,7 +16,7 @@ session_start();
 		'title' => $title,
 		'content' => $content
 	];
-	
+
 	echo loadTemplate('../templates/users/homepage.php', $tempVars);
 
 ?>

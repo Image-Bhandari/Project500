@@ -29,15 +29,20 @@
             <div class="dropdown" id="dropdown">
                 <button class="dropbtn" onclick="myFunction()"><i class="fa fa-bell"></i></button>
                 <div class="dropdown-content" id="dropdown-content">
+                    <?php 
+                        $connN=new DatabaseTable('notification');
+                        $allnotif=$connN->findAll();
+                        foreach ($allnotif as $value) { 
+                            if($value['role']==$_SESSION['role'] || $value['role']=="Everyone"){
+                    ?>
                     <div class="itms">
                         <img src="../images/logo/avatar1.png" alt="logo">
-                        <?php  foreach ($notif as $value) { ?>
                         <div class="text">
                             <h4><?php echo $value['notif_title'];?></h4>
                             <p><?php echo $value['notif_msg'];?></p>
-                        </div>
-                        <?php } ?>
+                        </div><br>
                     </div>
+                    <?php }} ?>
                 </div>
             </div>
             <!-- logout -->
