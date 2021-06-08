@@ -90,5 +90,13 @@ function delete($field, $value) {//passed as array
         return $stmt;
 }
 
+function booking($user_id){
+    global $pdo;
+    $stmt = $pdo->prepare('SELECT * FROM `properties` INNER JOIN bookings ON properties.prop_id = bookings.prop_id WHERE bookings.user_id ='.$user_id.';');
+    $stmt->execute();
+    return $stmt;
+
+}
+
 }
 ?>
