@@ -16,7 +16,7 @@
 				$bol=1;
 				echo "User login Success";
 				$_SESSION["login"]=1;
-				$_SESSION["userntame"]=$_POST['username'];
+				$_SESSION["username"]=$_POST['username'];
 				$_SESSION["user_id"]=$value['user_id'];
 				header('location:index.php?page=userhome');
 			}
