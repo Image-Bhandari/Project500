@@ -34,13 +34,10 @@
         <div class="userinfo">
         <?php
         if(isset($_SESSION['login']) && $_SESSION['login'] == 1){
-<<<<<<< Updated upstream
             echo '<b><a href="index.php?page=history">History</a></b>';
             echo '<b>User:</b><a href="index.php?page=userprofile"> '. $_SESSION['username'] .'</a>';
-=======
-            echo '<b>User:</b><a href="index.php?page=userprofile"> '. $_SESSION['user_id'] .'</a>';
->>>>>>> Stashed changes
-?>  
+
+        ?>  
 
             <form method="POST" action="index.php?page=login">
             <input class ="login" type="submit" value="LogOut" name="logout">
