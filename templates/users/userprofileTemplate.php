@@ -1,6 +1,7 @@
+<body onload="disable();">
 <section class="form_container">
 
-  <h2><?php if($data){echo "Update Profile Details";}?><i class="fas fa-pen"></i></h2>
+  <h2><?php if($data){echo "Update Profile Details";}?><br></h2> <div onclick="enable();"><h5>Edit <i class="fas fa-pen"></i></h5></div>
   <p><?php echo $status; ?></p>
   <form method="post" action="index.php?page=userprofile">
     <input type="hidden" name="user_id" value=<?php echo $uid;?>>
@@ -13,6 +14,7 @@
     <label for="email">Email</label>
     <input type="email" id="email" name="email" value="<?php if($data){echo $data['email'];}?>" placeholder="Updated Email Address">
 
-    <input type="submit" name="Update" value="Update Profile">
+    <input type="submit" id="update" name="Update" value="Update Profile">
   </form>
 </section>
+</body>

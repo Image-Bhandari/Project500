@@ -9,8 +9,6 @@ foreach($data as $value){
     echo '<br>Price     '.$value['price'];
 
 }
-echo 'Status: '.$availability;
-echo $uid;
 ?>
 <form method="post" action="index.php?page=book">
 <label>From: </label>
@@ -18,6 +16,7 @@ echo $uid;
 <label>To: </label>
 <input type="date" name="end_time">
 <input type="hidden" name="prop_id" value=<?php echo $id;?>>
+<input typpe="hidden" name="status" value="Not-Confirmed">
 <input type="submit" name="book" value="Book">
 <input type="hidden" name="user_id" value=<?php echo $uid;?>>
 </form>

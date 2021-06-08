@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> <?php echo $title; ?></title>
+    <script type="text/javascript" src="../css/js.js"></script>
     <link rel="stylesheet" href="../css/styles.css">
 </head>
 <body>
@@ -18,6 +19,7 @@
         <div class="userinfo">
         <?php
         if(isset($_SESSION['login']) && $_SESSION['login'] == 1){
+            echo '<b><a href="index.php?page=history">History</a></b>';
             echo '<b>User:</b><a href="index.php?page=userprofile"> '. $_SESSION['username'] .'</a>';
 ?>  
 
