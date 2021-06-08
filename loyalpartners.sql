@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 08, 2021 at 01:21 PM
--- Server version: 10.4.19-MariaDB
--- PHP Version: 8.0.6
+-- Generation Time: Jun 08, 2021 at 06:52 PM
+-- Server version: 10.4.18-MariaDB
+-- PHP Version: 8.0.3
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -42,9 +42,7 @@ CREATE TABLE `bookings` (
 --
 
 INSERT INTO `bookings` (`book_id`, `user_id`, `prop_id`, `start_time`, `end_time`, `status`, `cred_detail`) VALUES
-(3, 1, 1, '2021-06-30', '2021-07-04', 'Confirmed', '4111111111111111'),
-(4, 1, 1, '2021-06-09', '2021-06-12', '', ''),
-(5, 0, 3, '2021-06-17', '2021-06-25', '', '');
+(1, 1, 1, '2021-06-30', '2021-07-04', 'Confirmed', '4111111111111111');
 
 -- --------------------------------------------------------
 
@@ -64,12 +62,29 @@ CREATE TABLE `messages` (
 --
 
 INSERT INTO `messages` (`message_by`, `message_to`, `message`, `message_id`) VALUES
-('ram', 'staff', 'k cha', 2),
-('ram', 'staff', 'adfasfasdfads', 3),
-('staff', 'ram', 'k cha babu? k sodhichau?', 4),
-('staff', 'ram', 'hello', 5),
-('staff', 'ram', 'k xa', 6),
-('ram', 'staff', 'hi', 7);
+('ram', 'staff', 'k cha', 1),
+('staff', 'ram', 'k cha babu? k sodhichau?', 2);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `notification`
+--
+
+CREATE TABLE `notification` (
+  `notif_id` int(11) NOT NULL,
+  `notif_title` varchar(255) NOT NULL,
+  `notif_msg` varchar(255) NOT NULL,
+  `notif_date` timestamp NOT NULL DEFAULT current_timestamp(),
+  `role` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `notification`
+--
+
+INSERT INTO `notification` (`notif_id`, `notif_title`, `notif_msg`, `notif_date`, `role`) VALUES
+(1, 'k xaaaaaaaaa', 'garoh xa??? jindagi bahut hard xa?', '2021-06-08 15:30:34', 'Staff');
 
 -- --------------------------------------------------------
 
@@ -96,9 +111,7 @@ CREATE TABLE `properties` (
 
 INSERT INTO `properties` (`prop_id`, `prop_name`, `prop_type`, `prop_StreetName`, `prop_suburb`, `prop_state`, `prop_postCode`, `prop_det`, `prop_occupancy`, `price`) VALUES
 (1, 'Luxury 3 Bed FULL Ocean View Sky Suite Apartment!', 'Apartment', '1 street name', 'Westmead', 'NSW', 2145, '3 living , 1 cooking, 1 bathroom, Free Parking', 4, '500'),
-(2, 'Arru-Bari Ghar', 'Hotel', 'Arru-bari', 'Blacktown', 'NSW', 2148, '4 floor but no room sorry', 2, '500'),
-(3, 'saf', 'Apartment', 'adsf', 'asfd', 'asdf', 4545, 'asdf', 2, '500'),
-(4, '', '', '', '', '', 0, '', 0, '');
+(2, 'Arru-Bari Ghar', 'Hotel', 'Arru-bari', 'Blacktown', 'NSW', 2148, '4 floor but no room sorry', 2, '500');
 
 -- --------------------------------------------------------
 
@@ -142,6 +155,12 @@ ALTER TABLE `messages`
   ADD PRIMARY KEY (`message_id`);
 
 --
+-- Indexes for table `notification`
+--
+ALTER TABLE `notification`
+  ADD PRIMARY KEY (`notif_id`);
+
+--
 -- Indexes for table `properties`
 --
 ALTER TABLE `properties`
@@ -161,19 +180,25 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `bookings`
 --
 ALTER TABLE `bookings`
-  MODIFY `book_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `book_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `messages`
 --
 ALTER TABLE `messages`
-  MODIFY `message_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `message_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `notification`
+--
+ALTER TABLE `notification`
+  MODIFY `notif_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `properties`
 --
 ALTER TABLE `properties`
-  MODIFY `prop_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `prop_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `users`

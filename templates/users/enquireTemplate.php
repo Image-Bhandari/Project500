@@ -16,7 +16,7 @@ foreach($data as $value){
 <label>To: </label>
 <input type="date" name="end_time">
 <input type="hidden" name="prop_id" value=<?php echo $id;?>>
-<input typpe="hidden" name="status" value="Not-Confirmed">
+<input type="hidden" name="status" value="Not-Confirmed">
 <input type="submit" name="book" value="Book">
 <input type="hidden" name="user_id" value=<?php echo $uid;?>>
 </form>

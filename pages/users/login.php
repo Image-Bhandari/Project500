@@ -43,5 +43,8 @@
 		}
 	}
 
-	$content = loadTemplate('../templates/users/loginTemplate.php', ['message'=>$message]);//load template
+	$conn = new DatabaseTable('notification');
+	$notif=$conn->findAll();
+
+	$content = loadTemplate('../templates/users/loginTemplate.php', ['message'=>$message,'notif'=>$notif]);//load template
 ?>

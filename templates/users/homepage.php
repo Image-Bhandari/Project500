@@ -25,12 +25,28 @@
 
         ?>  
 
+            <!-- notification bell -->
+            <div class="dropdown" id="dropdown">
+                <button class="dropbtn" onclick="myFunction()"><i class="fa fa-bell"></i></button>
+                <div class="dropdown-content" id="dropdown-content">
+                    <div class="itms">
+                        <img src="../images/logo/avatar1.png" alt="logo">
+                        <?php  foreach ($notif as $value) { ?>
+                        <div class="text">
+                            <h4><?php echo $value['notif_title'];?></h4>
+                            <p><?php echo $value['notif_msg'];?></p>
+                        </div>
+                        <?php } ?>
+                    </div>
+                </div>
+            </div>
+            <!-- logout -->
             <form method="POST" action="index.php?page=login">
             <input class ="login" type="submit" value="LogOut" name="logout">
             </form>
             
                 <?php
-        }
+        } //if logged in
                 else{
                    echo '<a class="login" href="index.php?page=login">Login</a>';
                 }

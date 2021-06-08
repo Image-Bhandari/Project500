@@ -1,15 +1,15 @@
-var box  = document.getElementById('box');
-var down = false;
-
-
-function toggleNotifi(){
-	if (down) {
-		box.style.height  = '0px';
-		box.style.disabled = false;
-		down = false;
-	}else {
-		box.style.height  = '510px';
-		box.style.disabled = true;
-		down = true;
-	}
+function myFunction() {
+  var x = document.getElementById("dropdown");
+  if (x.style.display === "block") {
+    
+  } else {
+    x.style.display = "block";
+  }
+  
+  var x = document.getElementById("dropdown-content");
+  if (x.style.display === "block") {
+    x.style.display = "none";
+  } else {
+    x.style.display = "block";
+  }
 }
