@@ -1,4 +1,7 @@
 <?php
+
+$uid=$_SESSION['user_id'];
+
 if(isset($_SESSION['login']) && $_SESSION['login'] == 1){
     $product_id=0;
     $availability="Available";
@@ -16,13 +19,7 @@ if(isset($_SESSION['login']) && $_SESSION['login'] == 1){
     }
 }
 
-
-
-
-
-
-
-    $content = loadTemplate('../templates/users/enquireTemplate.php', ['data'=>$data, 'availability'=>$availability]);//load template
+    $content = loadTemplate('../templates/users/enquireTemplate.php', ['data'=>$data, 'availability'=>$availability,'uid'=>$uid]);//load template
 }
 else {
     header('location:index.php?page=login');

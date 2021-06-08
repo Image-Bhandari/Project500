@@ -18,7 +18,7 @@
         <div class="userinfo">
         <?php
         if(isset($_SESSION['login']) && $_SESSION['login'] == 1){
-            echo '<b>User:</b><a href="#"> '. $_SESSION['username'] .'</a>';
+            echo '<b>User:</b><a href="index.php?page=userprofile"> '. $_SESSION['username'] .'</a>';
 ?>  
 
             <form method="POST" action="index.php?page=login">
@@ -42,5 +42,6 @@
     <footer>
 
     </footer>
+    <script src="https://kit.fontawesome.com/6d2ea823d0.js"></script>
 </body>
 </html>
