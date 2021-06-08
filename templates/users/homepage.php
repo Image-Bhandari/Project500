@@ -15,21 +15,7 @@
         </div>
 
         <nav>
-        
-        <!-- notification icon -->
-        <div class="icon" onclick="toggleNotifi()">
-			<img src="../images/logo/bell.png" alt=""> <span>17</span>
-		</div>
-		<div class="notifi-box" id="box">
-			<h2>Notifications <span>17</span></h2>
-			<div class="notifi-item">
-				<img src="../images/logo/avatar1.png" alt="img">
-				<div class="text">
-				   <h4>Elias Abdurrahman</h4>
-				   <p>@lorem ipsum dolor sit amet</p>
-			    </div> 
-			</div>
-        </div>
+    
 
         <div class="userinfo">
         <?php
