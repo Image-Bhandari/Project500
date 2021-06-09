@@ -1,6 +1,7 @@
 * {
   padding: 0;
   margin: 0;
+  box-sizing: border-box;
 }
 /* #74d14c  logo ko green  */
 /* #f7f7f7  logo ko white */
@@ -273,4 +274,118 @@ input[type=text]:focus, input[type=email]:focus, input[type=password]:focus {
 .book input[type="submit"]{
   padding: 0.5rem 1rem;
   border: none;
+}
+
+article {
+	width: 90%;
+	margin: 2rem 0 0 5%;
+}
+
+/* table */
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+	width: 100%;
+	border: 1px solid #ddd;
+  }
+  
+  th {
+    background: #96EDDC;
+  }
+
+  th, td {
+	text-align: left;
+	padding: 16px;
+  }
+  
+  tr:nth-child(even) {
+	background-color: #F2F5F8;
+  }
+
+  .delete {
+    padding: 0 0.5rem;
+}
+
+table a {
+	text-decoration: none;
+}
+
+/* edit profile */
+.editbtn {
+  padding: 1rem;
+  cursor: pointer;
+  width: 5.2rem;
+}
+
+.profile h5 {
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+.form_container form {
+  background: #EEFCF9;
+  font-size: 1.2rem;
+}
+
+.form_container .cont {
+  width: 90%;
+  margin: 0.5rem 0 0.5rem 5%;
+}
+
+.form_container label {
+  margin: 0.5rem;
+}
+
+.form_container form input[type="submit"] {
+  text-decoration: none;
+  color: #000;
+  background: #fff;
+  padding: 0.5rem 1.5rem;
+  font-size: 1.2rem;
+  font-weight: 550;
+  margin: 0.2rem 0;
+}
+
+/* chat messages */
+.chattemplate {
+  position: relative;
+}
+
+.messages {
+	max-height: 25rem;
+	overflow: auto;
+}
+
+.messagebox {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+.messageby {
+	text-align: left;
+	margin-left: 0.6rem;
+	font-size: 1.2rem;
+}
+
+.messageto {
+	text-align: right;
+	margin-right: 0.6rem;
+	font-size: 1.2rem;
+  overflow-wrap: break-word;
+}
+
+.messagebox form{
+	display: flex;
+  overflow-wrap: break-word;
+}
+
+.messagebox form input[type="submit"] {
+	padding: 0 12px;
+	margin: 0;
+	bottom: 0;
+}
+
+.messagebox form input[type="text"] {
+	margin: 0;
 }

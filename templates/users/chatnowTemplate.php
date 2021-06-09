@@ -1,13 +1,13 @@
-<div>
-    <div>
+<article class="chattemplate">
+    <div class="messages">
         <?php
         $agent="";
         foreach ($message as $mes) {
             if($mes['message_by']==$_SESSION['username']){
-                echo "You (".$_SESSION['username'].") : ". $mes['message'].'<br>';
+                echo "<p class='messageby'>You (".$_SESSION['username'].") : ". $mes['message'].'</p>';
             }
             else{
-                echo "Loyal Partners (".$mes['message_by'].") : ". $mes['message'].'<br>';
+                echo "<p class='messageto'>Loyal Partners (".$mes['message_by'].") : ". $mes['message'].'</p>';
                 $agent=$mes['message_by'];
                 
             }
@@ -19,7 +19,7 @@
     <br>
     <br>
 
-    <div>
+    <div class="messagebox">
         <form method="post" action="index.php?page=chatnow">
             <input type="text" name="message">
             <input type="hidden" name="message_to" value=<?php if($agent!=""){echo $agent;} else echo " ";?>>
@@ -27,4 +27,4 @@
             <input type="submit" name="send" value="Send">
         </form>
     </div>
-</div>
+</article>
