@@ -20,6 +20,13 @@
                 <a href="index.php?page=manageproperty">Properties</a>
                 <a href="index.php?page=findclients">Clients</a>
                 <a href="index.php?page=chat">Chat</a>
+                <?php
+                if((isset($_SESSION['login']) && $_SESSION['login'] == 1) && $_SESSION['username']=="admin"){
+                echo "<a href=index.php?page=notif>Create Notification</a>";
+                echo "<a href=index.php?page=staff>Add Staff</a>";
+                
+                }
+                ?>
             </div>
             <div class="login">
                 <!-- logged in user -->

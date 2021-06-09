@@ -33,6 +33,7 @@
 				echo "Admin login Success";
 				$_SESSION["login"]=1;
 				$_SESSION["username"]=$_POST['username'];
+				header('location:../admin/index.php');
 			}
 			else{
 			}
