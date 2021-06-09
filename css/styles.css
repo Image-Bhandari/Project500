@@ -349,6 +349,7 @@ table a {
 /* chat messages */
 .chattemplate {
   position: relative;
+  background: #DDE8F9;
 }
 
 .messages {
