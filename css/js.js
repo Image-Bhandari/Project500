@@ -39,6 +39,18 @@ function bookCancel(bid){
 
 }
 
+function StaffbookCancel(bid){
+    confirm("Are You Sure??? Client Will Get A Notification !!");
+    if(confirm){
+        var path = "index.php?page=clienthistory&action=cancel&bod=";
+        var fullpath = path.concat(bid);
+        window.location.href =fullpath;
+    }
+    else {
+    }
+
+}
+
 function creditInfo(bid){
     var cardnum = prompt("Please Enter Your Credit Card Number: ","");
     var cardno = /^(?:4[0-9]{12}(?:[0-9]{3})?)$/;

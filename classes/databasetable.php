@@ -59,7 +59,7 @@ function find($field, $value) {//passed as array
 //findAll function
 function findAll() {
     global $pdo;
-        $stmt = $pdo->prepare('SELECT * FROM ' . $this->table );//selects the value
+        $stmt = $pdo->prepare('SELECT * FROM ' . $this->table);//selects the value
 
         $stmt->execute();//execute the value
 
@@ -97,6 +97,16 @@ function booking($user_id){
     return $stmt;
 
 }
+
+function notifAll() {
+    global $pdo;
+        $stmt = $pdo->prepare('SELECT * FROM ' . $this->table .' ORDER BY notif_id DESC');//selects the value
+
+        $stmt->execute();//execute the value
+
+        return $stmt;
+}
+
 
 }
 ?>

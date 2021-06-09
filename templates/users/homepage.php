@@ -31,9 +31,9 @@
                 <div class="dropdown-content" id="dropdown-content">
                     <?php 
                         $connN=new DatabaseTable('notification');
-                        $allnotif=$connN->findAll();
+                        $allnotif=$connN->notifAll();
                         foreach ($allnotif as $value) { 
-                            if($value['role']==$_SESSION['role'] || $value['role']=="Everyone"){
+                            if($value['role']==$_SESSION['role'] || $value['role']=="Everyone" ||$value['role']==$_SESSION['username']){
                     ?>
                     <div class="itms">
                         <img src="../images/logo/avatar1.png" alt="logo">
