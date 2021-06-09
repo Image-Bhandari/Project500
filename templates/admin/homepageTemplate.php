@@ -21,13 +21,36 @@
                 <a href="index.php?page=chat">Chat</a>
             </div>
             <div class="login">
+                <!-- logged in user -->
                 <?php
                 if(isset($_SESSION['login']) && $_SESSION['login'] == 1){
                     echo '<b><a href="#">User: '. $_SESSION['username'] .'</a></b>' ;
                 ?>
-                    <form action="../public_html/index.php?page=login" method="POST">
+
+                <!-- notification bell -->
+                <div class="dropdown" id="dropdown">
+                    <button class="dropbtn" onclick="myFunction()"><i class="fa fa-bell"></i></button>
+                    <div class="dropdown-content" id="dropdown-content">
+                        <?php 
+                            $connN=new DatabaseTable('notification');
+                            $allnotif=$connN->findAll();
+                            foreach ($allnotif as $value) { 
+                                if($value['role']=="staff" || $value['role']=="Everyone"){
+                        ?>
+                        <div class="itms">
+                            <img src="../images/logo/avatar1.png" alt="logo">
+                            <div class="text">
+                                <h4><?php echo $value['notif_title'];?></h4>
+                                <p><?php echo $value['notif_msg'];?></p>
+                            </div><br>
+                        </div>
+                        <?php }} ?>
+                    </div>
+                </div>
+                <!-- Lohout button -->
+                <form action="../public_html/index.php?page=login" method="POST">
                     <input type="submit" name="logout" value="Logout">
-                    </form>
+                </form>
                 <?php
                     }
                     else{
@@ -46,4 +69,6 @@
 
     </footer>
 </body>
+    <script src="../scripts/main.js"></script>
+    <script src="https://kit.fontawesome.com/6d2ea823d0.js"></script>
 </html>

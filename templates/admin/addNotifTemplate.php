@@ -15,8 +15,8 @@
             <select name="role" id="prop_type">
                 <option disabled selected value> -- select an option -- </option>
                 <option value="Everyone">Everyone</option>
-                <option value="Staff">Staff's</option>
-                <option value="Client">Client's</option>
+                <option value="staff">Staff's</option>
+                <option value="user">Client's</option>
             </select>
 
             <div class="clearfix">
