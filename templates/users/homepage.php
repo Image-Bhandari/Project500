@@ -16,15 +16,19 @@
 
         <nav>
     
-
+        <div class="homepg">
+            <a href="index.php">Home</a>
+            <?php
+                if(isset($_SESSION['login']) && $_SESSION['login'] == 1){
+                    echo '<a href="index.php?page=history">History</a>';
+                    echo '<a href="index.php?page=chatnow">Chat</a>';}
+            ?>
+        </div>
         <div class="userinfo">
-        <?php
-        if(isset($_SESSION['login']) && $_SESSION['login'] == 1){
-            echo '<b><a href="index.php?page=history">History</a></b>';
-            echo '<b>User:</b><a href="index.php?page=userprofile"> '. $_SESSION['username'] .'</a>';
-
-        ?>  
-
+            <?php
+                if(isset($_SESSION['login']) && $_SESSION['login'] == 1){
+                    echo 'User:<a href="index.php?page=userprofile"> '. $_SESSION['username'] .'</a>';
+            ?> 
             <!-- notification bell -->
             <div class="dropdown" id="dropdown">
                 <button class="dropbtn" onclick="myFunction()"><i class="fa fa-bell"></i></button>

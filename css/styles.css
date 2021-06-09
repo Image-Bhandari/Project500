@@ -13,7 +13,7 @@ header {
 nav {
   display: flex;
   flex-wrap: wrap;
-  justify-content: flex-end;
+  justify-content: space-between;
   align-items: center;
   padding: 0 0.5rem;
   background: #f7f7f7;
@@ -21,6 +21,9 @@ nav {
   position: relative;
 }
 
+.logo{
+  height: 90px;
+}
 /* notification */
 .dropdown {
   overflow: visible;
@@ -86,25 +89,26 @@ nav {
 }
 
 /* login / user ID info */
-.userinfo {
+.userinfo, .homepg {
   display: inherit;
   align-items: center;
   font-size: 1.2rem;
   color: #0e375e;
+  font-weight: 700;
 }
 
-.userinfo a {
+.userinfo a, .homepg a {
   text-decoration: none;
   text-transform: capitalize;
   padding: 0.5rem;
   opacity: 0.9;
 }
 
-.userinfo a:visited {
+.userinfo a:visited, .homepg a:visited {
   color: #0e375e;
 }
 
-.userinfo a:hover {
+.userinfo a:hover, .homepg a:hover {
   opacity: 1;
   color: #0578e6;
   text-decoration: underline;
@@ -232,6 +236,8 @@ input[type=text]:focus, input[type=email]:focus, input[type=password]:focus {
 /* Extra styles for the cancel button */
 .cancelbtn {
   background-color: #f44336;
+  text-align: center;
+  text-decoration: none;
 }
 
 /* Extra styles for signup button */
@@ -314,7 +320,7 @@ table a {
 .editbtn {
   padding: 1rem;
   cursor: pointer;
-  width: 5.2rem;
+  width: 10rem;
 }
 
 .profile h5 {
@@ -353,6 +359,7 @@ table a {
 }
 
 .messages {
+  min-height: 24rem;;
 	max-height: 25rem;
 	overflow: auto;
 }

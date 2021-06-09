@@ -19,12 +19,10 @@
         
             <label for="psw"><b>Password</b></label>
             <input type="password" placeholder="Enter Password" name="password" required>
-        
-            <label for="psw-repeat"><b>Repeat Password</b></label>
-            <input type="password" placeholder="Repeat Password" name="password-re" required>
+
             <input type="hidden" name="role" value="user">
             <div class="clearfix">
-                <input type="button" class="cancelbtn" name="cancelbtn" value="Cancel">
+                <a class="cancelbtn" href="index.php">Cancel</a>
                 <input type="submit" class="signupbtn" name="usersubmit" value="Submit">
             </div>
         </div>

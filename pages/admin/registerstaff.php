@@ -4,7 +4,6 @@
 	
 	if(isset($_POST['registerstaff'])){
 		unset($_POST['registerstaff']);
-		unset($_POST['password-re']);
 		$connToInsert-> insert($_POST);
 		var_dump($_POST);
 		header('location:index.php?page=staff'); 
@@ -16,5 +15,5 @@
 		$data=$dataa->fetch();
 	}
 
-	$content = loadTemplate('../templates/admin/registerStaffTemplate.php', [''=>$data]);//load template
+	$content = loadTemplate('../templates/admin/registerStaffTemplate.php', []);//load template
 ?>
