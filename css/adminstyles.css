@@ -237,3 +237,93 @@ article {
 	align-items: center;
 	margin: 1rem 0;
 }
+
+/* chat template */
+
+.chattemplate {
+	display: grid;
+	grid-template-columns: 20% auto 20%;
+	grid-gap: 10px;
+	background-color: #2196F3;
+	padding: 10px;
+	height: 30rem;
+}
+
+.chattemplate > div {
+	border: 1px solid black;
+}
+
+.chattemplate h3 {
+	text-align: center;
+}
+
+.handled {
+	background: #78787f; /*--------------*/ 
+}
+
+.requests {
+	background: #ba86ff; /*--------------*/ 
+}
+
+.handled li, .requests li {
+	list-style: none;
+	margin: 0.5rem 0;
+	text-align: center;
+}
+
+
+.chatscreen {
+	background: #8ae5c4; /*--------------*/ 
+	position: relative;
+}
+
+.messages {
+	max-height: 25rem;
+	overflow: auto;
+}
+
+.messagebox {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+.messageby {
+	text-align: left;
+	margin-left: 0.6rem;
+	font-size: 1.2rem;
+}
+
+.messageto {
+	text-align: right;
+	margin-right: 0.6rem;
+	font-size: 1.2rem;
+}
+
+.messagebox form{
+	display: flex;
+}
+
+.messagebox form input[type="submit"] {
+	padding: 0 12px;
+	margin: 0;
+	bottom: 0;
+}
+
+.messagebox form input[type="text"] {
+	margin: 0;
+}
+
+.msg, .msg:visited {
+	color: #000;
+	text-decoration: none;
+	text-transform: capitalize;
+	font-size: 1.2rem;
+	margin: 0.5rem 0;
+}
+
+.msg:hover {
+	text-decoration: underline;
+	color: aqua; /*--------------*/ 
+	transition: 2s;
+}
