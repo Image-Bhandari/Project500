@@ -58,8 +58,9 @@ if(isset($_POST['book'])){
     }
     
     if($available=="no"){
-        echo "<script>alert('Sorry, this has already been booked in the time frame you selected.');</script>";
-        header('location:index.php?page=userhome');  
+        echo "<script>alert('Sorry, this has already been booked in the time frame you selected.');
+        window.location.href='index.php';
+        </script>";
     }
     else{
         $inst=$conn->insert($_POST);

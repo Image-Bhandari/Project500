@@ -8,22 +8,22 @@
 
     <div class="propdetails">
         <h2><?php echo 'Name  '.$value['prop_name'];?></h2>
-        <p><?php echo $value['prop_type'];?> Located at: </p>
+        <h4><p><?php echo $value['prop_type'];?> Located at: </p>
         <p><?php echo $value['prop_StreetName'].' '.$value['prop_suburb'].' '.$value['prop_state'].' '.$value['prop_postCode'];?></p>
         <p>Recommended Guests: <?php echo $value['prop_occupancy'];?></p>
         <p>Details: <?php echo $value['prop_det']; ?></p>
-        <p>Price: $<?php echo  $value['price'];?></p>
+        <p>Price: $<?php echo  $value['price'];?></p><br></h4>
     </div>
     <?php } ?>
 
     <form method="post" action="index.php?page=book">
-        <label>From: </label>
-        <input type="date" name="start_time">
+        <label>From  : </label>
+        <input type="date" name="start_time"><br>
 
-        <label>To: </label>
-        <input type="date" name="end_time">
+        <label>To      :  </label>
+        <input type="date" name="end_time"><br>
 
-        <input type="hidden" name="prop_id" value=<?php echo $id;?>>
+        <input type="hidden" name="prop_id" value=<?php echo $id;?>><br>
         <input type="hidden" name="status" value="Not-Confirmed">
         <input type="submit" name="book" value="Book">
         <input type="hidden" name="user_id" value=<?php echo $uid;?>>

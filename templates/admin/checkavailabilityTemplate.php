@@ -12,10 +12,10 @@ foreach ($findtheprop as $property){
 }
 ?>
 <table>
-<tr><th>From date</th> <th> To Date </th></tr>
+<tr><th>From date</th> <th> To Date </th><th>Status</th></tr>
 <?php
 foreach($findthebook as $book){
-    echo '<tr><td>'.$book['start_time'].'</td><td>'.$book['end_time'].'</td></tr>';
+    echo '<tr><td>'.$book['start_time'].'</td><td>'.$book['end_time'].'</td><td>'.$book['status'].'</td></tr>';
 }
 ?>
 
