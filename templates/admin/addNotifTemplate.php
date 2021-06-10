@@ -12,7 +12,7 @@
             <input type="text" name="notif_msg" placeholder="Details on Notification" required>
 
             <label for="role">Send Notification to:</label>
-            <select name="role" id="prop_type">
+            <select name="role" id="prop_type" required>
                 <option disabled selected value> -- select an option -- </option>
                 <option value="Everyone">Everyone</option>
                 <option value="staff">Staff's</option>

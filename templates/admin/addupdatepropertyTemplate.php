@@ -3,11 +3,11 @@
   <h2><?php if($data){echo "Update the Property";}else{echo "Add a new property";}?></h2>
   <form action="index.php?page=addupdateproperty" method="POST">
     <label for="prop_name">Property Name:</label>
-    <input type="text" id="prop_name" name="prop_name" value="<?php if($data){echo $data['prop_name'];}?>" placeholder="Above HILTON Luxury Residence with Beach Views">
-  <input type="hidden" name="prop_id" value="<?php if($data){echo $data['prop_id'];} else{echo " ";}?>"
+    <input type="text" id="prop_name" name="prop_name" value="<?php if($data){echo $data['prop_name'];}?>" required placeholder="Above HILTON Luxury Residence with Beach Views">
+  <input type="hidden" name="prop_id" value="<?php if($data){echo $data['prop_id'];} else{echo " ";}?>" required>
     <label for="prop_type">Type of Property:</label>
     <div class="select">
-    <select name="prop_type" id="prop_type">
+    <select name="prop_type" id="prop_type" required>
         <option disabled selected value> -- select an option -- </option>
         <option value="Apartment">Apartment</option>
         <option value="Hotel">Hotel</option>
