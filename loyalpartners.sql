@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 08, 2021 at 06:52 PM
+-- Generation Time: Jun 10, 2021 at 04:02 AM
 -- Server version: 10.4.18-MariaDB
 -- PHP Version: 8.0.3
 
@@ -37,13 +37,6 @@ CREATE TABLE `bookings` (
   `cred_detail` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Dumping data for table `bookings`
---
-
-INSERT INTO `bookings` (`book_id`, `user_id`, `prop_id`, `start_time`, `end_time`, `status`, `cred_detail`) VALUES
-(1, 1, 1, '2021-06-30', '2021-07-04', 'Confirmed', '4111111111111111');
-
 -- --------------------------------------------------------
 
 --
@@ -56,14 +49,6 @@ CREATE TABLE `messages` (
   `message` varchar(255) NOT NULL,
   `message_id` int(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `messages`
---
-
-INSERT INTO `messages` (`message_by`, `message_to`, `message`, `message_id`) VALUES
-('ram', 'staff', 'k cha', 1),
-('staff', 'ram', 'k cha babu? k sodhichau?', 2);
 
 -- --------------------------------------------------------
 
@@ -84,7 +69,7 @@ CREATE TABLE `notification` (
 --
 
 INSERT INTO `notification` (`notif_id`, `notif_title`, `notif_msg`, `notif_date`, `role`) VALUES
-(1, 'k xaaaaaaaaa', 'garoh xa??? jindagi bahut hard xa?', '2021-06-08 15:30:34', 'Staff');
+(2, 'Covid19 Safety', 'Hi! Please be posted with the updates from government and follow the rules. Please stay safe and enjoy your stay at our premises.', '2021-06-09 02:49:23', 'Everyone');
 
 -- --------------------------------------------------------
 
@@ -110,8 +95,10 @@ CREATE TABLE `properties` (
 --
 
 INSERT INTO `properties` (`prop_id`, `prop_name`, `prop_type`, `prop_StreetName`, `prop_suburb`, `prop_state`, `prop_postCode`, `prop_det`, `prop_occupancy`, `price`) VALUES
-(1, 'Luxury 3 Bed FULL Ocean View Sky Suite Apartment!', 'Apartment', '1 street name', 'Westmead', 'NSW', 2145, '3 living , 1 cooking, 1 bathroom, Free Parking', 4, '500'),
-(2, 'Arru-Bari Ghar', 'Hotel', 'Arru-bari', 'Blacktown', 'NSW', 2148, '4 floor but no room sorry', 2, '500');
+(1, 'Luxury 3 Bed FULL Ocean View Sky Suite Apartment!', 'Apartment', '1 street name', 'Sydney', 'NSW', 2145, '3 living , 1 cooking, 1 bathroom, Free Parking', 4, '500'),
+(2, 'Mantra Legends Deluxe Queen with Kitchen', 'Town_House', '10 street name', 'N Sydney', 'NSW', 2222, '2 Bedroom with double beds, free wifi', 4, '110'),
+(3, 'Oceanview Exex 19th level 1 Bedroom Beach Apt', 'Apartment', '2 street name', 'Chatswood', 'NSW', 2222, '1 Bedroom with queen bed, free wifi, parkin', 3, '120'),
+(4, 'The Last Minute! Waterfront Studio Apartment', 'Apartment', '100 street name', 'Artamon', 'NSW', 2220, '2 Bedroom with queen beds, free wifi, parking, gym, spa', 3, '130');
 
 -- --------------------------------------------------------
 
@@ -134,9 +121,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`user_id`, `firstname`, `lastname`, `username`, `password`, `email`, `role`) VALUES
-(1, 'ram', 'ram', 'ram', 'ram', 'ram@ram.cum', 'user'),
-(2, 'staff', 'staff', 'staff', 'staff', 'staff@staff.com', 'staff'),
-(3, 'admin', 'admin', 'admin', 'admin', 'admin@admin.com', 'admin');
+(1, 'Admin', 'Admin', 'admin', 'admin', 'admin@admin.com', 'admin'),
+(2, 'staff', 'staff', 'staff', 'staff', 'staff@staff.com', 'staff');
 
 --
 -- Indexes for dumped tables
@@ -180,13 +166,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `bookings`
 --
 ALTER TABLE `bookings`
-  MODIFY `book_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `book_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
 
 --
 -- AUTO_INCREMENT for table `messages`
 --
 ALTER TABLE `messages`
-  MODIFY `message_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `message_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
 
 --
 -- AUTO_INCREMENT for table `notification`
@@ -198,13 +184,13 @@ ALTER TABLE `notification`
 -- AUTO_INCREMENT for table `properties`
 --
 ALTER TABLE `properties`
-  MODIFY `prop_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `prop_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `user_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
