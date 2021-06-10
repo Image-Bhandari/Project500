@@ -10,6 +10,7 @@
     <select name="prop_type" id="prop_type">
         <option disabled selected value> -- select an option -- </option>
         <option value="Apartment">Apartment</option>
+        <option value="Hotel">Hotel</option>
         <option value="Town_House">Town House</option>
         <option value="Unit">Unit</option>
     </select>
@@ -31,7 +32,7 @@
     <input type="text" id="prop_det" name="prop_det" value="<?php if($data){echo $data['prop_det'];}?>" placeholder="1A First Street">
     
     <label for="prop_occupancy">No. of guests:</label>
-    <input type="number" min="1" max="9" id="prop_occupancy" name="prop_occupancy" value="<?php if($data){echo $data['prop_occupancy'];}?>" placeholder="4">
+    <input type="number" min="1" max="20" id="prop_occupancy" name="prop_occupancy" value="<?php if($data){echo $data['prop_occupancy'];}?>" placeholder="4">
     
     <label for="price">Price per day: $</label>
     <input type="number" max="9999" id="price" name="price" value="<?php if($data){echo $data['price'];}?>" placeholder="120">

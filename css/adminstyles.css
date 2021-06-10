@@ -222,8 +222,15 @@ table {
     padding: 0 0.5rem;
 }
 
-table a {
+table a, table a:visited {
 	text-decoration: none;
+	color: #000;
+}
+
+table a:hover {
+	transition: 50ms ease-in;
+	text-decoration: underline;
+	color: #0430aa;
 }
 
 article {
