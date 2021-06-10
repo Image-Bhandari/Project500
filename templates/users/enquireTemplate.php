@@ -18,10 +18,10 @@
 
     <form method="post" action="index.php?page=book">
         <label>From  : </label>
-        <input type="date" name="start_time"><br>
+        <input type="date" name="start_time" required><br>
 
         <label>To      :  </label>
-        <input type="date" name="end_time"><br>
+        <input type="date" name="end_time" required><br>
 
         <input type="hidden" name="prop_id" value=<?php echo $id;?>><br>
         <input type="hidden" name="status" value="Not-Confirmed">

@@ -8,13 +8,13 @@
         <div class="cont">
         <input type="hidden" name="user_id" value=<?php echo $uid;?>>
         <label for="firstname">First Name</label>
-        <input type="text" id="firstname" name="firstname" value="<?php if($data){echo $data['firstname'];}?>" placeholder="Client's updated first name..">
+        <input type="text" id="firstname" name="firstname" value="<?php if($data){echo $data['firstname'];}?>" required placeholder="Client's updated first name..">
 
         <label for="lname">Last Name</label>
-        <input type="text" id="lastname" name="lastname" value="<?php if($data){echo $data['lastname'];}?>" placeholder="Client's updated last name..">
+        <input type="text" id="lastname" name="lastname" value="<?php if($data){echo $data['lastname'];}?>" required placeholder="Client's updated last name..">
 
         <label for="email">Email</label>
-        <input type="email" id="email" name="email" value="<?php if($data){echo $data['email'];}?>" placeholder="Updated Email Address">
+        <input type="email" id="email" name="email" value="<?php if($data){echo $data['email'];}?>" required placeholder="Updated Email Address">
 
         <input type="submit" id="update" name="Update" value="Update Profile">
         </div>

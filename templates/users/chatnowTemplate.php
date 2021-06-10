@@ -21,7 +21,7 @@
 
     <div class="messagebox">
         <form method="post" action="index.php?page=chatnow">
-            <input type="text" name="message">
+            <input type="text" name="message" required>
             <input type="hidden" name="message_to" value=<?php if($agent!=""){echo $agent;} else echo " ";?>>
             <input type="hidden" name="message_by" value=<?php echo $_SESSION['username'];?>>
             <input type="submit" name="send" value="Send">
