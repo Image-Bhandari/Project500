@@ -28,8 +28,8 @@ function enable(){
             }
 }
 function bookCancel(bid){
-    confirm("Are You Sure??? This will Cancel Your Booking.");
-    if(confirm){
+    var con = confirm("Are You Sure??? This will Cancel Your Booking.");
+    if(con == true){
         var path = "index.php?page=history&action=cancel&bid=";
         var fullpath = path.concat(bid);
         window.location.href =fullpath;
@@ -40,8 +40,8 @@ function bookCancel(bid){
 }
 
 function StaffbookCancel(bid){
-    confirm("Are You Sure??? Client Will Get A Notification !!");
-    if(confirm){
+    var con = confirm("Are You Sure??? Client Will Get A Notification !!");
+    if(con == true){
         var path = "index.php?page=clienthistory&action=cancel&bod=";
         var fullpath = path.concat(bid);
         window.location.href =fullpath;
