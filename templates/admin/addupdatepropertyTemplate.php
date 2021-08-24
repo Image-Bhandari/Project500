@@ -11,7 +11,7 @@
         <option disabled selected value> -- select an option -- </option>
         <option value="Apartment">Apartment</option>
         <option value="Hotel">Hotel</option>
-        <option value="Town_House">Town House</option>
+        <option value="Town House">Town House</option>
         <option value="Unit">Unit</option>
     </select>
     </div>
