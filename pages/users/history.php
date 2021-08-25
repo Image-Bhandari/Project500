@@ -18,6 +18,5 @@ if(isset($_GET['action'])){
     header('location:index.php?page=history');
 }
 
-
 $content = loadTemplate('../templates/users/bookTemplate.php',['findAllBook'=>$findAllBook]);
 ?>

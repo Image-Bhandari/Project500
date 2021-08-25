@@ -23,6 +23,10 @@
                     echo '<a href="index.php?page=history">History</a>';
                     echo '<a href="index.php?page=chatnow">Chat</a>';}
             ?>
+            <?php
+                echo '<a href="index.php?page=about">About</a>';
+                echo '<a href="index.php?page=contact">Contact Us</a>';
+            ?>
         </div>
         <div class="userinfo">
             <?php

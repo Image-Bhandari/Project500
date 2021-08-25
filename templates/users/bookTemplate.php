@@ -1,7 +1,7 @@
 
 <article>
     <table>
-        <tr><th>Property Name</th><th>Address</th><th>Type</th><th>Description</th><th>Occupancy</th><th>Duration</th><th>Price</th><th>Status</th></tr>
+        <tr><th>Property Name</th><th>Address</th><th>Type</th><th>Description</th><th>Occupancy</th><th>Duration</th><th>Price</th><th>Status</th><th></th></tr>
         <?php
         foreach($findAllBook as $value){
             $price = ((strtotime($value['end_time'])-strtotime($value['start_time']))/86400)*((int)($value['price']));
@@ -18,8 +18,8 @@
             else{
                 echo "Already Confirmed";
             }
-            echo '</td></tr>';
+            echo '</td><td> <a href="index.php?page=feedback&pid='.$value['prop_id'].'">Provide Feedback</a> </td></tr>';
         }
         ?>
-    </table>
+    </table>  
 </article>
