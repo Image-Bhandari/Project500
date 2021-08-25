@@ -69,7 +69,12 @@
     </main>
 
     <footer>
-
+            <section class="footer_cont">
+                <span class="footer_main">Loyal Partners Pty. Ltd</span>
+                <span>&#169 2021 Loyal Partners Pty. Ltd | All Rights Reserved.</span>
+                <!-- <span> &#127760 <u>English (AU)</u> </span> -->
+                <!-- <span> $ <u>AUD</u> </span> -->
+            </section>
     </footer>
     <script src="../scripts/main.js"></script>
     <script src="https://kit.fontawesome.com/6d2ea823d0.js"></script>
