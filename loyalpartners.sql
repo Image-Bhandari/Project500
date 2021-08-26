@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 26, 2021 at 09:34 PM
+-- Generation Time: Aug 26, 2021 at 10:04 PM
 -- Server version: 10.4.19-MariaDB
 -- PHP Version: 8.0.6
 
@@ -46,7 +46,8 @@ INSERT INTO `bookings` (`book_id`, `user_id`, `prop_id`, `start_time`, `end_time
 (8, 1, 2, '2021-06-18', '2021-06-29', 'Confirmed', '4111111111111111'),
 (15, 4, 1, '2021-08-27', '2021-08-30', 'Confirmed', '4000000000000000'),
 (16, 4, 2, '2021-08-27', '2021-08-30', 'Confirmed', '4333333555667788'),
-(17, 4, 1, '2021-09-02', '2021-09-04', 'Not-Confirmed', '');
+(17, 4, 1, '2021-09-02', '2021-09-04', 'Not-Confirmed', ''),
+(18, 5, 2, '2021-08-31', '2021-09-01', 'Confirmed', '4000000000000000');
 
 -- --------------------------------------------------------
 
@@ -69,7 +70,8 @@ CREATE TABLE `feedbacks` (
 INSERT INTO `feedbacks` (`user_id`, `prop_id`, `rating`, `description`, `feedback_id`) VALUES
 (1, 1, 3, ' vk', 2),
 (1, 2, 4, ' I love this house. This house is like my house. When i go inside this house it feels like house. it is a good house. we should stay in a house. :) :)', 3),
-(1, 1, 5, ' Lovely Housekeeping !! Epico !', 4);
+(1, 1, 5, ' Lovely Housekeeping !! Epico !', 4),
+(5, 2, 5, ' I loved it broo. Amazing house with amazing window. Just loved it.!   Must Go Place !', 5);
 
 -- --------------------------------------------------------
 
@@ -168,7 +170,8 @@ CREATE TABLE `users` (
 INSERT INTO `users` (`user_id`, `firstname`, `lastname`, `username`, `password`, `email`, `role`) VALUES
 (1, 'ram', 'ram', 'ram', 'ram', 'ram@ram.cum', 'user'),
 (2, 'staff', 'staff', 'staff', 'staff', 'staff@staff.com', 'staff'),
-(3, 'admin', 'admin', 'admin', 'admin', 'admin@admin.com', 'admin');
+(3, 'admin', 'admin', 'admin', 'admin', 'admin@admin.com', 'admin'),
+(5, 'Pandit', 'Surag', 'pandit', 'pandit', 'pandit@pan-ko-pat.com', 'user');
 
 --
 -- Indexes for dumped tables
@@ -218,13 +221,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `bookings`
 --
 ALTER TABLE `bookings`
-  MODIFY `book_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `book_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT for table `feedbacks`
 --
 ALTER TABLE `feedbacks`
-  MODIFY `feedback_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `feedback_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `messages`
@@ -248,7 +251,7 @@ ALTER TABLE `properties`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `user_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
