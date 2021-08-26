@@ -51,14 +51,15 @@
                 <?php } ?>  
 
                 <div class="nav-user">
-                    <button class="userbtn">
+                    <button class="userbtn" onclick="nav()">
                         <i class="fas fa-user"></i>
                     </button>
-                    <div class="nav-user-content">
+                    <div class="nav-user-content" id="nav-user-cont">
                             <?php
                                 //if logged in
                                 if(isset($_SESSION['login']) && $_SESSION['login'] == 1){
-                                    echo '<div class="userdet">'.'Hi'.'<a href="index.php?page=userprofile"> '. $_SESSION['username'] .'</a></div>';
+                                    echo '<div class="userdet">'.'Hi '. $_SESSION['username'] .'<a href="index.php?page=userprofile"> <i class="fas fa-user-edit"></i>
+                                    </a></div>';
                             ?> 
                         <!-- logout -->
                         <form method="POST" action="index.php?page=login">
