@@ -55,13 +55,11 @@
                         <i class="fas fa-user"></i>
                     </button>
                     <div class="nav-user-content">
-                        <div class="userdet">
                             <?php
                                 //if logged in
                                 if(isset($_SESSION['login']) && $_SESSION['login'] == 1){
-                                    echo 'Hi'.'<a href="index.php?page=userprofile"> '. $_SESSION['username'] .'</a>';
+                                    echo '<div class="userdet">'.'Hi'.'<a href="index.php?page=userprofile"> '. $_SESSION['username'] .'</a></div>';
                             ?> 
-                        </div>
                         <!-- logout -->
                         <form method="POST" action="index.php?page=login">
                             <input class ="login" type="submit" value="LogOut" name="logout">
