@@ -10,60 +10,69 @@
 </head>
 <body>
     <header>
-        <div class="logo">
-           <a href="index.php"> <img src="../images/logo/logo.png" alt="Local Partners Pty Ltd"></a>
-        </div>
-
         <nav>
-    
-        <div class="homepg">
-            <a href="index.php">Home</a>
-            <?php
-                if(isset($_SESSION['login']) && $_SESSION['login'] == 1){
-                    echo '<a href="index.php?page=history">History</a>';
-                    echo '<a href="index.php?page=chatnow">Chat</a>';}
-            ?>
-            <?php
-                echo '<a href="index.php?page=about">About</a>';
-                echo '<a href="index.php?page=contact">Contact Us</a>';
-            ?>
-        </div>
-        <div class="userinfo">
-            <?php
-                if(isset($_SESSION['login']) && $_SESSION['login'] == 1){
-                    echo 'User:<a href="index.php?page=userprofile"> '. $_SESSION['username'] .'</a>';
-            ?> 
-            <!-- notification bell -->
-            <div class="dropdown" id="dropdown">
-                <button class="dropbtn" onclick="myFunction()"><i class="fa fa-bell"></i></button>
-                <div class="dropdown-content" id="dropdown-content">
-                    <?php 
-                        $connN=new DatabaseTable('notification');
-                        $allnotif=$connN->notifAll();
-                        foreach ($allnotif as $value) { 
-                            if($value['role']==$_SESSION['role'] || $value['role']=="Everyone" ||$value['role']==$_SESSION['username']){
-                    ?>
-                    <div class="itms">
-                        <img src="../images/logo/avatar1.png" alt="logo">
-                        <div class="text">
-                            <h4><?php echo $value['notif_title'];?></h4>
-                            <p><?php echo $value['notif_msg'];?></p>
-                        </div><br>
-                    </div>
-                    <?php }} ?>
-                </div>
+            <div class="logo">
+            <a href="index.php"> <img src="../images/logo/logo.png" alt="Local Partners Pty Ltd"></a>
             </div>
-            <!-- logout -->
-            <form method="POST" action="index.php?page=login">
-            <input class ="login" type="submit" value="LogOut" name="logout">
-            </form>
-            
+
+            <div class="nav-list">
+                <a href="index.php">Home</a>
                 <?php
-        } //if logged in
-                else{
-                   echo '<a class="login" href="index.php?page=login">Login</a>';
-                }
-                    ?>
+                    if(isset($_SESSION['login']) && $_SESSION['login'] == 1){
+                        echo '<a href="index.php?page=history">History</a>';
+                        echo '<a href="index.php?page=chatnow">Chat</a>';}
+                ?>
+                <a href="index.php?page=about">About</a>
+                <a href="index.php?page=contact">Contact Us</a>
+                    
+                <?php
+                    if(isset($_SESSION['login']) && $_SESSION['login'] == 1){
+                ?> 
+                <!-- notification bell -->
+                <div class="dropdown" id="dropdown">
+                    <button class="dropbtn" onclick="myFunction()"><i class="fa fa-bell"></i></button>
+                    <div class="dropdown-content" id="dropdown-content">
+                        <?php 
+                            $connN=new DatabaseTable('notification');
+                            $allnotif=$connN->notifAll();
+                            foreach ($allnotif as $value) { 
+                                if($value['role']==$_SESSION['role'] || $value['role']=="Everyone" ||$value['role']==$_SESSION['username']){
+                        ?>
+                        <div class="itms">
+                            <img src="../images/logo/avatar1.png" alt="logo">
+                            <div class="text">
+                                <h4><?php echo $value['notif_title'];?></h4>
+                                <p><?php echo $value['notif_msg'];?></p>
+                            </div><br>
+                        </div>
+                        <?php }} ?>
+                    </div>
+                </div>
+                <?php } ?>  
+
+                <div class="nav-user">
+                    <button class="userbtn" onclick="nav()">
+                        <i class="fas fa-user"></i>
+                    </button>
+                    <div class="nav-user-content" id="nav-user-cont">
+                            <?php
+                                //if logged in
+                                if(isset($_SESSION['login']) && $_SESSION['login'] == 1){
+                                    echo '<div class="userdet">'.'Hi '. $_SESSION['username'] .'<a href="index.php?page=userprofile"> <i class="fas fa-user-edit"></i>
+                                    </a></div>';
+                            ?> 
+                        <!-- logout -->
+                        <form method="POST" action="index.php?page=login">
+                            <input class ="login" type="submit" value="LogOut" name="logout">
+                        </form>
+
+                        <?php } //if user isn't logged in
+                        else{
+                            echo '<a class="login" href="index.php?page=login">Login</a>';
+                            echo '<a class="login" href="index.php?page=register">Sign Up</a>';
+                    }?>
+                    </div>
+                </div> 
             </div>
         </nav>
     </header>
