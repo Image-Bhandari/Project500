@@ -1,7 +1,7 @@
 
 <article>
     <table>
-        <tr><th>Property Name</th><th>Address</th><th>Type</th><th>Description</th><th>Occupancy</th><th>Duration</th><th>Price</th><th>Status</th><th></th></tr>
+        <tr><th>Property Name</th><th>Address</th><th>Type</th><th>Description</th><th>Occupancy</th><th>Duration</th><th>Price</th><th>Status</th><th>Feedback</th></tr>
         <?php
         foreach($findAllBook as $value){
             $price = ((strtotime($value['end_time'])-strtotime($value['start_time']))/86400)*((int)($value['price']));
@@ -14,11 +14,14 @@
                 echo "<button onclick=\"bookCancel(".$value['book_id'].");\">Cancel Booking</button>";
                 //echo "<a href=index.php?page=history&action=cancel&bid=".$value['book_id'].">Cancel Booking</a>";
                 echo "<button onclick=\"creditInfo(".$value['book_id'].");\">Confirm Booking</button>";
+                echo '</td><td> N/A </td></tr>';
+    
             }
             else{
                 echo "Already Confirmed";
+                echo '</td><td> <a href="index.php?page=feedback&pid='.$value['prop_id'].'">Provide Feedback</a> </td></tr>';
             }
-            echo '</td><td> <a href="index.php?page=feedback&pid='.$value['prop_id'].'">Provide Feedback</a> </td></tr>';
+            
         }
         ?>
     </table>  
