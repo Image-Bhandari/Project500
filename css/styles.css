@@ -672,6 +672,40 @@ img {vertical-align: middle;}
   margin-left: 10%;
 }
 
+.contact-pg {
+  border: none;
+}
+
+.contact-pg-cnts {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-gap: 10px;
+  padding: 10px;
+  width: 80%;
+  margin-left: 10%;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  margin: 3rem 10%;
+}
+
+.contact-form label, .contact-form span {
+  padding: 0.5rem 0;
+}
+
+.contact-form textarea {
+  min-height: 10rem;
+}
+
+.contact-det {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
 /* footer */
 footer {
   margin: 3rem 0 1rem;
