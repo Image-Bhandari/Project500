@@ -3,7 +3,7 @@
     <div class="about-contents">
         <div class="about-desc">
             <p>
-                Loyal Partners started as a group of 5 people who had an urge to travel. With low options from online booking and visiting site to site finding the resonable price for stay, we decided to start our own service.
+                Loyal Partners started as a group of 4 people who had an urge to travel. With low options from online booking and visiting site to site finding the resonable price for stay, we decided to start our own service.
             </p>
 
             <p>
