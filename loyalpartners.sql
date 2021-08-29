@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 10, 2021 at 08:59 AM
--- Server version: 10.4.18-MariaDB
--- PHP Version: 8.0.3
+-- Generation Time: Aug 26, 2021 at 10:04 PM
+-- Server version: 10.4.19-MariaDB
+-- PHP Version: 8.0.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -37,6 +37,42 @@ CREATE TABLE `bookings` (
   `cred_detail` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `bookings`
+--
+
+INSERT INTO `bookings` (`book_id`, `user_id`, `prop_id`, `start_time`, `end_time`, `status`, `cred_detail`) VALUES
+(1, 1, 1, '2021-06-30', '2021-07-04', 'Confirmed', '4111111111111111'),
+(8, 1, 2, '2021-06-18', '2021-06-29', 'Confirmed', '4111111111111111'),
+(15, 4, 1, '2021-08-27', '2021-08-30', 'Confirmed', '4000000000000000'),
+(16, 4, 2, '2021-08-27', '2021-08-30', 'Confirmed', '4333333555667788'),
+(17, 4, 1, '2021-09-02', '2021-09-04', 'Not-Confirmed', ''),
+(18, 5, 2, '2021-08-31', '2021-09-01', 'Confirmed', '4000000000000000');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `feedbacks`
+--
+
+CREATE TABLE `feedbacks` (
+  `user_id` int(255) NOT NULL,
+  `prop_id` int(255) NOT NULL,
+  `rating` int(255) NOT NULL,
+  `description` varchar(255) NOT NULL,
+  `feedback_id` int(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `feedbacks`
+--
+
+INSERT INTO `feedbacks` (`user_id`, `prop_id`, `rating`, `description`, `feedback_id`) VALUES
+(1, 1, 3, ' vk', 2),
+(1, 2, 4, ' I love this house. This house is like my house. When i go inside this house it feels like house. it is a good house. we should stay in a house. :) :)', 3),
+(1, 1, 5, ' Lovely Housekeeping !! Epico !', 4),
+(5, 2, 5, ' I loved it broo. Amazing house with amazing window. Just loved it.!   Must Go Place !', 5);
+
 -- --------------------------------------------------------
 
 --
@@ -49,6 +85,15 @@ CREATE TABLE `messages` (
   `message` varchar(255) NOT NULL,
   `message_id` int(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `messages`
+--
+
+INSERT INTO `messages` (`message_by`, `message_to`, `message`, `message_id`) VALUES
+('ram', 'staff', 'k cha', 1),
+('staff', 'ram', 'k cha babu? k sodhichau?', 2),
+('ram', 'staff', 'hami k bhanxau bhanne.... jindagi k cha?? bahut garo cha hai daju', 3);
 
 -- --------------------------------------------------------
 
@@ -69,7 +114,11 @@ CREATE TABLE `notification` (
 --
 
 INSERT INTO `notification` (`notif_id`, `notif_title`, `notif_msg`, `notif_date`, `role`) VALUES
-(1, 'Covid19 Safety', 'Hi! Please be posted with the updates from government and follow the rules. Please stay safe and enjoy your stay at our premises.', '2021-06-09 02:49:23', 'Everyone');
+(1, 'k xaaaaaaaaa', 'garoh xa??? jindagi bahut hard xa?', '2021-06-08 15:30:34', 'Everyone'),
+(2, 'dashain offer', 'nirmal ko geda 2 rupaiya ma', '2021-06-08 17:05:29', 'user'),
+(3, 'Booking Got Canceled:', 'Your booking was canceled by our staff: staff', '2021-06-09 13:10:55', 'ram'),
+(4, 'Booking Got Canceled:', 'Your booking was canceled by our staff: staff', '2021-06-09 18:20:44', 'ram'),
+(5, 'Booking Got Canceled:', 'Your booking was canceled by our staff: staff', '2021-06-12 10:53:32', 'ram');
 
 -- --------------------------------------------------------
 
@@ -95,14 +144,8 @@ CREATE TABLE `properties` (
 --
 
 INSERT INTO `properties` (`prop_id`, `prop_name`, `prop_type`, `prop_StreetName`, `prop_suburb`, `prop_state`, `prop_postCode`, `prop_det`, `prop_occupancy`, `price`) VALUES
-(1, 'Luxury 3 Bed FULL Ocean View Sky Suite Apartment!', 'Apartment', '1 street name', 'Sydney', 'NSW', 2145, '3 living , 1 cooking, 1 bathroom, Free Parking', 4, '500'),
-(2, 'Mantra Legends Deluxe Queen with Kitchen', 'Town_House', '10 street name', 'N Sydney', 'NSW', 2222, '2 Bedroom with double beds, free wifi', 4, '110'),
-(3, 'Oceanview Exex 19th level 1 Bedroom Beach Apt', 'Apartment', '2 street name', 'Chatswood', 'NSW', 2222, '1 Bedroom with queen bed, free wifi, parkin', 3, '120'),
-(4, 'The Last Minute! Waterfront Studio Apartment', 'Apartment', '100 street name', 'Artamon', 'NSW', 2220, '2 Bedroom with queen beds, free wifi, parking, gym, spa', 3, '130'),
-(5, 'Masterbedroom with work station, lounge & ensuite', 'Unit', '12 Central Street', 'Surry Hills', 'NSW', 2000, '2 bedroom with queen beds each, access to hot tub, kitchen WiFi, TV, washing machine', 4, '99'),
-(6, 'The Kirketon Hotel', 'Hotel', '20 Name street', 'Sydney', 'NSW', 2000, 'Room in boutique hotel in Darlinghurst. Free Parking and Wifi. 1 bedroom 1 Bathroom', 2, '87'),
-(7, 'Sydney CBD Near Traun UTS ', 'Unit', '1 Railway St', 'Surry Hills', 'NSW', 2001, 'Private room in house. 1 bedroom, 1 single bed, private bathroom. Kitchen, Free WiFi, TV and free parking', 1, '87'),
-(8, 'Beautiful spaciour Sydney Harbour View property', 'Apartment', '2 Second Avenue', 'Neutral Bay', 'NSW', 2400, 'Private room in apartment having 1 bedroom with 2 beds and 1 shared bathroom. Access to beach, WiFi, street parking, TV and pets are allowed as well', 2, '60');
+(1, 'Luxury 3 Bed FULL Ocean View Sky Suite Apartment!', 'Apartment', '1 street name', 'Westmead', 'NSW', 2145, '3 living , 1 cooking, 1 bathroom, Free Parking', 4, '500'),
+(2, 'Arru-Bari Ghar', 'Hotel', 'Arru-bari', 'Blacktown', 'NSW', 2148, '4 floor but no room sorry', 2, '500');
 
 -- --------------------------------------------------------
 
@@ -125,8 +168,10 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`user_id`, `firstname`, `lastname`, `username`, `password`, `email`, `role`) VALUES
-(1, 'admin', 'admin', 'admin', 'admin', 'admin@admin.com', 'admin'),
-(2, 'staff', 'staff', 'staff', 'staff', 'staff@staff.com', 'staff');
+(1, 'ram', 'ram', 'ram', 'ram', 'ram@ram.cum', 'user'),
+(2, 'staff', 'staff', 'staff', 'staff', 'staff@staff.com', 'staff'),
+(3, 'admin', 'admin', 'admin', 'admin', 'admin@admin.com', 'admin'),
+(5, 'Pandit', 'Surag', 'pandit', 'pandit', 'pandit@pan-ko-pat.com', 'user');
 
 --
 -- Indexes for dumped tables
@@ -137,6 +182,12 @@ INSERT INTO `users` (`user_id`, `firstname`, `lastname`, `username`, `password`,
 --
 ALTER TABLE `bookings`
   ADD PRIMARY KEY (`book_id`);
+
+--
+-- Indexes for table `feedbacks`
+--
+ALTER TABLE `feedbacks`
+  ADD PRIMARY KEY (`feedback_id`);
 
 --
 -- Indexes for table `messages`
@@ -170,31 +221,37 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `bookings`
 --
 ALTER TABLE `bookings`
-  MODIFY `book_id` int(255) NOT NULL AUTO_INCREMENT;
+  MODIFY `book_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+
+--
+-- AUTO_INCREMENT for table `feedbacks`
+--
+ALTER TABLE `feedbacks`
+  MODIFY `feedback_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `messages`
 --
 ALTER TABLE `messages`
-  MODIFY `message_id` int(255) NOT NULL AUTO_INCREMENT;
+  MODIFY `message_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `notification`
 --
 ALTER TABLE `notification`
-  MODIFY `notif_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `notif_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `properties`
 --
 ALTER TABLE `properties`
-  MODIFY `prop_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `prop_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `user_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
