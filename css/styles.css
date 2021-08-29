@@ -695,6 +695,11 @@ img {vertical-align: middle;}
   padding: 0.5rem 0;
 }
 
+.contact-form input[type=submit] {
+  margin: 1rem 0;
+  padding: 0.5rem 0;
+}
+
 .contact-form textarea {
   min-height: 10rem;
 }

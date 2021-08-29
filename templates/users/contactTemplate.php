@@ -8,7 +8,7 @@
         <form action="" class="contact-pg">
             
             <div class="contact-form">
-            <span>Please send us a message!</span>
+                <span>Please send us a message!</span>
                 <label for="name"> Name</label>
                 <input type="text" id="name" placeholder="Full Name">
                 
@@ -17,8 +17,8 @@
                 
                 <label for="que"> Question</label>
                 <textarea name="que" id="que"></textarea>
-                
-                
+
+                <input type="submit" value="Send Us a Message">
             </div>
         </form>
 
