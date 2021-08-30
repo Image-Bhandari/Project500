@@ -35,7 +35,7 @@ if(isset($_SESSION['login']) && $_SESSION['login'] == 1){
     }
     $ratings=$connForFeedBack->rating('prop_id',$product_id);
 
-    $content = loadTemplate('../templates/users/enquireTemplate.php', ['usrData'=>$usrData,'allfeedback'=>$allfeedback,'data'=>$data, 'availability'=>$availability,'uid'=>$uid, 'images'=>$images, 'image'=>$image, 'ratings'=>$ratings]);//load template
+    $content = loadTemplate('../templates/users/enquireTemplate.php', ['usrData'=>$usrData,'allfeedback'=>$allfeedback,'data'=>$data, 'availability'=>$availability,'uid'=>$uid, 'images'=>$images, 'image'=>$image,'pid'=>$product_id, 'ratings'=>$ratings]);//load template
 }
 else {
     header('location:index.php?page=login');

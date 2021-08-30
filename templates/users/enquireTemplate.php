@@ -8,6 +8,7 @@
 
     <div class="propdetails">
         <h2><?php echo 'Name  '.$value['prop_name'];?></h2><br>
+        
         <p> <?php foreach ($ratings as $rate){echo '<i class="fas fa-star" style="color: #ffd700;"></i> '.$rate['averages'].' · '.$rate['counts'].'<u> Reviews</u> · ';} ?> <i class="fas fa-map-marker-alt" style="color: #4c6ef5;"></i> <?php echo $value['prop_suburb'].' '.$value['prop_state'].' '.$value['prop_postCode'].' · ';?> <i class="fas fa-home" style="color: #FF385C;"></i> <?php echo $value['prop_occupancy'].' Guests · '.$value['prop_type'];?> </p>
 
          <!-- property image start -->
@@ -15,8 +16,8 @@
             <?php $counter=1;  foreach ($images as $imgval) { $tot=8; ?> 
                 <div class="prop_picture_cont">
                     <div class="numbertext"><?php echo $counter; $counter++; echo ' / '.$tot.'';?></div>
-                    <a target="_self" href="../images/<?php echo $imgval['name']?>" data-lightbox="mygallery" data-title="<?php echo $imggval['alt'];?>">
-                        <img src="../images/<?php echo $imgval['name']?>">
+                    <a target="_self" href="../images/<?php echo $imgval['prop_id'].'/'.$imgval['name'];?>" data-lightbox="mygallery" data-title="<?php echo $imgval['alt'];?>">
+                        <img src="../images/<?php echo $imgval['prop_id'].'/'.$imgval['name'];?>">
                     </a>
                 </div>
             <?php } ?>    
@@ -31,7 +32,7 @@
             <div class="property_pictures_row">
                 <?php $counter=1; foreach ($image as $imgval) { ?> 
                     <div class="property_pictures_column">
-                        <img class="demo cursor" src="../images/<?php echo $imgval['name'];?>" style="width:100%" onclick="currentPropViewSlide(<?php echo $counter; $counter++?>)" alt="<?php echo $imgval['alt'];?>">
+                        <img class="demo cursor" src="../images/<?php echo $imgval['prop_id'].'/'.$imgval['name'];?>" style="width:100%" onclick="currentPropViewSlide(<?php echo $counter; $counter++?>)" alt="<?php echo $imgval['alt'];?>">
                     </div>
                 <?php } ?>
         
