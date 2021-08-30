@@ -42,11 +42,10 @@
     echo '<label>Choose Picture:</label>';
     echo '<br><input type="file" name="fileToUpload" id="fileToUpload" required>';
     }
-    else{
-      $value=$data['prop_id'];
-      echo '<br><a href="index.php?page=manageImages&pid="'.$value.'">Manage Images</a><br>';
-    }
-    ?>
+    else{ ?>
+     
+     <br><a href="index.php?page=manageImages&pid=<?php if($data){echo $data['prop_id'];}}?>">Manage Images</a><br>
+    
     
     
     <input type="submit" value="Update" name=<?php if($data){echo "\"val_update\"";}else{echo "\"val_insert\"";}?>>
