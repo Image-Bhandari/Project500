@@ -3,8 +3,8 @@
 $uid=$_SESSION['user_id'];
 
 $conimg= new DatabaseTable('images');
-$images=$conimg->findAll();
-$image=$conimg->findAll();
+$images=$conimg->find('prop_id',$_GET['pid']);
+$image=$conimg->find('prop_id',$_GET['pid']);
 
 
 if(isset($_SESSION['login']) && $_SESSION['login'] == 1){
