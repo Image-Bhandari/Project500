@@ -1,7 +1,7 @@
 <section class="form_container">
 
   <h2><?php if($data){echo "Update the Property";}else{echo "Add a new property";}?></h2>
-  <form action="index.php?page=addupdateproperty" method="POST">
+  <form action="index.php?page=addupdateproperty" method="POST" enctype="multipart/form-data">
     <label for="prop_name">Property Name:</label>
     <input type="text" id="prop_name" name="prop_name" value="<?php if($data){echo $data['prop_name'];}?>" required placeholder="Above HILTON Luxury Residence with Beach Views">
   <input type="hidden" name="prop_id" value="<?php if($data){echo $data['prop_id'];} else{echo " ";}?>" required>
@@ -36,6 +36,18 @@
     
     <label for="price">Price per day: $</label>
     <input type="number" max="9999" id="price" name="price" value="<?php if($data){echo $data['price'];}?>" required placeholder="120">
+
+    <?php
+    if(!$data){
+    echo '<label>Choose Picture:</label>';
+    echo '<br><input type="file" name="fileToUpload" id="fileToUpload" required>';
+    }
+    else{
+      $value=$data['prop_id'];
+      echo '<br><a href="index.php?page=manageImages&pid="'.$value.'">Manage Images</a><br>';
+    }
+    ?>
+    
     
     <input type="submit" value="Update" name=<?php if($data){echo "\"val_update\"";}else{echo "\"val_insert\"";}?>>
   </form>

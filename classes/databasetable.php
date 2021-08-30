@@ -106,6 +106,14 @@ function notifAll() {
 
         return $stmt;
 }
+function getlastVal($field) {//passed as array
+    global $pdo;
+        $stmt = $pdo->prepare('SELECT MAX('.$field.') FROM '.$this->table);
+        $stmt->execute();//execute the criteria
+
+        return $stmt;
+
+}
 
 function rating($prop_id) {
     global $pdo;
