@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> <?php echo $title; ?></title>
-    <script type="text/javascript" src="../css/js.js"></script>
     <link rel="stylesheet" href="../css/styles.css">
+    <script type="text/javascript" src="../css/js.js"></script>
 </head>
 <body>
     <header>
@@ -85,11 +85,10 @@
             <section class="footer_cont">
                 <span class="footer_main">Loyal Partners Pty. Ltd</span>
                 <span>&#169 2021 Loyal Partners Pty. Ltd | All Rights Reserved.</span>
-                <!-- <span> &#127760 <u>English (AU)</u> </span> -->
-                <!-- <span> $ <u>AUD</u> </span> -->
             </section>
     </footer>
     <script src="../scripts/main.js"></script>
     <script src="https://kit.fontawesome.com/6d2ea823d0.js"></script>
+    <script src="../scripts/lightbox-plus-jquery.min.js"></script> <!-- file retrived from: https://lokeshdhakar.com/projects/lightbox2/ -->
 </body>
 </html>

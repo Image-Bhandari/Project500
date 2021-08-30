@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> <?php echo $title; ?></title>
     <script src="../css/js.js"></script>
-    <!-- <link rel="stylesheet" href="../css/styles.css"> -->
+    <link rel="stylesheet" href="../css/styles.css">
     <link rel="stylesheet" href="../css/adminstyles.css">
 </head>
 <body>
@@ -74,7 +74,10 @@
     </main>
 
     <footer>
-
+        <section class="footer_cont">
+            <span class="footer_main">Loyal Partners Pty. Ltd</span>
+            <span>&#169 2021 Loyal Partners Pty. Ltd | All Rights Reserved.</span>
+        </section>
     </footer>
 </body>
     <script src="../scripts/main.js"></script>

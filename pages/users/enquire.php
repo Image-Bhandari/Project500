@@ -2,6 +2,11 @@
 
 $uid=$_SESSION['user_id'];
 
+$conimg= new DatabaseTable('images');
+$images=$conimg->findAll();
+$image=$conimg->findAll();
+
+
 if(isset($_SESSION['login']) && $_SESSION['login'] == 1){
     $product_id=0;
     $availability="Available";
@@ -29,7 +34,7 @@ if(isset($_SESSION['login']) && $_SESSION['login'] == 1){
         $usrData[$usrs['user_id']]=$fullname;
     }
 
-    $content = loadTemplate('../templates/users/enquireTemplate.php', ['usrData'=>$usrData,'allfeedback'=>$allfeedback,'data'=>$data, 'availability'=>$availability,'uid'=>$uid]);//load template
+    $content = loadTemplate('../templates/users/enquireTemplate.php', ['usrData'=>$usrData,'allfeedback'=>$allfeedback,'data'=>$data, 'availability'=>$availability,'uid'=>$uid, 'images'=>$images, 'image'=>$image]);//load template
 }
 else {
     header('location:index.php?page=login');
