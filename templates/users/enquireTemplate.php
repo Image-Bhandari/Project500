@@ -8,56 +8,60 @@
 
     <div class="propdetails">
         <h2><?php echo 'Name  '.$value['prop_name'];?></h2><br>
-        <h4><p><?php echo $value['prop_type'];?> Located at:
-        <?php echo $value['prop_StreetName'].' '.$value['prop_suburb'].' '.$value['prop_state'].' '.$value['prop_postCode'];?></p>
-        <p>Recommended Guests: <?php echo $value['prop_occupancy'];?></p>
-        <p>Details: <?php echo $value['prop_det']; ?></p>
-        <p>Price: $<?php echo  $value['price'];?></p><br></h4>
+        <p> <?php foreach ($ratings as $rate){echo '<i class="fas fa-star" style="color: #ffd700;"></i> '.$rate['averages'].' · '.$rate['counts'].'<u> Reviews</u> · ';} ?> <i class="fas fa-map-marker-alt" style="color: #4c6ef5;"></i> <?php echo $value['prop_suburb'].' '.$value['prop_state'].' '.$value['prop_postCode'].' · ';?> <i class="fas fa-home" style="color: #FF385C;"></i> <?php echo $value['prop_occupancy'].' Guests · '.$value['prop_type'];?> </p>
+
+         <!-- property image start -->
+        <div class="property_pictures">
+            <?php $counter=1;  foreach ($images as $imgval) { $tot=8; ?> 
+                <div class="prop_picture_cont">
+                    <div class="numbertext"><?php echo $counter; $counter++; echo ' / '.$tot.'';?></div>
+                    <a target="_self" href="../images/<?php echo $imgval['name']?>" data-lightbox="mygallery" data-title="<?php echo $imggval['alt'];?>">
+                        <img src="../images/<?php echo $imgval['name']?>">
+                    </a>
+                </div>
+            <?php } ?>    
+
+            <a class="prev" onclick="propViewerSlides(-1)">❮</a>
+            <a class="next" onclick="propViewerSlides(1)">❯</a>
+
+            <div class="caption-container">
+                <p id="caption"></p>
+            </div>
+
+            <div class="property_pictures_row">
+                <?php $counter=1; foreach ($image as $imgval) { ?> 
+                    <div class="property_pictures_column">
+                        <img class="demo cursor" src="../images/<?php echo $imgval['name'];?>" style="width:100%" onclick="currentPropViewSlide(<?php echo $counter; $counter++?>)" alt="<?php echo $imgval['alt'];?>">
+                    </div>
+                <?php } ?>
+        
+            </div>
+        </div>
+
+        <!-- property image end -->
+
+        <div class="prop-det-book">
+            <div class="prop-det">
+                <span><i class="fas fa-map-marker-alt" style="color: #4c6ef5"></i> <?php echo $value['prop_type'];?> <?php echo $value['prop_StreetName'].' '.$value['prop_suburb'].' '.$value['prop_state'].' '.$value['prop_postCode'];?></span>
+                <span><i class="fas fa-home" style="color: #FF385C;"></i> <?php echo $value['prop_occupancy'].' Guests Recommended';?> </span>
+                <span><i class="fas fa-search-location" style="color: #FF385C;"></i>Details: <?php echo $value['prop_det']; ?></span>
+            </div>
+            <div class="prop-book">
+                <div class="prop-price">$<?php echo  $value['price'];?> / Night</div>
+                <div class="prop-rating"><?php foreach ($ratings as $rat){echo '<i class="fas fa-star" style="color: #ffd700;"></i> '.$rat['averages'].' · '.$rat['counts'].'<u> Reviews</u> · ';} ?></div>
+                <form method="post" action="index.php?page=book">
+                    <div class="prop-date"> <label>Check-in :  </label> <input type="date" name="start_time" required></div>
+                    <div class="prop-date"> <label>Checkout :  </label> <input type="date" name="end_time" required></div>
+
+                    <input type="hidden" name="prop_id" value=<?php echo $id;?>>
+                    <input type="hidden" name="status" value="Not-Confirmed">
+                    <input type="submit" class="login" name="book" value="Book">
+                    <input type="hidden" name="user_id" value=<?php echo $uid;?>>
+                </form>
+            </div>  
+        </div>
     </div>
     <?php } ?>
-
-    <!-- property image start -->
-    <div class="property_pictures">
-        <?php $counter=1;  foreach ($images as $value) { $tot=8; ?> 
-            <div class="prop_picture_cont">
-                <div class="numbertext"><?php echo $counter; $counter++; echo ' / '.$tot.'';?></div>
-                <a target="_self" href="../images/<?php echo $value['name']?>" data-lightbox="mygallery" data-title="<?php echo $value['alt'];?>">
-                    <img src="../images/<?php echo $value['name']?>">
-                </a>
-            </div>
-        <?php } ?>    
-
-        <a class="prev" onclick="propViewerSlides(-1)">❮</a>
-        <a class="next" onclick="propViewerSlides(1)">❯</a>
-
-        <div class="caption-container">
-            <p id="caption"></p>
-        </div>
-
-        <div class="property_pictures_row">
-            <?php $counter=1; foreach ($image as $value) { ?> 
-                <div class="property_pictures_column">
-                    <img class="demo cursor" src="../images/<?php echo $value['name'];?>" style="width:100%" onclick="currentPropViewSlide(<?php echo $counter; $counter++?>)" alt="<?php echo $value['alt'];?>">
-                </div>
-            <?php } ?>
-     
-        </div>
-    </div>
-
-    <!-- property image end -->
-
-    <form method="post" action="index.php?page=book">
-        <label>From  : </label>
-        <input type="date" name="start_time" required><br><br>
-
-        <label>To      :  </label>
-        <input type="date" name="end_time" required><br>
-
-        <input type="hidden" name="prop_id" value=<?php echo $id;?>><br>
-        <input type="hidden" name="status" value="Not-Confirmed">
-        <input type="submit" class="login" name="book" value="Book">
-        <input type="hidden" name="user_id" value=<?php echo $uid;?>>
-    </form><br><br>
 
     <form>
         <br>

@@ -33,8 +33,9 @@ if(isset($_SESSION['login']) && $_SESSION['login'] == 1){
         $fullname = $usrs['firstname']." ".$usrs['lastname'];
         $usrData[$usrs['user_id']]=$fullname;
     }
+    $ratings=$connForFeedBack->rating('prop_id',$product_id);
 
-    $content = loadTemplate('../templates/users/enquireTemplate.php', ['usrData'=>$usrData,'allfeedback'=>$allfeedback,'data'=>$data, 'availability'=>$availability,'uid'=>$uid, 'images'=>$images, 'image'=>$image]);//load template
+    $content = loadTemplate('../templates/users/enquireTemplate.php', ['usrData'=>$usrData,'allfeedback'=>$allfeedback,'data'=>$data, 'availability'=>$availability,'uid'=>$uid, 'images'=>$images, 'image'=>$image, 'ratings'=>$ratings]);//load template
 }
 else {
     header('location:index.php?page=login');

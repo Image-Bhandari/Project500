@@ -107,6 +107,12 @@ function notifAll() {
         return $stmt;
 }
 
+function rating($prop_id) {
+    global $pdo;
+    $stmt = $pdo->prepare('SELECT ROUND(AVG(rating), 2) AS averages, count(prop_id) AS counts FROM `feedbacks` WHERE prop_id='.$prop_id.';');
+    $stmt->execute();
+    return $stmt;
+}
 
 }
 ?>
