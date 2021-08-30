@@ -47,10 +47,16 @@
                 <span><i class="fas fa-home" style="color: #FF385C;"></i> <?php echo $value['prop_occupancy'].' Guests Recommended';?> </span>
                 <span><i class="fas fa-search-location" style="color: #FF385C;"></i>Details: <?php echo $value['prop_det']; ?></span>
             </div>
+            
             <div class="prop-book">
+            <p> <?php foreach ($ratings as $rate){echo '<i class="fas fa-star" style="color: #ffd700;"></i> '.$rate['averages'].' · '.$rate['counts'].'<u> Reviews</u> · ';} ?> <i class="fas fa-map-marker-alt" style="color: #4c6ef5;"></i> <?php echo $value['prop_suburb'].' '.$value['prop_state'].' '.$value['prop_postCode'].' · ';?> <i class="fas fa-home" style="color: #FF385C;"></i> <?php echo $value['prop_occupancy'].' Guests · '.$value['prop_type'];?> </p>
                 <div class="prop-price">$<?php echo  $value['price'];?> / Night</div>
-                <div class="prop-rating"><?php foreach ($ratings as $rat){echo '<i class="fas fa-star" style="color: #ffd700;"></i> '.$rat['averages'].' · '.$rat['counts'].'<u> Reviews</u> · ';} ?></div>
-                <form method="post" action="index.php?page=book">
+                <div class="prop-rating"><p>
+               
+
+                </p>
+                </div>
+                 <form method="post" action="index.php?page=book">
                     <div class="prop-date"> <label>Check-in :  </label> <input type="date" name="start_time" required></div>
                     <div class="prop-date"> <label>Checkout :  </label> <input type="date" name="end_time" required></div>
 
