@@ -70,7 +70,7 @@
             foreach($allfeedback as $value){
                 $num = (int)$value['rating'];
                 echo '<div class="fedbak">';
-                for($i=1;$i<=(int)$value['rating'];$i++){echo '<i class="fa fa-star"></i>';}
+                for($i=1;$i<=(int)$value['rating'];$i++){echo '<i class="fa fa-star"  style="color: #ffd700;"></i>';}
                 echo "<br>User: ".$usrData[$value['user_id']];
                 echo "<br> Comment: ". $value['description'];
                 echo '</div><br>';
