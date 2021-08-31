@@ -840,7 +840,7 @@ img {vertical-align: middle;}
   align-items: center;
 }
 
-.prop-chat-btn{
+.prop-chat-btn, .prop-chat-btn:visited{
   text-decoration: none;
   border: #0578e6 2px solid;
   text-align: center;
@@ -909,6 +909,15 @@ img {vertical-align: middle;}
   width: 30rem;
   text-align: justify;
   font-size: 1rem;
+}
+
+.linktofdk, .linktofdk:visited {
+  color: #000;
+}
+
+.linktofdk:hover {
+  color: #0578e6;
+  transition: 1s ease-in-out;
 }
 
 /* enquiry page reviews end*/
