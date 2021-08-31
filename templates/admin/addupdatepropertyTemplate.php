@@ -8,11 +8,12 @@
     <label for="prop_type">Type of Property:</label>
     <div class="select">
     <select name="prop_type" id="prop_type" required>
-        <option disabled selected value> -- select an option -- </option>
-        <option value="Apartment">Apartment</option>
-        <option value="Hotel">Hotel</option>
-        <option value="Town House">Town House</option>
-        <option value="Unit">Unit</option>
+      
+      <option <?php if($data){echo 'value="'.$data['prop_type'].'"';} else{echo "disabled selected value";}?>> -- select an option -- </option>
+      <option value="Apartment">Apartment</option>
+      <option value="Hotel">Hotel</option>
+      <option value="Town House">Town House</option>
+      <option value="Unit">Unit</option>
     </select>
     </div>
 
