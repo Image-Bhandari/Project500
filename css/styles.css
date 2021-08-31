@@ -301,7 +301,7 @@ body {
 /* login container */
 
 /* Bordered form */
-form {
+.form {
   border: 3px solid #f1f1f1;
 }
 
@@ -735,7 +735,7 @@ img {vertical-align: middle;}
   position: relative;
   border: 5px solid #000;
   width: 70%;
-  margin: 1.5rem auto
+  margin: 1.5rem auto;
 }
 
 /* Hide the images by default */
@@ -803,40 +803,115 @@ img {vertical-align: middle;}
 }
 /* property images viewer end */
 
+/* property checkout with date selection/booking button start */
 .prop-det-book {
   display: grid;
   width: 80%;
   margin: 0 auto;
-  grid-template-columns: 70% auto;
-  background-color: #2196F3;
+  /* background-color: #2196F3; */
   padding: 10px;
 }
-.prop-det, .prop-book {
-  background-color: rgba(255, 255, 255, 0.8);
-  border: 1px solid rgba(0, 0, 0, 0.8);
-  padding: 20px;
-  font-size: 1.5rem;
+
+.prop-det-book > div {
+  padding: 0.6rem;
+  font-size: 1.2rem;
 }
 
 .prop-det {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row-start: 1;
+  grid-row-end: 2;
+  display: grid;
   text-align: left;
 }
 
-.prop-book{
+.prop-det i {
+  padding-right: 0.2rem;
+}
+
+.prop-chat {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row-start: 2;
+  grid-row-end: 3;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.prop-chat-btn{
+  text-decoration: none;
+  border: #0578e6 2px solid;
   text-align: center;
+  padding: 1rem;
+  border-radius: 1rem;
+}
+
+.prop-chat-btn:hover {
+  color: #000;
+  background-color: rgba(255, 255, 255, 0.3);
+  transition: 1s ease-in-out;
+}
+
+.prop-book {
+  grid-column-start: 4;
+  grid-column-end: 5;
+  grid-row-start: 1;
+  grid-row-end: 3;
+  text-align: center;
+  display: grid;
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgb(221, 221, 221);
+  border-radius: 12px;
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 6px 16px;
 }
 
 .prop-date {
-  display: flex;
-  align-items: center;
-  justify-content: center;
   padding: 0.5rem;
+}
+
+.prop-book-findet{
+	display: flex;
+  justify-content:space-evenly;
+  font-size: 1rem;
+  font-weight: 501;
+}
+
+.prop-book-findet > div {
+   padding: 1rem;
 }
 
 .prop-book input[type="date"] {
   padding: 0.5rem;
   margin-left: 0.5rem;
 }
+
+/* property checkout end */
+
+/* enquiry page reviews start */
+.review-cont{
+  width: 80%;
+  margin: 1.5rem auto;
+}
+
+.enq-reviews{
+  margin: 1rem auto;
+}
+
+.enq-review-head {
+  width: 30rem;
+  font-size: 0.9rem;
+}
+
+.enq-review-sum {
+  padding: 0.5rem 0;
+  width: 30rem;
+  text-align: justify;
+  font-size: 1rem;
+}
+
+/* enquiry page reviews end*/
 
 /* star rating start   */
 .star-rating form {

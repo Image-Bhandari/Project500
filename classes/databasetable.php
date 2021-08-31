@@ -122,5 +122,18 @@ function rating($prop_id) {
     return $stmt;
 }
 
+// get month name and year from feedback table
+function findrating($field, $value) {//passed as array
+    global $pdo;
+        $stmt = $pdo->prepare('SELECT *,MONTHNAME(post_date) AS months, YEAR(post_date) AS years FROM ' . $this->table . ' WHERE ' . $field . ' = :valu');//prepare the value
+        $criteria = [
+                'valu' => $value//passed as criteria
+        ];
+        $stmt->execute($criteria);//execute the criteria
+
+        return $stmt;
+}
+
+
 }
 ?>

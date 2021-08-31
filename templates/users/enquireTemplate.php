@@ -13,7 +13,7 @@
 
          <!-- property image start -->
         <div class="property_pictures">
-            <?php $counter=1;  foreach ($images as $imgval) { $tot=8; ?> 
+            <?php $counter=1;  foreach ($images as $imgval) { $tot=count($imgval); ?>
                 <div class="prop_picture_cont">
                     <div class="numbertext"><?php echo $counter; $counter++; echo ' / '.$tot.'';?></div>
                     <a target="_self" href="../images/<?php echo $imgval['prop_id'].'/'.$imgval['name'];?>" data-lightbox="mygallery" data-title="<?php echo $imgval['alt'];?>">
@@ -47,39 +47,49 @@
                 <span><i class="fas fa-home" style="color: #FF385C;"></i> <?php echo $value['prop_occupancy'].' Guests Recommended';?> </span>
                 <span><i class="fas fa-search-location" style="color: #FF385C;"></i>Details: <?php echo $value['prop_det']; ?></span>
             </div>
+            <div class="prop-chat">
+                <span>Need more help?</span>
+                <a href ="index.php?page=chatnow" class="prop-chat-btn"><i class="fas fa-comment-alt"></i> CHAT NOW </a>
+            </div>
             <div class="prop-book">
-                <div class="prop-price">$<?php echo  $value['price'];?> / Night</div>
-                <div class="prop-rating"><?php foreach ($ratings as $rat){echo '<i class="fas fa-star" style="color: #ffd700;"></i> '.$rat['averages'].' · '.$rat['counts'].'<u> Reviews</u> · ';} ?></div>
+                <div class="prop-book-findet">
+                    <div class="prop-price">$<?php echo  $value['price'];?> / Night</div>
+                    <div class="prop-rating"><?php foreach ($rating as $rat){echo '<i class="fas fa-star" style="color: #ffd700;"></i> '.$rat['averages'].' · <u>'.$rat['counts'].' Reviews</u> ';} ?></div>
+                </div>
                 <form method="post" action="index.php?page=book">
-                    <div class="prop-date"> <label>Check-in :  </label> <input type="date" name="start_time" required></div>
-                    <div class="prop-date"> <label>Checkout :  </label> <input type="date" name="end_time" required></div>
+                    <div class="prop-date"> 
+                        <label>Check-in :  </label> <input type="date" name="start_time" min="<?= date('Y-m-d'); ?>" required>
+                    </div>
+                    <div class="prop-date"> 
+                        <label>Checkout :  </label> <input type="date" name="end_time" min="<?= date('Y-m-d'); ?>" required>
+                    </div>
 
                     <input type="hidden" name="prop_id" value=<?php echo $id;?>>
                     <input type="hidden" name="status" value="Not-Confirmed">
-                    <input type="submit" class="login" name="book" value="Book">
                     <input type="hidden" name="user_id" value=<?php echo $uid;?>>
+                    <input type="submit" class="login" name="book" value="Book">
                 </form>
             </div>  
         </div>
     </div>
     <?php } ?>
-
-    <form>
-        <br>
-        <h2> FeedBacks: </h2><br>
-        <?php
-            foreach($allfeedback as $value){
-                $num = (int)$value['rating'];
-                echo '<div class="fedbak">';
-                for($i=1;$i<=(int)$value['rating'];$i++){echo '<i class="fa fa-star"  style="color: #ffd700;"></i>';}
-                echo "<br>User: ".$usrData[$value['user_id']];
-                echo "<br> Comment: ". $value['description'];
-                echo '</div><br>';
-            }
-        ?>
-        <br>
-    </form>
-<br>
-    <h3>Confused about this? <br>Need to find out more? <br><br> Take a chat with us and we can guide you..<br></h3>
-    <button><a href ="index.php?page=chatnow"> CHAT NOW </a></button>
+    
+    <div class="review-cont">
+        <h2>Feedbacks: </h2>
+        <?php foreach($allfeedback as $value){ ?>
+        <div class="enq-reviews">
+            <div class="enq-review-head">
+                <span><?php $num = (int)$value['rating']; for($i=1;$i<=(int)$value['rating'];$i++){echo '<i class="fa fa-star"  style="color: #ffd700;"></i>';} ?></span>
+                <span><?php echo "User: ".$usrData[$value['user_id']].' · ';?></span>
+                <span><?php echo $value['months'].' '.$value['years']?></span>
+            </div>
+        
+            <div class="enq-review-sum">
+                <span>
+                    <?php echo $value['description']; ?>
+                </span>
+            </div>
+        </div>
+        <?php } ?>
+    </div>
 </article>
