@@ -106,13 +106,12 @@ function notifAll() {
 
         return $stmt;
 }
+
 function getlastVal($field) {//passed as array
     global $pdo;
         $stmt = $pdo->prepare('SELECT MAX('.$field.') FROM '.$this->table);
         $stmt->execute();//execute the criteria
-
         return $stmt;
-
 }
 
 function rating($prop_id) {
@@ -133,6 +132,16 @@ function findrating($field, $value) {//passed as array
 
         return $stmt;
 }
+
+function report() {
+    global $pdo;
+        $stmt = $pdo->prepare('SELECT properties.prop_id,properties.prop_name AS property_name, properties.prop_StreetName, properties.prop_suburb, properties.prop_state, properties.prop_postCode, properties.prop_type AS property_type, properties.prop_occupancy AS property_occup, properties.price AS price, users.user_id, users.firstname, users.lastname, users.email AS user_email, bookings.start_time AS book_start, bookings.end_time AS book_end, bookings.status AS book_status FROM properties,users,bookings WHERE bookings.prop_id=properties.prop_id AND bookings.user_id=users.user_id ORDER BY bookings.start_time DESC; ');//selects the value
+
+        $stmt->execute();//execute the value
+
+        return $stmt;
+}
+
 
 
 }

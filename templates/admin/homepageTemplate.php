@@ -21,12 +21,12 @@
                 <a href="index.php?page=findclients">Clients</a>
                 <a href="index.php?page=chat">Chat</a>
                 <?php
-                if((isset($_SESSION['login']) && $_SESSION['login'] == 1) && $_SESSION['username']=="admin"){
-                echo "<a href=index.php?page=notif>Manage Notifications</a>";
-                echo "<a href=index.php?page=staff>Staff Details</a>";
-                
-                }
+                    if((isset($_SESSION['login']) && $_SESSION['login'] == 1) && $_SESSION['username']=="admin"){
+                    echo "<a href=index.php?page=notif>Manage Notifications</a>";
+                    echo "<a href=index.php?page=staff>Staff Details</a>";
+                    }
                 ?>
+                <a href="index.php?page=report">Report</a>
             </div>
             <div class="login">
                 <!-- logged in user -->
