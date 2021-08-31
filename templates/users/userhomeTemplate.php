@@ -1,13 +1,13 @@
 <article class="property-listing">
 
     <?php  
-       foreach ($data as $value) {
+       $img_slider=1; foreach ($data as $value) {
     ?>
 
     <section class="property">
         <div class="thumbnail_images"> 
             <div class="slides fade">
-                <img src="a.png" id="img_slider" alt="Image Link Broken" style="width:100%; height: 100%;">
+                <img src="a.png" id="img_slider<?php echo $img_slider; $img_slider++; ?>" alt="Image Link Broken" style="width:100%; height: 100%;">
             </div>
 
             <a class="prev">&#10094;</a> 
@@ -28,7 +28,7 @@
         <div class="booking-options">
         <form method="POST" action="index.php?page=userhome">
             <input type="hidden" name="pid" value="<?php echo $value['prop_id'];?>">
-            <input type="submit" value="Enquiry" class="enquir" name="book_prop">
+            <input type="submit" value="Book" class="enquir" name="book_prop">
             </form>
         </div>
     </section>
