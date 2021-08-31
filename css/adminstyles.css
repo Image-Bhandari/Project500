@@ -344,7 +344,7 @@ article {
 .manageimg {
 	display: grid;
 	align-content: center;
-	grid-template-columns: auto auto auto;
+	grid-template-columns: auto auto;
 	grid-gap: 10px;
 	background-color: #2196F3;
 	padding: 10px;
@@ -358,7 +358,7 @@ article {
 	align-content: center;
 }
 
-.viewimg, .viewtitle, .viewact {
+.viewimg, .viewact {
 	padding: 0.5rem;
 	font-size: 1.5rem;
 	font-weight: 600;
@@ -366,20 +366,13 @@ article {
 }
 
 .photo-holdr {
-	width: 30rem;
+	width: 40rem;
 }
 
 .photo-holdr img {
 	display: block;
 	width: 100%;
 	height: auto;
-}
-
-.photo-title {
-	display: grid;
-	grid-template-columns: 80% 15%;
-	text-align: left;
-	padding: 0.5rem 0.5rem 0.5rem 1rem;
 }
 
 .editbutton, .editbutton:visited {
