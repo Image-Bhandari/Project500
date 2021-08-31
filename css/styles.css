@@ -311,7 +311,7 @@ body {
 }
 
 /* Full-width inputs */
-input[type=text], input[type=email], input[type=password] {
+.login-container input[type=text], .login-container input[type=password], .register-container input[type=email],.register-container input[type=text],.register-container input[type=password] {
   width: 100%;
   padding: 12px 20px;
   margin: 8px 0;
@@ -343,14 +343,7 @@ button:hover, input[type=submit]:hover {
   background-color: #fff;
 }
 
-
 /* Sign up container */
-/* Full-width input fields */
-
-input[type=text]:focus, input[type=email]:focus, input[type=password]:focus {
-  background-color: #ddd;
-  outline: none;
-}
 
 /* Float cancel and signup buttons and add an equal width */
 .cancelbtn, .signupbtn {
@@ -399,7 +392,7 @@ input[type=text]:focus, input[type=email]:focus, input[type=password]:focus {
   width: max-content;
 }
 
-.book input[type="submit"]{
+.book input[type="submit"] {
   padding: 0.5rem 1rem;
   border: none;
 }
@@ -1010,6 +1003,79 @@ form .submit-rating:hover {
 }
 
 /* star rating end */
+
+/* payment form start */
+.payment-header { grid-area: header; }
+.payment-name { grid-area: name; }
+.card-num { grid-area: number; }
+.exp-month { grid-area: month; }
+.exp-year { grid-area: year; }
+.cvv { grid-area: cvv; }
+.chkout { grid-area: chkout; }
+
+.payment-container {
+  display: grid;
+  grid-template-areas:
+    'header header header header header header'
+    'name name name name name name'
+    'number number number number number number'
+    'month month year year cvv cvv'
+    'chkout chkout chkout chkout chkout chkout';
+  grid-gap: 10px;
+  background-color: #f2f2f2;
+  padding: 10px;
+  max-width: 50rem;
+  margin: 0 auto;
+}
+
+.payment-container > div {
+  padding: 0.2rem 1rem;
+  font-size: 1rem;
+}
+
+.icon-container {
+  padding: 0.5rem 0;
+  font-size: 1.5rem;
+}
+
+.payment-name {
+  width: 100%;
+}
+
+.payment-container input[type=number], .payment-container input[type=text] {
+  width: 100%;
+  margin-bottom: 0.5rem;
+  padding: 0.8rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  -moz-appearance: textfield;
+  overflow: hidden;
+  background-color: #fff;
+}
+
+.payment-container input::-webkit-outer-spin-button,
+.payment-container input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.payment-container label {
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.payment-container input[type=submit]{
+  background-color: #777;
+  color: white;
+  padding: 12px;
+  margin: 10px 0;
+  border: none;
+  width: 100%;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 17px;
+}
+/* payment form end */
 
 /* footer */
 footer {
