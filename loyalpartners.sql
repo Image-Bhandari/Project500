@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 30, 2021 at 01:51 PM
+-- Generation Time: Sep 02, 2021 at 07:24 AM
 -- Server version: 10.4.20-MariaDB
 -- PHP Version: 8.0.9
 
@@ -52,26 +52,43 @@ INSERT INTO `bookings` (`book_id`, `user_id`, `prop_id`, `start_time`, `end_time
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `creditinfo`
+--
+
+CREATE TABLE `creditinfo` (
+  `creditcardID` int(11) NOT NULL,
+  `Name` varchar(255) NOT NULL,
+  `cardnumber` int(11) NOT NULL,
+  `exp_month` int(11) NOT NULL,
+  `exp_year` int(11) NOT NULL,
+  `cvv` int(11) NOT NULL,
+  `book_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `feedbacks`
 --
 
 CREATE TABLE `feedbacks` (
+  `feedback_id` int(255) NOT NULL,
   `user_id` int(255) NOT NULL,
   `prop_id` int(255) NOT NULL,
   `rating` int(255) NOT NULL,
   `description` varchar(255) NOT NULL,
-  `feedback_id` int(255) NOT NULL
+  `post_date` date NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `feedbacks`
 --
 
-INSERT INTO `feedbacks` (`user_id`, `prop_id`, `rating`, `description`, `feedback_id`) VALUES
-(1, 1, 3, ' vk', 2),
-(1, 2, 4, ' I love this house. This house is like my house. When i go inside this house it feels like house. it is a good house. we should stay in a house. :) :)', 3),
-(1, 1, 5, ' Lovely Housekeeping !! Epico !', 4),
-(5, 2, 5, ' I loved it broo. Amazing house with amazing window. Just loved it.!   Must Go Place !', 5);
+INSERT INTO `feedbacks` (`feedback_id`, `user_id`, `prop_id`, `rating`, `description`, `post_date`) VALUES
+(2, 1, 1, 3, ' vk', '2021-08-17'),
+(3, 1, 2, 4, ' I love this house. This house is like my house. When i go inside this house it feels like house. it is a good house. we should stay in a house. :) :)', '2021-07-21'),
+(4, 1, 1, 5, ' Lovely Housekeeping !! Epico !', '2021-06-30'),
+(5, 5, 2, 5, ' I loved it broo. Amazing house with amazing window. Just loved it.!   Must Go Place !', '2021-08-18');
 
 -- --------------------------------------------------------
 
@@ -167,9 +184,9 @@ CREATE TABLE `properties` (
 --
 
 INSERT INTO `properties` (`prop_id`, `prop_name`, `prop_type`, `prop_StreetName`, `prop_suburb`, `prop_state`, `prop_postCode`, `prop_det`, `prop_occupancy`, `price`) VALUES
-(1, 'Luxury 3 Bed FULL Ocean View Sky Suite Apartment!', 'Apartment', '1 street name', 'Westmead', 'NSW', 2145, '3 living , 1 cooking, 1 bathroom, Free Parking', 4, '500'),
-(2, 'Arru-Bari Ghar', 'Hotel', 'Arru-bari', 'Blacktown', 'NSW', 2148, '4 floor but no room sorry', 2, '500'),
-(3, 'Oceanview Exex 19th level 1 Bedroom Beach Apt', 'Apartment', '2 street name', 'Chatswood', 'NSW', 2222, '1 Bedroom with queen bed, free wifi, parkin', 3, '120'),
+(1, 'Luxury 3 Bed FULL Ocean View Sky Suite Apartment!', 'Apartment', '1 street name', 'Westmead', 'NSW', 2145, '3 living , 1 cooking, 1 bathroom, Free Parking', 4, '90'),
+(2, 'Arru-Bari Ghar', 'Hotel', 'Arru-bari', 'Blacktown', 'NSW', 2148, '4 floor but no room sorry', 2, '89'),
+(3, 'Oceanview Exex 19th level 1 Bedroom Beach Apt', 'Apartment', '2 street name', 'Chatswood', 'NSW', 2222, '1 Bedroom with queen bed, free wifi, parkin', 3, '119'),
 (4, 'The Last Minute! Waterfront Studio Apartment', 'Apartment', '100 street name', 'Artamon', 'NSW', 2220, '2 Bedroom with queen beds, free wifi, parking, gym, spa', 3, '130'),
 (5, 'Masterbedroom with work station, lounge & ensuite', 'Unit', '12 Central Street', 'Surry Hills', 'NSW', 2000, '2 bedroom with queen beds each, access to hot tub, kitchen WiFi, TV, washing machine', 4, '99'),
 (6, 'The Kirketon Hotel', 'Hotel', '20 Name street', 'Sydney', 'NSW', 2000, 'Room in boutique hotel in Darlinghurst. Free Parking and Wifi. 1 bedroom 1 Bathroom', 2, '87'),
@@ -197,9 +214,10 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`user_id`, `firstname`, `lastname`, `username`, `password`, `email`, `role`) VALUES
-(1, 'ram', 'ram', 'ram', 'ram', 'ram@ram.cum', 'user'),
+(1, 'Ram', 'Rama', 'ram', 'ram', 'ram@ram.cum', 'user'),
 (2, 'staff', 'staff', 'staff', 'staff', 'staff@staff.com', 'staff'),
 (3, 'admin', 'admin', 'admin', 'admin', 'admin@admin.com', 'admin'),
+(4, 'Test', 'Test', 'test', 'test', 'test@test.com', 'user'),
 (5, 'Pandit', 'Surag', 'pandit', 'pandit', 'pandit@pan-ko-pat.com', 'user');
 
 --
@@ -211,6 +229,12 @@ INSERT INTO `users` (`user_id`, `firstname`, `lastname`, `username`, `password`,
 --
 ALTER TABLE `bookings`
   ADD PRIMARY KEY (`book_id`);
+
+--
+-- Indexes for table `creditinfo`
+--
+ALTER TABLE `creditinfo`
+  ADD PRIMARY KEY (`creditcardID`);
 
 --
 -- Indexes for table `feedbacks`
@@ -258,6 +282,12 @@ ALTER TABLE `users`
 --
 ALTER TABLE `bookings`
   MODIFY `book_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+
+--
+-- AUTO_INCREMENT for table `creditinfo`
+--
+ALTER TABLE `creditinfo`
+  MODIFY `creditcardID` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `feedbacks`
