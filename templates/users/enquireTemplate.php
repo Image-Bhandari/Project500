@@ -17,11 +17,10 @@
                 $counter=1;
                 $dire = "../images/".$pid;
                 $images = glob($dire . "/*");
-                $tot=8;
                 foreach($images as $tasbir){ 
             ?>
                 <div class="prop_picture_cont">
-                    <div class="numbertext"><?php echo $counter; $counter++; echo ' / '.$tot.'';?></div>
+                    <div class="numbertext"><?php echo $counter; $counter++; echo ' / '.count($images).'';?></div>
                     <a target="_self" href="<?php echo $tasbir?>" data-lightbox="mygallery" data-title="<?php echo $value['prop_name'];?>">
                     <img src="<?php echo $tasbir?>">
                     </a>
