@@ -7,7 +7,7 @@
     <section class="property">
         <div class="thumbnail_images"> 
             <div class="slides fade">
-                <img src="a.png" id="img_slider<?php echo $img_slider; $img_slider++; ?>" alt="Image Link Broken" style="width:100%; height: 100%;">
+                <img src="../images/<?php echo $value['prop_id']?>/1.jpg" id="img_slider<?php echo $img_slider; $img_slider++; ?>" alt="Image Link Broken" style="width:100%; height: 100%;">
             </div>
 
             <a class="prev">&#10094;</a> 
