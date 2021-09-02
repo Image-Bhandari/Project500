@@ -13,11 +13,17 @@
 
          <!-- property image start -->
         <div class="property_pictures">
-            <?php $counter=1;  foreach ($images as $imgval) { $tot=count($imgval); ?>
+            <?php
+                $counter=1;
+                $dire = "../images/".$pid;
+                $images = glob($dire . "/*");
+                $tot=8;
+                foreach($images as $tasbir){ 
+            ?>
                 <div class="prop_picture_cont">
                     <div class="numbertext"><?php echo $counter; $counter++; echo ' / '.$tot.'';?></div>
-                    <a target="_self" href="../images/<?php echo $imgval['prop_id'].'/'.$imgval['name'];?>" data-lightbox="mygallery" data-title="<?php echo $imgval['alt'];?>">
-                        <img src="../images/<?php echo $imgval['prop_id'].'/'.$imgval['name'];?>">
+                    <a target="_self" href="<?php echo $tasbir?>" data-lightbox="mygallery" data-title="<?php echo $value['prop_name'];?>">
+                    <img src="<?php echo $tasbir?>">
                     </a>
                 </div>
             <?php } ?>    
@@ -30,9 +36,9 @@
             </div>
 
             <div class="property_pictures_row">
-                <?php $counter=1; foreach ($image as $imgval) { ?> 
+                <?php $counter=1; foreach ($images as $img) { ?> 
                     <div class="property_pictures_column">
-                        <img class="demo cursor" src="../images/<?php echo $imgval['prop_id'].'/'.$imgval['name'];?>" style="width:100%" onclick="currentPropViewSlide(<?php echo $counter; $counter++?>)" alt="<?php echo $imgval['alt'];?>">
+                        <img class="demo cursor" src="../images/<?php echo $img;?>" style="width:100%" onclick="currentPropViewSlide(<?php echo $counter; $counter++?>)" alt="<?php echo $value['prop_name'];?>">
                     </div>
                 <?php } ?>
         

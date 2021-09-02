@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 02, 2021 at 07:24 AM
+-- Generation Time: Sep 02, 2021 at 11:22 AM
 -- Server version: 10.4.20-MariaDB
 -- PHP Version: 8.0.9
 
@@ -89,33 +89,6 @@ INSERT INTO `feedbacks` (`feedback_id`, `user_id`, `prop_id`, `rating`, `descrip
 (3, 1, 2, 4, ' I love this house. This house is like my house. When i go inside this house it feels like house. it is a good house. we should stay in a house. :) :)', '2021-07-21'),
 (4, 1, 1, 5, ' Lovely Housekeeping !! Epico !', '2021-06-30'),
 (5, 5, 2, 5, ' I loved it broo. Amazing house with amazing window. Just loved it.!   Must Go Place !', '2021-08-18');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `images`
---
-
-CREATE TABLE `images` (
-  `picid` int(11) NOT NULL,
-  `name` varchar(255) NOT NULL,
-  `alt` varchar(255) NOT NULL,
-  `prop_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `images`
---
-
-INSERT INTO `images` (`picid`, `name`, `alt`, `prop_id`) VALUES
-(1, '1.jpg', 'The Woods', 1),
-(2, '2.jpg', 'Cinque Terre', 1),
-(3, '3.jpg', 'Mountains and fjords', 1),
-(4, '4.jpg', 'Northern Lights', 1),
-(5, '2.jpg', '5th one', 1),
-(6, '1.jpg', '6th', 1),
-(7, '4.jpg', '7th', 1),
-(8, '1.jpg', '8th', 1);
 
 -- --------------------------------------------------------
 
@@ -243,13 +216,6 @@ ALTER TABLE `feedbacks`
   ADD PRIMARY KEY (`feedback_id`);
 
 --
--- Indexes for table `images`
---
-ALTER TABLE `images`
-  ADD PRIMARY KEY (`picid`),
-  ADD KEY `prop_id` (`prop_id`);
-
---
 -- Indexes for table `messages`
 --
 ALTER TABLE `messages`
@@ -296,12 +262,6 @@ ALTER TABLE `feedbacks`
   MODIFY `feedback_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT for table `images`
---
-ALTER TABLE `images`
-  MODIFY `picid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
-
---
 -- AUTO_INCREMENT for table `messages`
 --
 ALTER TABLE `messages`
@@ -324,16 +284,6 @@ ALTER TABLE `properties`
 --
 ALTER TABLE `users`
   MODIFY `user_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
-
---
--- Constraints for dumped tables
---
-
---
--- Constraints for table `images`
---
-ALTER TABLE `images`
-  ADD CONSTRAINT `prop_id` FOREIGN KEY (`prop_id`) REFERENCES `properties` (`prop_id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

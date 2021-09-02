@@ -2,11 +2,6 @@
 
 $uid=$_SESSION['user_id'];
 
-$conimg= new DatabaseTable('images');
-$images=$conimg->find('prop_id',$_GET['pid']);
-$image=$conimg->find('prop_id',$_GET['pid']);
-
-
 if(isset($_SESSION['login']) && $_SESSION['login'] == 1){
     $product_id=0;
     $availability="Available";
@@ -36,7 +31,7 @@ if(isset($_SESSION['login']) && $_SESSION['login'] == 1){
     $ratings=$connForFeedBack->rating('prop_id',$product_id);
     $rating=$connForFeedBack->rating('prop_id',$product_id);
 
-    $content = loadTemplate('../templates/users/enquireTemplate.php', ['usrData'=>$usrData,'allfeedback'=>$allfeedback,'data'=>$data, 'availability'=>$availability,'uid'=>$uid, 'images'=>$images, 'image'=>$image,'pid'=>$product_id, 'ratings'=>$ratings,'rating'=>$rating]);//load template
+    $content = loadTemplate('../templates/users/enquireTemplate.php', ['usrData'=>$usrData,'allfeedback'=>$allfeedback,'data'=>$data, 'availability'=>$availability,'uid'=>$uid, 'pid'=>$product_id, 'ratings'=>$ratings,'rating'=>$rating]);//load template
 }
 else {
     header('location:index.php?page=login');
