@@ -16,6 +16,7 @@
 		foreach($valu as $value){
 			$nextVal = $value[0];
 		}
+		$nextVal=$nextVal+1;
 		if( is_dir('../images/'.$nextVal) === false )
 {
     mkdir('../images/'.$nextVal);
