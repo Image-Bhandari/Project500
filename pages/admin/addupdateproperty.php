@@ -7,7 +7,7 @@
 		$conn = new DatabaseTable('properties');
 		unset($_POST['prop_id']);
 		unset($_POST['val_insert']);
-		
+		$conn->insert($_POST);
 
 		/*  IMAGE UPLOAD    */
 		$getVal= new DatabaseTable('properties');
@@ -16,7 +16,6 @@
 		foreach($valu as $value){
 			$nextVal = $value[0];
 		}
-		$nextVal=$nextVal+1;
 		if( is_dir('../images/'.$nextVal) === false )
 {
     mkdir('../images/'.$nextVal);
@@ -46,7 +45,6 @@ if ($uploadOk == 0) {
 	$temp = explode(".", $_FILES["fileToUpload"]["tmp_name"]);
 $newfilename = '1.jpg';
 if(move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_dir . $newfilename)){
-	$conn->insert($_POST);
 	header('Location:index.php?page=manageproperty');
 }
 else{
