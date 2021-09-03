@@ -1,5 +1,5 @@
 <article>
-    <form action=""> 
+    <form action="index.php?page=payment" method="POST"> 
     <div class="payment-container">
         <div class="payment-header">
             <h2>Payment</h2>
@@ -13,6 +13,7 @@
         </div>
 
         <div class="payment-name">
+            <input type="hidden" name="book_id" value="<?php echo $_GET['bid'];?>">
             <label for="cname">Name on Card</label>
             <input type="text" id="cname" name="Name" placeholder="Full Name">
         </div>
@@ -38,7 +39,7 @@
         </div>
 
         <div class="chkout">
-            <input type="submit" value="Continue to checkout">
+            <input type="submit" name="submit" value="Continue to checkout">
         </div>
     </div>
     </form>

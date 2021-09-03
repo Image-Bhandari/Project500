@@ -13,7 +13,8 @@
             if($value['status']=="Not-Confirmed"){
                 echo "<button onclick=\"bookCancel(".$value['book_id'].");\">Cancel Booking</button>";
                 //echo "<a href=index.php?page=history&action=cancel&bid=".$value['book_id'].">Cancel Booking</a>";
-                echo "<button onclick=\"creditInfo(".$value['book_id'].");\">Confirm Booking</button>";
+                //echo "<a><button onclick=\"creditInfo(".$value['book_id'].");\">Confirm Booking</button></a>";
+                echo "<button><a href='index.php?page=payment&bid=".$value['book_id']."'>Confirm Booking</a></button>";
                 echo '</td><td> N/A </td></tr>';
     
             }
