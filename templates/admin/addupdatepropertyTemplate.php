@@ -45,10 +45,12 @@
     }
     else{ ?>
      
-     <br><a href="index.php?page=manageImages&pid=<?php if($data){echo $data['prop_id'];}}?>">Manage Images</a><br>
+     <br><a href="index.php?page=manageImages&pid=<?php if($data){echo $data['prop_id'];}?>">Manage Images</a><br>
     
     
-    
+    <?php } ?>
+    <br>
+    <br>
     <input type="submit" value="Update" name=<?php if($data){echo "\"val_update\"";}else{echo "\"val_insert\"";}?>>
   </form>
 </section>
