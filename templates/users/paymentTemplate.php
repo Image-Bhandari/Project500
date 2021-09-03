@@ -20,22 +20,22 @@
 
         <div class="card-num">
             <label for="ccnum">Credit card number</label>
-            <input type="number" id="ccnum" name="cardnumber" placeholder="1111222233334444">
+            <input type="number" id="ccnum" name="cardnumber" min="1000000000000000" max="9999999999999999" placeholder="1111222233334444">
         </div>  
 
         <div class="exp-month">
             <label for="expmonth">Exp Month</label>
-            <input type="number" id="expmonth" name="exp_month" placeholder="September">
+            <input type="number" id="expmonth" name="exp_month" min="1" max="12" placeholder="September">
         </div>
 
         <div class="exp-year">
             <label for="expyear">Exp Year</label>
-            <input type="number" id="expyear" name="exp_year" placeholder="2018">
+            <input type="number" id="expyear" name="exp_year" min="2021" max="2040" placeholder="2018">
         </div>
         
         <div class="cvv">
             <label for="cvv">CVV</label>
-            <input type="number" id="cvv" name="cvv" placeholder="352">
+            <input type="number" id="cvv" name="cvv" min="100" max="9999" placeholder="352">
         </div>
 
         <div class="chkout">
