@@ -80,7 +80,7 @@
     <?php } ?>
     
     <div class="review-cont">
-        <h2 id="feedbk">Feedbacks: </h2>
+        <h2 id="feedbk">Reviews: </h2>
         <?php foreach($allfeedback as $value){ ?>
         <div class="enq-reviews">
             <div class="enq-review-head">

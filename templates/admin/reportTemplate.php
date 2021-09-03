@@ -1,5 +1,6 @@
 <article>
     <table>
+        <h2>Sales List Table</h2>
         <tr><th>Property Name</th><th>Address</th><th>Type</th><th>Occupancy</th><th>Price</th><th>User Name</th><th>e-mail Address</th><th>Duration Booked</th><th>Status</th></tr>
         <?php
         foreach ($booking_report as $value) { ?>
