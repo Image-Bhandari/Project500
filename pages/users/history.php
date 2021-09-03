@@ -17,6 +17,8 @@ if(isset($_GET['action'])){
     $connB->delete("book_id",$_GET['bid']);
     header('location:index.php?page=history');
 }
+$fedbk= new DatabaseTable('feedbacks');
+$findfedbak=$fedbk->findPropFed($_SESSION['user_id']);
 
-$content = loadTemplate('../templates/users/bookTemplate.php',['findAllBook'=>$findAllBook]);
+$content = loadTemplate('../templates/users/bookTemplate.php',['findAllBook'=>$findAllBook,'findfedbak'=>$findfedbak]);
 ?>

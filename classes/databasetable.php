@@ -142,6 +142,13 @@ function report() {
         return $stmt;
 }
 
+function findPropFed($user){
+    global $pdo;
+    $stmt = $pdo->prepare('SELECT prop_id FROM `feedbacks` where user_id='.$user);
+    $stmt->execute();//execute the criteria
+    return $stmt;
+}
+
 
 
 }

@@ -19,8 +19,17 @@
             }
             else{
                 echo "Already Confirmed";
-                echo '</td><td> <a href="index.php?page=feedback&pid='.$value['prop_id'].'">Provide Feedback</a> </td></tr>';
+                $vari=$findfedbak->fetch();
+                if($vari && $vari['prop_id']==$value['prop_id']){
+                    echo '</td><td>FeedBack Provided !</td></tr>';
+                }
+                else {
+                    echo '</td><td> <a href="index.php?page=feedback&pid='.$value['prop_id'].'">Provide Feedback</a> </td></tr>';
+                   
+                }
+
             }
+
             
         }
         ?>
