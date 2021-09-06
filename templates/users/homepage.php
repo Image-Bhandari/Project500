@@ -68,8 +68,8 @@
 
                         <?php } //if user isn't logged in
                         else{
-                            echo '<a class="login" href="index.php?page=login">Login</a>';
-                            echo '<a class="login" href="index.php?page=register">Sign Up</a>';
+                            echo '<a class="loginlnk" href="index.php?page=login">Login</a>';
+                            echo '<a class="loginlnk" href="index.php?page=register">Sign Up</a>';
                     }?>
                     </div>
                 </div> 

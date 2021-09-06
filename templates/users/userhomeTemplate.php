@@ -21,7 +21,7 @@
                 for ($counter=2; $counter < $c+2; $counter++) { 
                     $a = ",";
                     if ($counter == $c+1) {$a="]";};
-                    ${'propertyimages'.$pidjs} .= "'".$inf[$counter]."'".$a;
+                    ${'propertyimages'.$pidjs} .= "'../images/".$pidjs."/".$inf[$counter]."'".$a;
                 }
             ?>
 
@@ -30,7 +30,6 @@
         </div>
 
         <div class="details">
-            <span><?php echo ${'propertyimages'.$pidjs}; ?></span>
             <span class="details-type">Completely Serviced <?php echo $value["prop_type"];?> located in <?php echo $value["prop_suburb"];?></span>
             <span class="details-name"><?php echo $value["prop_name"];?></span>
             <span class="details-line"></span>
@@ -51,9 +50,35 @@
 
     <script>
         const slide_images<?php echo$pidjs; ?> = <?php echo ${'propertyimages'.$pidjs}; ?>;
-        console.log(slide_images<?php echo$pidjs; ?>);
     </script>
 
     <?php } ?>
 
 </article>
+
+<script>
+    // slideshow for main page in the small box of properties
+
+    i = 0;
+
+    const slideshow_add = (a, b) => {
+    document.getElementById(a).src = b[i]
+    if (i < (b.length - 1)) {
+            i++
+        } else {
+            i = 0
+        }
+    }
+    const slideshow_substract = (a, b) => {
+        document.getElementById(a).src = b[i]
+        if (i == 0) {
+            i = b.length - 1
+        }
+        else if (i < (b.length)) {
+            i--
+        }
+        else {
+            i = 0
+        }
+    }
+</script>
