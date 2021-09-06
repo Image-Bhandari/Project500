@@ -288,6 +288,41 @@ article {
 	position: relative;
 }
 
+.clienticon { grid-area: clienticon; }
+.clientname { grid-area: name; }
+.clientlastmsgdate { grid-area: lmsgdate; }
+
+.clientlnk {
+  display: grid;
+  grid-template-areas:
+    'clienticon name'
+    'clienticon lmsgdate';
+  grid-gap: 1px;
+  background-color: #2196F3;
+  padding: 10px;
+  grid-template-columns: 25% 75%;
+  align-items: center;margin: 1rem 0.5rem;
+  border-radius: 0.6rem;
+}
+
+.clienticon img{
+	border-radius: 50%;
+	width: 100%;
+	height: 100%;
+	vertical-align: middle;
+}
+
+.clientname {
+	text-align: left;
+	padding-left: 0.5rem;
+	font-size: 1.1rem;
+}
+
+.clientlastmsgdate {
+	text-align: right;
+	font-size: 0.9rem;
+}
+
 .messages {
 	max-height: 25rem;
 	overflow: auto;
@@ -297,6 +332,15 @@ article {
     position: absolute;
     bottom: 0;
     width: 100%;
+}
+
+.outgoingmsg {
+	width: 54%;
+	float: right;
+}
+
+.incomingmsg {
+	width: 60%;
 }
 
 .messageby {

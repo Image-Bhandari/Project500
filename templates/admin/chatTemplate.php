@@ -3,10 +3,23 @@
     <div class="handled">
         <h3> Your Clients </h3>
         <?php
-        foreach ($handledname as $value) {
-            echo '<li><a class="msg" href="index.php?page=chat&chat='. $value.'">'.$value.'</a></li><br><br>';
-        }
-        ?>
+        foreach ($handledname as $value) { ?>
+
+        <a class="msg" href="<?php echo 'index.php?page=chat&chat='. $value; ?>">
+        <div class="clientlnk">
+            <div class="clienticon">
+                <img src="../images/logo/user.jpg" alt="logo">
+            </div>
+            <div class="clientname">
+                <?php echo $value; ?>
+            </div>
+
+            <div class="clientlastmsgdate">
+                April 18
+            </div>
+        </div>
+        </a>
+        <?php } ?>
     </div>
 
     <div class="chatscreen">
@@ -14,16 +27,18 @@
             <?php
             $client="";
             foreach ($message as $mes) {
-                if($mes['message_by']==$_SESSION['username']){
-                    echo "<p class='messageto'> (".$_SESSION['username'].") : ". $mes['message'].'</p>';
-                }
-                else{
-                    echo "<p class='messageby'> (".$mes['message_by'].") : ". $mes['message'].'</p>';
-                    $client=$mes['message_by'];
-                    
-                }
-            }
-            ?>
+                if($mes['message_by']==$_SESSION['username']){ ?>
+                <div class="indivmessage outgoing">
+                    <?php echo "<p class='messageto'> (".$_SESSION['username'].") : ". $mes['message'].'</p>'; ?>
+                    <span>6:10 AM | 18 June 2019</span>
+                </div>
+                <?php } else{?>
+                <div class="indivmessage incoming">
+                    <?php echo "<p class='messageby'> (".$mes['message_by'].") : ". $mes['message'].'</p>';
+                    $client=$mes['message_by'];?>
+                    <span>10:16 AM | 19 June 2019</span>
+                </div>
+            <?php } } ?>
         </div>
 
         <br>
