@@ -1,20 +1,36 @@
 <article class="property-listing">
 
     <?php  
-       $img_slider=1; foreach ($data as $value) {
+        foreach ($data as $value) {
+            $pidjs = $value['prop_id'];
     ?>
 
     <section class="property">
         <div class="thumbnail_images"> 
             <div class="slides fade">
-                <img src="../images/<?php echo $value['prop_id']?>/1.jpg" id="img_slider<?php echo $img_slider; $img_slider++; ?>" alt="Image Link Broken" style="width:100%; height: 100%;">
+                <img src="../images/<?php echo $pidjs?>/1.jpg" id="img_slider<?php echo $pidjs; ?>" alt="Image Link Broken" style="width:100%; height: 100%;">
             </div>
 
-            <a class="prev">&#10094;</a> 
-            <a class="next">&#10095;</a>
+            <?php
+                $dir = "../images/".$pidjs;
+                $img = glob($dir . "/*");
+                $inf = array_diff(scandir($dir), array('.', '..')); //gets the file name in an array list
+                
+                $c= count($inf);
+                ${'propertyimages'.$pidjs} = "[";
+                for ($counter=2; $counter < $c+2; $counter++) { 
+                    $a = ",";
+                    if ($counter == $c+1) {$a="]";};
+                    ${'propertyimages'.$pidjs} .= "'".$inf[$counter]."'".$a;
+                }
+            ?>
+
+            <a class="prev" onclick="slideshow_substract('img_slider<?php echo $pidjs; ?>',slide_images<?php echo $pidjs; ?>)">&#10094;</a> 
+            <a class="next" onclick="slideshow_add('img_slider<?php echo $pidjs; ?>',slide_images<?php echo $pidjs; ?>)">&#10095;</a>
         </div>
 
         <div class="details">
+            <span><?php echo ${'propertyimages'.$pidjs}; ?></span>
             <span class="details-type">Completely Serviced <?php echo $value["prop_type"];?> located in <?php echo $value["prop_suburb"];?></span>
             <span class="details-name"><?php echo $value["prop_name"];?></span>
             <span class="details-line"></span>
@@ -32,6 +48,11 @@
             </form>
         </div>
     </section>
+
+    <script>
+        const slide_images<?php echo$pidjs; ?> = <?php echo ${'propertyimages'.$pidjs}; ?>;
+        console.log(slide_images<?php echo$pidjs; ?>);
+    </script>
 
     <?php } ?>
 

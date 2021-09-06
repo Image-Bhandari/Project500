@@ -57,3 +57,26 @@ function showSlides(na) {
   dots[PropslideIndex-1].className += " active";
   captionText.innerHTML = dots[PropslideIndex-1].alt;
 }
+
+// slideshow for main page in the small box of properties
+
+const slideshow_add = (a, b) => {
+  document.getElementById(a).src = b[i]
+  if (i < (b.length - 1)) {
+      i++
+  } else {
+      i = 0
+  }
+}
+const slideshow_substract = (a, b) => {
+  document.getElementById(a).src = b[i]
+  if (i == 0) {
+      i = b.length - 1
+  }
+  else if (i < (b.length)) {
+      i--
+  }
+  else {
+      i = 0
+  }
+}
