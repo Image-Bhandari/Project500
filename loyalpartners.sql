@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 02, 2021 at 11:22 AM
+-- Generation Time: Sep 06, 2021 at 03:32 PM
 -- Server version: 10.4.20-MariaDB
 -- PHP Version: 8.0.9
 
@@ -46,8 +46,22 @@ INSERT INTO `bookings` (`book_id`, `user_id`, `prop_id`, `start_time`, `end_time
 (8, 1, 2, '2021-06-18', '2021-06-29', 'Confirmed', '4111111111111111'),
 (15, 4, 1, '2021-08-27', '2021-08-30', 'Confirmed', '4000000000000000'),
 (16, 4, 2, '2021-08-27', '2021-08-30', 'Confirmed', '4333333555667788'),
-(17, 4, 1, '2021-09-02', '2021-09-04', 'Not-Confirmed', ''),
-(18, 5, 2, '2021-08-31', '2021-09-01', 'Confirmed', '4000000000000000');
+(17, 4, 1, '2021-09-02', '2021-09-04', 'Not-Confirmed', '');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `contactform`
+--
+
+CREATE TABLE `contactform` (
+  `cntfrmid` int(255) NOT NULL,
+  `cust_name` varchar(255) NOT NULL,
+  `cust_email` varchar(255) NOT NULL,
+  `cust_num` int(255) DEFAULT NULL,
+  `cust_ques` varchar(255) NOT NULL,
+  `staff_id` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -64,6 +78,15 @@ CREATE TABLE `creditinfo` (
   `cvv` int(11) NOT NULL,
   `book_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `creditinfo`
+--
+
+INSERT INTO `creditinfo` (`creditcardID`, `Name`, `cardnumber`, `exp_month`, `exp_year`, `cvv`, `book_id`) VALUES
+(1, 'alu', 2147483647, 11, 2222, 222, 20),
+(2, 'alu', 2147483647, 12, 2022, 1000, 21),
+(3, 'Surag Pandit', 2147483647, 12, 2030, 119, 22);
 
 -- --------------------------------------------------------
 
@@ -88,7 +111,8 @@ INSERT INTO `feedbacks` (`feedback_id`, `user_id`, `prop_id`, `rating`, `descrip
 (2, 1, 1, 3, ' vk', '2021-08-17'),
 (3, 1, 2, 4, ' I love this house. This house is like my house. When i go inside this house it feels like house. it is a good house. we should stay in a house. :) :)', '2021-07-21'),
 (4, 1, 1, 5, ' Lovely Housekeeping !! Epico !', '2021-06-30'),
-(5, 5, 2, 5, ' I loved it broo. Amazing house with amazing window. Just loved it.!   Must Go Place !', '2021-08-18');
+(5, 5, 2, 5, ' I loved it broo. Amazing house with amazing window. Just loved it.!   Must Go Place !', '2021-08-18'),
+(6, 5, 12, 3, ' i am happy ', '2021-09-03');
 
 -- --------------------------------------------------------
 
@@ -163,9 +187,7 @@ INSERT INTO `properties` (`prop_id`, `prop_name`, `prop_type`, `prop_StreetName`
 (4, 'The Last Minute! Waterfront Studio Apartment', 'Apartment', '100 street name', 'Artamon', 'NSW', 2220, '2 Bedroom with queen beds, free wifi, parking, gym, spa', 3, '130'),
 (5, 'Masterbedroom with work station, lounge & ensuite', 'Unit', '12 Central Street', 'Surry Hills', 'NSW', 2000, '2 bedroom with queen beds each, access to hot tub, kitchen WiFi, TV, washing machine', 4, '99'),
 (6, 'The Kirketon Hotel', 'Hotel', '20 Name street', 'Sydney', 'NSW', 2000, 'Room in boutique hotel in Darlinghurst. Free Parking and Wifi. 1 bedroom 1 Bathroom', 2, '87'),
-(7, 'Sydney CBD Near Traun UTS ', 'Unit', '1 Railway St', 'Surry Hills', 'NSW', 2001, 'Private room in house. 1 bedroom, 1 single bed, private bathroom. Kitchen, Free WiFi, TV and free parking', 1, '87'),
-(8, 'Beautiful spaciour Sydney Harbour View property', 'Apartment', '2 Second Avenue', 'Neutral Bay', 'NSW', 2400, 'Private room in apartment having 1 bedroom with 2 beds and 1 shared bathroom. Access to beach, WiFi, street parking, TV and pets are allowed as well', 2, '60');
-
+(7, 'Sydney CBD Near Traun UTS ', 'Unit', '1 Railway St', 'Surry Hills', 'NSW', 2001, 'Private room in house. 1 bedroom, 1 single bed, private bathroom. Kitchen, Free WiFi, TV and free parking', 1, '87');
 -- --------------------------------------------------------
 
 --
@@ -191,7 +213,8 @@ INSERT INTO `users` (`user_id`, `firstname`, `lastname`, `username`, `password`,
 (2, 'staff', 'staff', 'staff', 'staff', 'staff@staff.com', 'staff'),
 (3, 'admin', 'admin', 'admin', 'admin', 'admin@admin.com', 'admin'),
 (4, 'Test', 'Test', 'test', 'test', 'test@test.com', 'user'),
-(5, 'Pandit', 'Surag', 'pandit', 'pandit', 'pandit@pan-ko-pat.com', 'user');
+(5, 'Pandit', 'Surag', 'pandit', 'pandit', 'pandit@pan-ko-pat.com', 'user'),
+(6, 'te', 'st', 'te', 'test', 'te@t.com', 'user');
 
 --
 -- Indexes for dumped tables
@@ -202,6 +225,12 @@ INSERT INTO `users` (`user_id`, `firstname`, `lastname`, `username`, `password`,
 --
 ALTER TABLE `bookings`
   ADD PRIMARY KEY (`book_id`);
+
+--
+-- Indexes for table `contactform`
+--
+ALTER TABLE `contactform`
+  ADD PRIMARY KEY (`cntfrmid`);
 
 --
 -- Indexes for table `creditinfo`
@@ -247,19 +276,25 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `bookings`
 --
 ALTER TABLE `bookings`
-  MODIFY `book_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `book_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+
+--
+-- AUTO_INCREMENT for table `contactform`
+--
+ALTER TABLE `contactform`
+  MODIFY `cntfrmid` int(255) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `creditinfo`
 --
 ALTER TABLE `creditinfo`
-  MODIFY `creditcardID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `creditcardID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `feedbacks`
 --
 ALTER TABLE `feedbacks`
-  MODIFY `feedback_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `feedback_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `messages`
@@ -277,13 +312,13 @@ ALTER TABLE `notification`
 -- AUTO_INCREMENT for table `properties`
 --
 ALTER TABLE `properties`
-  MODIFY `prop_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `prop_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `user_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
