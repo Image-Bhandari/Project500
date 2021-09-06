@@ -29,14 +29,20 @@
             foreach ($message as $mes) {
                 if($mes['message_by']==$_SESSION['username']){ ?>
                 <div class="indivmessage outgoing">
-                    <?php echo "<p class='messageto'> (".$_SESSION['username'].") : ". $mes['message'].'</p>'; ?>
-                    <span>6:10 AM | 18 June 2019</span>
+                    <?php echo "<p class='messageto'> (".$_SESSION['username'].") : ". $mes['message'].'</p>'; 
+                     echo "<span>".$mes['time']."</span>";
+                     echo "<br><span>".$mes['date']."</span>";
+
+                    ?>
                 </div>
                 <?php } else{?>
                 <div class="indivmessage incoming">
                     <?php echo "<p class='messageby'> (".$mes['message_by'].") : ". $mes['message'].'</p>';
-                    $client=$mes['message_by'];?>
-                    <span>10:16 AM | 19 June 2019</span>
+                    $client=$mes['message_by']; 
+                    echo "<span>".$mes['time']."</span>";
+                    echo "<br><span>".$mes['date']."</span>";
+
+                    ?>
                 </div>
             <?php } } ?>
         </div>

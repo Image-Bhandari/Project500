@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.1.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 06, 2021 at 03:32 PM
--- Server version: 10.4.20-MariaDB
--- PHP Version: 8.0.9
+-- Generation Time: Sep 06, 2021 at 06:59 PM
+-- Server version: 10.4.19-MariaDB
+-- PHP Version: 8.0.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -124,17 +124,20 @@ CREATE TABLE `messages` (
   `message_by` varchar(255) NOT NULL,
   `message_to` varchar(255) NOT NULL,
   `message` varchar(255) NOT NULL,
-  `message_id` int(255) NOT NULL
+  `message_id` int(255) NOT NULL,
+  `date` date DEFAULT current_timestamp(),
+  `time` time NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `messages`
 --
 
-INSERT INTO `messages` (`message_by`, `message_to`, `message`, `message_id`) VALUES
-('ram', 'staff', 'k cha', 1),
-('staff', 'ram', 'k cha babu? k sodhichau?', 2),
-('ram', 'staff', 'hami k bhanxau bhanne.... jindagi k cha?? bahut garo cha hai daju', 3);
+INSERT INTO `messages` (`message_by`, `message_to`, `message`, `message_id`, `date`, `time`) VALUES
+('ram', 'staff', 'k cha', 1, '2021-09-06', '22:28:58'),
+('staff', 'ram', 'k cha babu? k sodhichau?', 2, '2021-09-06', '22:28:58'),
+('ram', 'staff', 'hami k bhanxau bhanne.... jindagi k cha?? bahut garo cha hai daju', 3, '2021-09-06', '22:28:58'),
+('staff', 'ram', 'hi', 4, '2021-09-06', '22:28:58');
 
 -- --------------------------------------------------------
 
@@ -188,6 +191,7 @@ INSERT INTO `properties` (`prop_id`, `prop_name`, `prop_type`, `prop_StreetName`
 (5, 'Masterbedroom with work station, lounge & ensuite', 'Unit', '12 Central Street', 'Surry Hills', 'NSW', 2000, '2 bedroom with queen beds each, access to hot tub, kitchen WiFi, TV, washing machine', 4, '99'),
 (6, 'The Kirketon Hotel', 'Hotel', '20 Name street', 'Sydney', 'NSW', 2000, 'Room in boutique hotel in Darlinghurst. Free Parking and Wifi. 1 bedroom 1 Bathroom', 2, '87'),
 (7, 'Sydney CBD Near Traun UTS ', 'Unit', '1 Railway St', 'Surry Hills', 'NSW', 2001, 'Private room in house. 1 bedroom, 1 single bed, private bathroom. Kitchen, Free WiFi, TV and free parking', 1, '87');
+
 -- --------------------------------------------------------
 
 --
@@ -300,7 +304,7 @@ ALTER TABLE `feedbacks`
 -- AUTO_INCREMENT for table `messages`
 --
 ALTER TABLE `messages`
-  MODIFY `message_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `message_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `notification`
