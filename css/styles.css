@@ -73,7 +73,7 @@ nav {
   left: 0; 
   width: 0%;
   height: 2px; 
-  background-color: #BADEFC;
+  background-color: #8FBFE0;
   transition: .3s width ease-in-out;
 }
 
@@ -184,10 +184,12 @@ nav {
 .login, .enquir {
   text-decoration: none;
   color: #0e375e;
-  background: #74d14c;
+  background: #EFF6EE;
+  cursor: pointer;
   padding: 0.5rem 2rem;
   font-size: 1.2rem;
   font-weight: 550;
+  border-radius: 0.5rem;
 }
 
 .login a, .login a:visited{
@@ -299,16 +301,26 @@ nav {
   background: #146600;
 }
 
-/* login container */
+/* login/signup container */
 
-/* Bordered form */
-.form {
+.registration {
+  margin: 4rem;
   border: 3px solid #f1f1f1;
+  background: #D6EDFF;
+}
+
+.registration h1 {
+  margin-bottom: 1rem;
 }
 
 /* Add padding to containers */
-.login-container {
+.login-container, .register-container {
   padding: 1rem;
+}
+
+.register-container label, .register-container hr {
+  font-weight: 600;
+  margin: 1rem 0;
 }
 
 /* Full-width inputs */
@@ -322,26 +334,55 @@ nav {
 }
 
 /* Set a style for all buttons */
-button {
+.cancbook,.cnfbook {
   background-color: #8a30d3;
-  color: white;
+  color: #fff;
   padding: 14px 20px;
-  margin: 0.5rem 0;
+  margin: 1rem 0;
   border: none;
   cursor: pointer;
   width: 100%;
+  font-size: 1rem;
 }
 
-/* Add a hover effect for buttons */
-button:hover, input[type=submit]:hover {
-  opacity: 0.8;
+.cancbook:hover, .cnfbook:hover {
+  transition: 0.5s ease-in;
+  background-color: #4ae;
+  color: #140e14cc;
+}
+
+.loginbtn {
+  padding: 0.5rem;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  background-color: #88A7D3;
+  border-radius: 0.5rem;
+  width: 6rem;
+}
+
+.loginbtn:hover {
+  background-color: #EFE5DC;
+  transition: 1s ease-out;
+  
 }
 
 /* Extra style for the cancel button (red) */
 .new-user {
   width: auto;
   padding: 0.62rem 1.2rem;
-  background-color: #fff;
+  background-color: #DCD6F7;
+}
+
+.new-user a, .new-user a:visited {
+  text-decoration: none;
+  color: #005fee;
+}
+
+.new-user a:hover {
+  color: #454ADE;
+  cursor: pointer;
+  text-decoration: underline;
+  transition: 1s ease-in;
 }
 
 /* Sign up container */
@@ -350,18 +391,31 @@ button:hover, input[type=submit]:hover {
 .cancelbtn, .signupbtn {
   padding: 14px 20px;
   float: left;
-  width: 50%;
+  width: 10rem;
+  margin: 1rem;
+  cursor: pointer;
+  border-radius: 0.5rem;
+  text-align: center;
+  text-decoration: none;
+  color: #000;
+  font-weight: 600;
 }
 
 /* Extra styles for the cancel button */
 .cancelbtn {
+  background-color: #f83325d7;
+}
+
+.cancelbtn:hover {
   background-color: #f44336;
-  text-align: center;
-  text-decoration: none;
 }
 
 /* Extra styles for signup button */
 .signupbtn {
+  background-color: #654ff1cc;
+}
+
+.signupbtn:hover{
   background-color: #6a5acd;
 }
 
@@ -371,7 +425,7 @@ button:hover, input[type=submit]:hover {
 }
 
 /* Clear floats */
-.clearfix::after {
+.registerbtns::after {
   content: "";
   clear: both;
   display: table;
@@ -611,7 +665,6 @@ img {vertical-align: middle;}
   padding: 3rem;
   font-size: 1.5rem;
   text-align: justify;
-  width: 70%;
 }
 
 .about-desc p {
@@ -683,17 +736,38 @@ img {vertical-align: middle;}
   margin: 3rem 10%;
 }
 
+.contact-form input[type=number], .contact-form input[type=text], .contact-form input[type=email], .contact-form textarea {
+  padding: 1rem;
+  font-size: 1rem;
+}
+
 .contact-form label, .contact-form span {
   padding: 0.5rem 0;
+  font-weight: 600;
 }
 
 .contact-form input[type=submit] {
   margin: 1rem 0;
   padding: 0.5rem 0;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  background-color: #efefef;
+  font-size: 1rem;
+}
+
+.contact-form input[type=submit]:hover {
+  background-color: #dbd8d8;
+  color: #000;
+  text-decoration: underline;
 }
 
 .contact-form textarea {
   min-height: 10rem;
+}
+
+.cntnum {
+  display: flex;
+  flex-direction: column;
 }
 
 .contact-det {
@@ -1096,7 +1170,7 @@ footer {
 .footer_cont::before{
   content:'';
   position: absolute;
-  background-color: #fff;
+  background-color: #736CED;
   width: 90%;
   height: 3px;
   top: -1rem; 

@@ -1,4 +1,4 @@
-<section class="login">
+<section class="registration">
     <form action="index.php?page=login" method="post" class="form">
                         
         <div class="login-container">

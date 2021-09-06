@@ -4,19 +4,22 @@
     </div>
     
     <div class="contact-pg-cnts">
-
-        <form action="" class="contact-pg">
-            
+        <form action="" class="contact-pg">     
             <div class="contact-form">
                 <span>Please send us a message!</span>
                 <label for="name"> Name</label>
-                <input type="text" id="name" placeholder="Full Name">
+                <input type="text" id="name" placeholder="Full Name" name="cust_name" required>
                 
                 <label for="email"> Email</label>
-                <input type="email" id="email" placeholder="someone@mail.com">
-                
+                <input type="email" id="email" placeholder="someone@mail.com" name="cust_email" required>
+
+                <div class="cntnum">
+                    <label for="number"> Contact Number</label>
+                    <input type="number" id="number" name="cust_num" placeholder="0123456789">
+                </div>
+                 
                 <label for="que"> Question</label>
-                <textarea name="que" id="que"></textarea>
+                <textarea name="que" id="que" name="cust_ques" placeholder="Hi! How can I help you?"></textarea>
 
                 <input type="submit" value="Send Us a Message">
             </div>

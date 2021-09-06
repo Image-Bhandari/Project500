@@ -411,6 +411,17 @@ article {
 	border-radius: 25px;
 }
 
+/* customer request */
+.contactreq {
+	width: 50%;
+	margin: 1rem;
+	font-size: 1rem;
+}
+
+.contactreqlink {
+	text-decoration: none;
+}
+
 /* footer */
 footer {
 	margin: 3rem 0 1rem;
