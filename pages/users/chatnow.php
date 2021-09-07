@@ -3,7 +3,7 @@
     $conn = new DatabaseTable('messages');
     $message=array();
     $agent="";
-    $check=$conn->find("message_by",$_SESSION['username']);
+    $check=$conn->findmsg("message_by",$_SESSION['username']);
     $num=$check->fetch();
     if($num){
         $agent=$num['message_to'];

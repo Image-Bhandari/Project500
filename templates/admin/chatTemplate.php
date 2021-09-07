@@ -2,7 +2,7 @@
 
     <div class="handled">
         <h3> Your Clients </h3>
-        <?php $clientcount=0;
+        <?php $clientcount=1;
         foreach ($handledname as $value) { ?>
 
         <a class="msgid" href="<?php echo 'index.php?page=chat&chat='. $value; ?>">
@@ -15,7 +15,8 @@
             </div>
 
             <div class="clientlastmsgdate">
-                <?php print($handlednamed[$clientcount]);$clientcount++;?>
+                <?php print($handlednamed[$clientcount]);
+                $clientcount++;?>
             </div>
         </div>
         </a>

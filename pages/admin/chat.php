@@ -7,11 +7,13 @@ $message=array();
 $handledchat=$conn->findmsg('message_to',$_SESSION['username']);
 $handledname=array();
 $handlednamed=array();
+$cunt=0;
 foreach($handledchat as $value){
-    if(in_array($value['message_by'],$handledname)){}
+    if(in_array($value['message_by'],$handledname)){$handlednamed[$cunt]=$value['montday'];}
     else{
         array_push($handledname,$value['message_by']);
         array_push($handlednamed,$value['montday']);
+        $cunt++;
     }
 }
 
