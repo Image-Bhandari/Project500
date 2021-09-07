@@ -4,12 +4,14 @@ $conn= new DatabaseTable('messages');
 $message=array();
 // ************************-HANDLED CHATS--************************************
 
-$handledchat=$conn->find('message_to',$_SESSION['username']);
+$handledchat=$conn->findmsg('message_to',$_SESSION['username']);
 $handledname=array();
+$handlednamed=array();
 foreach($handledchat as $value){
     if(in_array($value['message_by'],$handledname)){}
     else{
         array_push($handledname,$value['message_by']);
+        array_push($handlednamed,$value['montday']);
     }
 }
 
@@ -52,5 +54,5 @@ if(isset($_POST['send'])){
     }
 }
 
-$content=loadTemplate('../templates/admin/chatTemplate.php', ['handledname'=>$handledname, 'unhandledname'=>$unhandledname, 'message'=>$message]);
+$content=loadTemplate('../templates/admin/chatTemplate.php', ['handledname'=>$handledname,'handlednamed'=>$handlednamed, 'unhandledname'=>$unhandledname, 'message'=>$message]);
 ?>

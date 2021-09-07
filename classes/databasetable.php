@@ -72,9 +72,10 @@ function handlingChat($mes_to,$mes_by){
     $stmt->execute();
     return $stmt;
 }
+
 function gettingChat($person1,$person2){
     global $pdo;
-    $stmt = $pdo->prepare('SELECT * FROM messages WHERE message_to="'.$person1.'" AND message_by="'.$person2.'"OR message_to="'.$person2.'" AND message_by="'.$person1.'"');
+    $stmt = $pdo->prepare('SELECT *, DATE_FORMAT(time, "%r") as time12, DATE_FORMAT(time, "%M %e") as montday, date(time) as jdate FROM messages WHERE message_to="'.$person1.'" AND message_by="'.$person2.'"OR message_to="'.$person2.'" AND message_by="'.$person1.'"');
     $stmt->execute();
     return $stmt;
 }
@@ -149,6 +150,17 @@ function findPropFed($user){
     return $stmt;
 }
 
+//find function
+function findmsg($field, $value) {//passed as array
+    global $pdo;
+        $stmt = $pdo->prepare("SELECT *, DATE_FORMAT(time, '%r') as time12, DATE_FORMAT(time, '%M %e') as montday, date(time) as jdate FROM " . $this->table . ' WHERE ' . $field . ' = :valu');//prepare the value
+        $criteria = [
+                'valu' => $value//passed as criteria
+        ];
+        $stmt->execute($criteria);//execute the criteria
+
+        return $stmt;
+}
 
 
 }
