@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 06, 2021 at 06:59 PM
+-- Generation Time: Sep 09, 2021 at 02:09 PM
 -- Server version: 10.4.19-MariaDB
 -- PHP Version: 8.0.6
 
@@ -34,19 +34,22 @@ CREATE TABLE `bookings` (
   `start_time` date NOT NULL,
   `end_time` date NOT NULL,
   `status` varchar(255) NOT NULL,
-  `cred_detail` varchar(255) NOT NULL
+  `cred_detail` varchar(255) NOT NULL,
+  `feedback` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `bookings`
 --
 
-INSERT INTO `bookings` (`book_id`, `user_id`, `prop_id`, `start_time`, `end_time`, `status`, `cred_detail`) VALUES
-(1, 1, 1, '2021-06-30', '2021-07-04', 'Confirmed', '4111111111111111'),
-(8, 1, 2, '2021-06-18', '2021-06-29', 'Confirmed', '4111111111111111'),
-(15, 4, 1, '2021-08-27', '2021-08-30', 'Confirmed', '4000000000000000'),
-(16, 4, 2, '2021-08-27', '2021-08-30', 'Confirmed', '4333333555667788'),
-(17, 4, 1, '2021-09-02', '2021-09-04', 'Not-Confirmed', '');
+INSERT INTO `bookings` (`book_id`, `user_id`, `prop_id`, `start_time`, `end_time`, `status`, `cred_detail`, `feedback`) VALUES
+(1, 1, 1, '2021-06-30', '2021-07-04', 'Confirmed', '4111111111111111', 'Given'),
+(8, 1, 2, '2021-06-18', '2021-06-29', 'Confirmed', '4111111111111111', 'Given'),
+(15, 4, 1, '2021-08-27', '2021-08-30', 'Confirmed', '4000000000000000', 'Given'),
+(16, 4, 2, '2021-08-27', '2021-08-30', 'Confirmed', '4333333555667788', 'Given'),
+(17, 4, 1, '2021-09-02', '2021-09-04', 'Not-Confirmed', '', ''),
+(18, 1, 1, '2021-09-17', '2021-09-21', 'Confirmed', '4111111111111111', 'Given'),
+(20, 7, 2, '2021-09-17', '2021-09-20', 'Confirmed', '5111111111111111', 'Given');
 
 -- --------------------------------------------------------
 
@@ -86,7 +89,10 @@ CREATE TABLE `creditinfo` (
 INSERT INTO `creditinfo` (`creditcardID`, `Name`, `cardnumber`, `exp_month`, `exp_year`, `cvv`, `book_id`) VALUES
 (1, 'alu', 2147483647, 11, 2222, 222, 20),
 (2, 'alu', 2147483647, 12, 2022, 1000, 21),
-(3, 'Surag Pandit', 2147483647, 12, 2030, 119, 22);
+(3, 'Surag Pandit', 2147483647, 12, 2030, 119, 22),
+(4, 'Pnadir', 2147483647, 4, 2022, 234, 18),
+(5, 'raju', 2147483647, 8, 2024, 352, 19),
+(6, 'aaabbbccc', 2147483647, 6, 2032, 345, 20);
 
 -- --------------------------------------------------------
 
@@ -112,7 +118,10 @@ INSERT INTO `feedbacks` (`feedback_id`, `user_id`, `prop_id`, `rating`, `descrip
 (3, 1, 2, 4, ' I love this house. This house is like my house. When i go inside this house it feels like house. it is a good house. we should stay in a house. :) :)', '2021-07-21'),
 (4, 1, 1, 5, ' Lovely Housekeeping !! Epico !', '2021-06-30'),
 (5, 5, 2, 5, ' I loved it broo. Amazing house with amazing window. Just loved it.!   Must Go Place !', '2021-08-18'),
-(6, 5, 12, 3, ' i am happy ', '2021-09-03');
+(6, 5, 12, 3, ' i am happy ', '2021-09-03'),
+(7, 7, 2, 3, ' nice hotels with good rooms and ac', '2021-09-09'),
+(8, 7, 2, 5, ' jj', '2021-09-09'),
+(9, 7, 2, 4, ' kk', '2021-09-09');
 
 -- --------------------------------------------------------
 
@@ -137,7 +146,8 @@ INSERT INTO `messages` (`message_by`, `message_to`, `message`, `message_id`, `da
 ('ram', 'staff', 'k cha', 1, '2021-09-06', '22:28:58'),
 ('staff', 'ram', 'k cha babu? k sodhichau?', 2, '2021-09-06', '22:28:58'),
 ('ram', 'staff', 'hami k bhanxau bhanne.... jindagi k cha?? bahut garo cha hai daju', 3, '2021-09-06', '22:28:58'),
-('staff', 'ram', 'hi', 4, '2021-09-06', '22:28:58');
+('staff', 'ram', 'hi', 4, '2021-09-06', '22:28:58'),
+('staff', 'ram', 'whats up', 5, '2021-09-09', '12:46:28');
 
 -- --------------------------------------------------------
 
@@ -218,7 +228,8 @@ INSERT INTO `users` (`user_id`, `firstname`, `lastname`, `username`, `password`,
 (3, 'admin', 'admin', 'admin', 'admin', 'admin@admin.com', 'admin'),
 (4, 'Test', 'Test', 'test', 'test', 'test@test.com', 'user'),
 (5, 'Pandit', 'Surag', 'pandit', 'pandit', 'pandit@pan-ko-pat.com', 'user'),
-(6, 'te', 'st', 'te', 'test', 'te@t.com', 'user');
+(6, 'te', 'st', 'te', 'test', 'te@t.com', 'user'),
+(7, 'Surag', 'Ram pandit', 'Pandit101', 'pandit', 'pandit@pujari.com', 'user');
 
 --
 -- Indexes for dumped tables
@@ -280,7 +291,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `bookings`
 --
 ALTER TABLE `bookings`
-  MODIFY `book_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `book_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT for table `contactform`
@@ -292,19 +303,19 @@ ALTER TABLE `contactform`
 -- AUTO_INCREMENT for table `creditinfo`
 --
 ALTER TABLE `creditinfo`
-  MODIFY `creditcardID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `creditcardID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `feedbacks`
 --
 ALTER TABLE `feedbacks`
-  MODIFY `feedback_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `feedback_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `messages`
 --
 ALTER TABLE `messages`
-  MODIFY `message_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `message_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `notification`
@@ -322,7 +333,7 @@ ALTER TABLE `properties`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `user_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
