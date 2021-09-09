@@ -117,7 +117,7 @@ function getlastVal($field) {//passed as array
 
 function rating($prop_id) {
     global $pdo;
-    $stmt = $pdo->prepare('SELECT ROUND(AVG(rating), 2) AS averages, count(prop_id) AS counts FROM `feedbacks` WHERE prop_id='.$prop_id.';');
+    $stmt = $pdo->prepare('SELECT ROUND(AVG(rating), count(prop_id)) AS averages, count(prop_id) AS counts FROM `feedbacks` WHERE prop_id='.$prop_id.';');
     $stmt->execute();
     return $stmt;
 }
@@ -145,7 +145,7 @@ function report() {
 
 function findPropFed($user){
     global $pdo;
-    $stmt = $pdo->prepare('SELECT prop_id FROM `feedbacks` where user_id='.$user);
+    $stmt = $pdo->prepare('SELECT * FROM `feedbacks` where user_id='.$user);
     $stmt->execute();//execute the criteria
     return $stmt;
 }

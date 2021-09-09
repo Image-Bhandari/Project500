@@ -7,7 +7,8 @@ if(isset($_GET['book_id'])){
     $values= [
         "book_id" => $_GET['book_id'],
         "cred_detail" => $_GET['cred-detail'],
-        "status" => "Confirmed"
+        "status" => "Confirmed",
+        "feedback" => "NotGiven"
     ];
     $connB->update($values,'book_id');
     header('location:index.php?page=history');

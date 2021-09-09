@@ -34,6 +34,7 @@
     <form method="POST" action="index.php?page=feedback">
     <input type="hidden" name="user_id" value="<?php echo $userID;?>">
     <input type="hidden" name="prop_id" value="<?php echo $propertyID;?>">
+    <input type="hidden" name="book_id" value="<?php echo $bidd;?>">
     
 <div class="star-rating">
             <div class="star-input">

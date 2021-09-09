@@ -21,11 +21,14 @@
             else{
                 echo "Already Confirmed";
                 $vari=$findfedbak->fetch();
-                if($vari && $vari['prop_id']==$value['prop_id']){
+                if($value['feedback']=="Given"){
                     echo '</td><td>FeedBack Provided !</td></tr>';
                 }
+                else if((strtotime($value['end_time'])) < strtotime('-2 days')){
+                    echo '</td><td>Time Exceeded !</td></tr>';
+                }
                 else {
-                    echo '</td><td> <a href="index.php?page=feedback&pid='.$value['prop_id'].'">Provide Feedback</a> </td></tr>';
+                    echo '</td><td> <a href="index.php?page=feedback&pid='.$value['prop_id'].'&bidd='.$value['book_id'].'">Provide Feedback</a> </td></tr>';
                    
                 }
 

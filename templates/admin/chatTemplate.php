@@ -29,7 +29,9 @@
                 <img src="../images/logo/user.jpg" alt="logo">
             </div>
             <div class="clientname">
-                <?php echo $value; ?>
+                <?php if(!$message){echo "Loyal Partners Nepal";}
+                else {echo $_GET['chat'];}
+                ?>
             </div>
         </div>
         <div class="messages">
