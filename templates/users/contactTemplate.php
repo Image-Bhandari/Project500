@@ -4,10 +4,11 @@
     </div>
     
     <div class="contact-pg-cnts">
-        <form action="" class="contact-pg">     
+        <form action="index.php?page=contact" class="contact-pg" method="POST">     
             <div class="contact-form">
                 <span>Please send us a message!</span>
                 <label for="name"> Name</label>
+                <input type="hidden" name="staff_id" value="NotAssigned">
                 <input type="text" id="name" placeholder="Full Name" name="cust_name" required>
                 
                 <label for="email"> Email</label>
@@ -19,9 +20,9 @@
                 </div>
                  
                 <label for="que"> Question</label>
-                <textarea name="que" id="que" name="cust_ques" placeholder="Hi! How can I help you?"></textarea>
+                <textarea id="que" name="cust_ques" placeholder="Hi! How can I help you?"></textarea>
 
-                <input type="submit" value="Send Us a Message">
+                <input type="submit" name="submit" value="Send Us a Message">
             </div>
         </form>
 
