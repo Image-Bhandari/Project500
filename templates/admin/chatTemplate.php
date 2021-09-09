@@ -31,6 +31,7 @@
             <div class="clientname">
                 <?php echo $value; ?>
             </div>
+            
         </div>
         <div class="messages">
             <?php
