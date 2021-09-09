@@ -117,7 +117,7 @@ function getlastVal($field) {//passed as array
 
 function rating($prop_id) {
     global $pdo;
-    $stmt = $pdo->prepare('SELECT ROUND(AVG(rating), count(prop_id)) AS averages, count(prop_id) AS counts FROM `feedbacks` WHERE prop_id='.$prop_id.';');
+    $stmt = $pdo->prepare('SELECT ROUND(AVG(rating), 2) AS averages, count(prop_id) AS counts FROM `feedbacks` WHERE prop_id='.$prop_id.';');
     $stmt->execute();
     return $stmt;
 }

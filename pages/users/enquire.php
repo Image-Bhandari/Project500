@@ -17,10 +17,10 @@ if(isset($_SESSION['login']) && $_SESSION['login'] == 1){
     $connForFeedBack = new DatabaseTable('feedbacks');
     $allfeedback=$connForFeedBack->findrating('prop_id',$product_id);
     foreach($chk as $key){
-    if($key['prop_id']==$product_id){
-        $availability="NotAvailable";
+        if($key['prop_id']==$product_id){
+            $availability="NotAvailable";
+        }
     }
-}
     $getusr= new DatabaseTable ('users');
     $getallusr=$getusr->findAll();
     $usrData=[];

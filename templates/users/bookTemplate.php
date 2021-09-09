@@ -8,7 +8,7 @@
             echo '<tr><td>'.$value['prop_name'].'</td><td>'.$value['prop_StreetName'].
             ', '.$value['prop_suburb'].', '.$value['prop_state'].' Zip: '.$value['prop_postCode'].
             '</td><td>'.$value['prop_type'].'</td><td>'.$value['prop_det'].'</td><td>'.$value['prop_occupancy'].
-            '</td><td>'.$value['start_time'].' To: '.$value['end_time'].'</td><td>'.$price.
+            '</td><td>'.$value['start_time'].' To: '.$value['end_time'].'</td><td>$'.$price.
             '</td><td>';
             if($value['status']=="Not-Confirmed"){
                 echo "<button class='cancbook' onclick=\"bookCancel(".$value['book_id'].");\">Cancel Booking</button>";
