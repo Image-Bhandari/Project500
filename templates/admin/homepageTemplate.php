@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> <?php echo $title; ?></title>
     <script src="../css/js.js"></script>
-    <link rel="stylesheet" href="../css/styles.css">
     <link rel="stylesheet" href="../css/adminstyles.css">
 </head>
 <body>
@@ -55,7 +54,7 @@
                         <?php }} ?>
                     </div>
                 </div>
-                <!-- Lohout button -->
+                <!-- Logout button -->
                 <form action="../public_html/index.php?page=login" method="POST">
                     <input type="submit" name="logout" value="Logout">
                 </form>

@@ -7,7 +7,7 @@
     ?>
 
     <div class="propdetails">
-        <h2><?php echo 'Name  '.$value['prop_name'];?></h2><br>
+        <h2><?php echo $value['prop_name'];?></h2><br>
         
         <p> <?php foreach ($ratings as $rate){echo '<i class="fas fa-star" style="color: #ffd700;"></i> '.$rate['averages'].' <a href="#feedbk" class="linktofdk">'.$rate['counts'].' Reviews</a> · ';} ?> <i class="fas fa-map-marker-alt" style="color: #4c6ef5;"></i> <?php echo $value['prop_suburb'].' '.$value['prop_state'].' '.$value['prop_postCode'].' · ';?> <i class="fas fa-home" style="color: #FF385C;"></i> <?php echo $value['prop_occupancy'].' Guests · '.$value['prop_type'];?> </p>
 
