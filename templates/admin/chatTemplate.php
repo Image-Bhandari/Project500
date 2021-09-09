@@ -26,10 +26,12 @@
     <div class="chatscreen">
         <div class="clientinnfo">
             <div class="clientinficn">
-                <img src="../images/logo/user.jpg" alt="logo">
+                <?php if($message) { ?>
+                <img src="../images/logo/user.jpg" alt="logo"> <?php } else { ?>
+                <img src="../images/logo/logo.png" style="border-radius: 5px;"> <?php } ?>
             </div>
             <div class="clientname">
-                <?php if(!$message){echo "Loyal Partners Nepal";}
+                <?php if(!$message){echo "Loyal Partners Pty. Ltd";}
                 else {echo $_GET['chat'];}
                 ?>
             </div>
