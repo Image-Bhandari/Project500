@@ -1,3 +1,4 @@
+<article>
 <section class="registration">
     <form action="index.php?page=addNotif" method="POST">
         <div class="register-container">
@@ -26,3 +27,4 @@
         </div>
         </form> 
 </section>
+</article>

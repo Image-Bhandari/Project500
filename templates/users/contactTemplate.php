@@ -16,7 +16,7 @@
 
                 <div class="cntnum">
                     <label for="number"> Contact Number</label>
-                    <input type="number" id="number" name="cust_num" placeholder="0123456789">
+                    <input type="number" id="number" name="cust_num" min="1000000" max="9999999999" placeholder="0123456789">
                 </div>
                  
                 <label for="que"> Question</label>

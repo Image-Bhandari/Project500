@@ -18,5 +18,4 @@
 	];
 	
 	echo loadTemplate('../templates/admin/homepageTemplate.php', $tempVars);
-
 ?>
