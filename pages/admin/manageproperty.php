@@ -22,7 +22,6 @@
 			}
 		}
 		$content = loadTemplate('../templates/admin/managepropertyTemplate.php', ['data'=>$data]);//load template 
-	}
 	}else {
 		header('location:../public_html/index.php?page=login');
 	}
