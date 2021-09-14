@@ -163,5 +163,32 @@ function findmsg($field, $value) {//passed as array
 }
 
 
+//find customer support queries function
+function findcustsv($field, $value, $orderby) {//passed as array
+    global $pdo;
+        $stmt = $pdo->prepare("SELECT * FROM " . $this->table . ' WHERE ' . $field . ' = :valu ORDER BY '.$orderby);//prepare the value
+        $criteria = [
+                'valu' => $value//passed as criteria
+        ];
+        $stmt->execute($criteria);//execute the criteria
+
+        return $stmt;
+}
+
+
+// SELECT COUNT(staff_id)AS count FROM `contactform` WHERE staff_id="NotAssigned";
+
+//Count function
+function count($field, $value) {//passed as array
+    global $pdo;
+        $stmt = $pdo->prepare("SELECT COUNT($field) AS total FROM " . $this->table . ' WHERE ' . $field . ' = :valu');//prepare the value
+        $criteria = [
+                'valu' => $value//passed as criteria
+        ];
+        $stmt->execute($criteria);//execute the criteria
+
+        return $stmt;
+}
+
 }
 ?>

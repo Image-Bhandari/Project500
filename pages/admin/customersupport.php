@@ -2,7 +2,12 @@
 	$title = "Customer Support";
 	if(isset($_SESSION['login']) && $_SESSION['login'] == 1 && ($_SESSION['role']  == 'staff' || $_SESSION['role'] == 'admin')){
 		$connToInsert = new DatabaseTable('contactform');
-		$allData=$connToInsert->findAll();
+
+		if ($_SESSION['role']  == 'admin') {
+			$allData=$connToInsert->findcustsv('staff_id = "NotAssigned" OR staff_id = "staff" OR staff_id',$_SESSION['username'], 'CASE WHEN staff_id="NotAssigned" THEN NULL ELSE staff_id END ASC');
+		} else {
+			$allData=$connToInsert->findcustsv('staff_id = "NotAssigned" OR staff_id',$_SESSION['username'], 'CASE WHEN staff_id="NotAssigned" THEN NULL ELSE staff_id END ASC');
+		}
 
 		if(isset($_GET['assign'])){
 			$values= [
