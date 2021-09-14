@@ -1086,10 +1086,42 @@ img {vertical-align: middle;}
 
 /* property checkout end */
 
+/* property invalid dates for booking */
+.review_invalid-cont {
+  width: 80%;
+  margin: 1rem auto;
+  display: grid;
+  grid-template-columns: auto 20rem;
+  grid-template-areas: 'reviews unavailablee'
+}
+
+.invalidbookopt {
+  display: none;
+  width: 18rem;
+  background: #f31911c7;;
+  height: min-content;
+  color: #fff;
+  padding: 1rem 0.5rem;
+  text-align: justify;;
+  border-radius: 0.5rem;
+  border: 1px solid #dddddd;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 6px 16px;
+  font-size: 1rem;
+  grid-area: unavailablee;
+}
+
+.invalidbookopt:hover {
+  cursor: pointer;
+  background: hsla(2, 90%, 51%, 0.245);
+  color: #000;
+  transition: 1s ease;
+}
+
 /* enquiry page reviews start */
 .review-cont{
   width: 80%;
   margin: 1.5rem auto;
+  grid-area: reviews;
 }
 
 .enq-reviews{

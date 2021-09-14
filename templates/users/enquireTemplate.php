@@ -79,22 +79,29 @@
     </div>
     <?php } ?>
     
-    <div class="review-cont">
-        <h2 id="feedbk">Reviews: </h2>
-        <?php foreach($allfeedback as $value){ ?>
-        <div class="enq-reviews">
-            <div class="enq-review-head">
-                <span><?php $num = (int)$value['rating']; for($i=1;$i<=(int)$value['rating'];$i++){echo '<i class="fa fa-star"  style="color: #ffd700;"></i>';} ?></span>
-                <span><?php echo " ".$usrData[$value['user_id']].' · ';?></span>
-                <span><?php echo $value['months'].' '.$value['years']?></span>
-            </div>
-        
-            <div class="enq-review-sum">
-                <span>
-                    <?php echo $value['description']; ?>
-                </span>
-            </div>
+
+    <div class="review_invalid-cont">
+        <div class="invalidbookopt">
+            Sorry the booking for selected dates are currently unavailable. Please contact the support team for availabile date and times. 
         </div>
-        <?php } ?>
+
+        <div class="review-cont">
+            <h2 id="feedbk">Reviews: </h2>
+            <?php foreach($allfeedback as $value){ ?>
+            <div class="enq-reviews">
+                <div class="enq-review-head">
+                    <span><?php $num = (int)$value['rating']; for($i=1;$i<=(int)$value['rating'];$i++){echo '<i class="fa fa-star"  style="color: #ffd700;"></i>';} ?></span>
+                    <span><?php echo " ".$usrData[$value['user_id']].' · ';?></span>
+                    <span><?php echo $value['months'].' '.$value['years']?></span>
+                </div>
+            
+                <div class="enq-review-sum">
+                    <span>
+                        <?php echo $value['description']; ?>
+                    </span>
+                </div>
+            </div>
+            <?php } ?>
+        </div>
     </div>
 </article>
