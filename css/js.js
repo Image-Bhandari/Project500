@@ -15,6 +15,13 @@ function disable(){
     }
 }
 
+function scrolldown(){
+    alert();
+    $(document).ready(function() {
+        $(".prop-book").delay(2000).fadeIn(500);
+    });
+}
+
 function enable(){
     if(bol==1){
         document.getElementById("firstname").disabled=false;

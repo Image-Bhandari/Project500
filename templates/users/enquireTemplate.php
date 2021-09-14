@@ -1,10 +1,13 @@
 <article>
-
-    <?php
+<?php
+    if(isset($_GET['ermsg'])){
+        $ermsg = $_GET['ermsg'];
+    }
         $id='0';
         foreach($data as $value){
             $id=$value['prop_id'];
     ?>
+    
 
     <div class="propdetails">
         <h2><?php echo $value['prop_name'];?></h2><br>
@@ -73,7 +76,17 @@
                     <input type="hidden" name="status" value="Not-Confirmed">
                     <input type="hidden" name="user_id" value=<?php echo $uid;?>>
                     <input type="submit" class="login" name="book" value="Book">
+                    <?php
+        if($ermsg==1){
+            echo '<div class="error-msg">';
+            echo '<p>Sorry the booking for selected dates are currently unavailable. Please contact the support team for availabile date and times.</p>';
+            echo '</div>';?>
+            <?php
+        }
+        else {}
+             ?>
                 </form>
+                
             </div>  
         </div>
     </div>
@@ -82,7 +95,8 @@
 
     <div class="review_invalid-cont">
         <div class="invalidbookopt">
-            Sorry the booking for selected dates are currently unavailable. Please contact the support team for availabile date and times. 
+       
+        
         </div>
 
         <div class="review-cont">

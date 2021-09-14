@@ -4,9 +4,13 @@ $uid=$_SESSION['user_id'];
 
 if(isset($_SESSION['login']) && $_SESSION['login'] == 1 && $_SESSION['role']  == 'user' ) {
     $product_id=0;
+    $ermsg="0";
     $availability="Available";
     if(isset($_GET['pid'])){
         $product_id=$_GET['pid'];
+        if($_GET['ermsg']){
+            $ermsg=$_GET['ermsg'];
+        }
         
     }
     $conn = new DatabaseTable('properties');
@@ -31,7 +35,7 @@ if(isset($_SESSION['login']) && $_SESSION['login'] == 1 && $_SESSION['role']  ==
     $ratings=$connForFeedBack->rating($product_id);
     $rating=$connForFeedBack->rating($product_id);
 
-    $content = loadTemplate('../templates/users/enquireTemplate.php', ['usrData'=>$usrData,'allfeedback'=>$allfeedback,'data'=>$data, 'availability'=>$availability,'uid'=>$uid, 'pid'=>$product_id, 'ratings'=>$ratings,'rating'=>$rating]);//load template
+    $content = loadTemplate('../templates/users/enquireTemplate.php', ['usrData'=>$usrData,'allfeedback'=>$allfeedback,'data'=>$data, 'availability'=>$availability,'uid'=>$uid, 'pid'=>$product_id, 'ratings'=>$ratings,'rating'=>$rating,'ermsg'=>$ermsg]);//load template
 }else {
     session_unset();
     header('location:index.php?page=login');

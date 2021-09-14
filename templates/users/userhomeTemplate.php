@@ -43,6 +43,7 @@
         <div class="booking-options">
         <form method="POST" action="index.php?page=userhome">
             <input type="hidden" name="pid" value="<?php echo $value['prop_id'];?>">
+            <input type="hidden" name="ermsg" value="0">
             <input type="submit" value="Book" class="enquir" name="book_prop" class="bookbtn">
             </form>
         </div>

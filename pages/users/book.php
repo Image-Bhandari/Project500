@@ -59,9 +59,7 @@ if(isset($_SESSION['login']) && $_SESSION['login'] == 1 && $_SESSION['role']  ==
         }
         
         if($available=="no"){
-            echo "<script>alert('Sorry, this has already been booked in the time frame you selected.');
-            window.location.href='index.php';
-            </script>";
+            header('location:index.php?page=enquire&pid='.$_POST['prop_id'].'&ermsg=1');
         }
         else{
             $inst=$conn->insert($_POST);
