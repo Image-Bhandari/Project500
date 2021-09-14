@@ -1,4 +1,13 @@
 <article>
+    <section class="cdetails">
+    <?php foreach ($userdetails as $uds){ ?>
+        <div class="cname">Client Name:</div>
+        <div class="cnameval"><?php echo $uds['firstname'].' '.$uds['lastname'];?></div>
+        <div class="cmail">Email:</div>
+        <div class="cmailval"><a href = "mailto: <?php echo $uds['email']; ?>"><?php echo $uds['email']; ?></a></div>
+    <?php } ?>
+    </section>
+
     <table>
         <tr><th>Property Name</th><th>Address</th><th>Type</th><th>Description</th><th>Occupancy</th><th>Duration</th><th>Price</th><th>Status</th></tr>
         <?php

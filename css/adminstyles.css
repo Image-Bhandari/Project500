@@ -253,6 +253,81 @@ article {
 	margin: 1rem 0;
 }
 
+/* property info in check availability page */
+.prname {grid-area: prname;}
+.pnamerval {grid-area: pnamerval;}
+.prtype {grid-area: prtype;}
+.prtypeval {grid-area: prtypeval;}
+.praddr {grid-area: praddr;}
+.praddrval {grid-area: praddrval;}
+.prdet {grid-area: prdet;}
+.prdetval {grid-area: prdetval;}
+.proccup {grid-area: proccup;}
+.proccupval {grid-area: proccupval;}
+.prprice {grid-area: prprice;}
+.prpriceval {grid-area: prpriceval;}
+
+.propdetchk {
+	width: 80%;
+	display: grid;
+	grid-template-areas:	'prname pnamerval'
+							'prtype prtypeval'
+							'praddr praddrval'
+							'prdet prdetval'
+							'proccup proccupval'
+							'prprice prpriceval';
+	grid-template-columns: min-content auto;
+	margin: 1rem 0;
+}
+
+.propdetchk > div {
+	text-align: justify;
+	font-size: 1.2rem;
+	padding: 0.3rem;
+	white-space: pre-wrap;
+}
+
+.prname, .prtype, .praddr, .prdet, .proccup, .prprice {font-weight: 600;}
+/* client info in client history page */
+
+.prbookdet {
+	margin: 1rem 0;
+}
+
+.cname {grid-area: cname;}
+.cnameval {grid-area: cnameval;}
+.cmail {grid-area: cmail;}
+.cmailval {grid-area: cmailval;}
+
+.cdetails {
+	width: 80%;
+	display: grid;
+	grid-template-areas:	'cname cnameval'
+							'cmail cmailval';
+	grid-template-columns: min-content auto;
+	margin: 1rem 0;
+}
+
+.cdetails > div {
+	text-align: justify;
+	font-size: 1.2rem;
+	padding: 0.3rem;
+	white-space: nowrap;
+}
+
+.cname, .cmail {font-weight: 600;}
+
+.cmailval a {
+	text-decoration: none;
+	color: #000;
+}
+
+.cmailval a:hover {
+	text-decoration: underline;
+	transition: 1s ease-in;
+	color: #0084ff;
+}
+
 /* chat template */
 
 .chattemplate {
