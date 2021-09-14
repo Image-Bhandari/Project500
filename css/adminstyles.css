@@ -100,7 +100,7 @@ nav a.active {
 }
 
 /* form container */
-input[type=text], input[type=number], input[type=email] {
+input[type=text], input[type=number], input[type=email], input[type=password] {
     width: 100%;
     padding: 12px;
     border: 1px solid #ccc;
@@ -346,6 +346,7 @@ article {
 
 .chattemplate h3 {
 	text-align: center;
+    margin: 1rem 0;
 }
 
 .handled {
@@ -531,11 +532,12 @@ article {
 .manageimg {
 	display: grid;
 	align-content: center;
-	grid-template-columns: auto auto;
+	grid-template-columns: min-content min-content;
 	grid-gap: 10px;
 	background-color: #2196F3;
 	padding: 10px;
-	width: 80%;
+	width: min-content;
+	max-width: 80%;
 	margin: 2rem auto;	
 }
   

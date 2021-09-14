@@ -18,10 +18,7 @@
         </div>
             
         <div class="photo-actions">
-            <a href="index.php?page=manageImages&dpid=<?php 
-            echo substr($chitra,-5,-4);
-            
-            ?>&pid=<?php echo $pid?>">Delete</a>
+            <a href="index.php?page=manageImages&dpid=<?php echo substr($chitra,-5,-4);?>&pid=<?php echo $pid?>">Delete</a>
         </div>
         
            
