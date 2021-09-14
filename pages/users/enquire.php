@@ -2,7 +2,7 @@
 
 $uid=$_SESSION['user_id'];
 
-if(isset($_SESSION['login']) && $_SESSION['login'] == 1){
+if(isset($_SESSION['login']) && $_SESSION['login'] == 1 && $_SESSION['role']  == 'user' ) {
     $product_id=0;
     $availability="Available";
     if(isset($_GET['pid'])){
@@ -32,8 +32,8 @@ if(isset($_SESSION['login']) && $_SESSION['login'] == 1){
     $rating=$connForFeedBack->rating($product_id);
 
     $content = loadTemplate('../templates/users/enquireTemplate.php', ['usrData'=>$usrData,'allfeedback'=>$allfeedback,'data'=>$data, 'availability'=>$availability,'uid'=>$uid, 'pid'=>$product_id, 'ratings'=>$ratings,'rating'=>$rating]);//load template
-}
-else {
+}else {
+    session_unset();
     header('location:index.php?page=login');
 }
 
