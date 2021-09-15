@@ -12,6 +12,9 @@
             </div>
 
             <?php
+                if( is_dir('../images/'.$pidjs) === false ) {
+                    mkdir('../images/'.$pidjs);
+                }
                 $dir = "../images/".$pidjs;
                 $img = glob($dir . "/*");
                 $inf = array_diff(scandir($dir), array('.', '..')); //gets the file name in an array list
