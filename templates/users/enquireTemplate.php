@@ -87,8 +87,9 @@
     <div class="review_invalid-cont">
         <?php
             if($ermsg==1){
+                echo '<script> alert("Sorry!\nBooking for selected Dates is unavailable.");</script>';
                 echo '<div class="invalidbookopt">';
-                echo 'Sorry the booking for selected dates are currently unavailable. Please contact the support team for availabile date and times.';
+                echo 'Sorry! the booking for selected dates are currently unavailable for the property. Please contact the support team for availabile date and times.';
                 echo '</div>';?>
                 <?php
             }
