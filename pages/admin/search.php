@@ -4,7 +4,6 @@
             $title = "Search Properties";
             $connP = new DatabaseTable('properties');
             $results=$connP->searchP($_POST['query']);
-            // var_dump($results);
             $content = loadTemplate('../templates/admin/managepropertyTemplate.php', ['data'=>$results]);
         }
         elseif (isset($_POST['findclients'])){
