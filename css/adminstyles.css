@@ -99,6 +99,17 @@ nav a.active {
 	text-align: left;
 }
 /* dashboard / home screen */
+.contactreq a {
+	text-decoration: none;
+	color: #000;
+}
+
+.contactreq a:hover {
+	text-decoration: underline;
+	color: #0084ff;
+	transition: 0.5s ease-in-out;
+}
+
 .admin-stats {
 	display: grid;
 	grid-template-areas: 'admin-main admin-status';
