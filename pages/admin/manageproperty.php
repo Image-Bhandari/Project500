@@ -4,7 +4,7 @@
 	if(isset($_SESSION['login']) && $_SESSION['login'] == 1 && ($_SESSION['role']  == 'staff' || $_SESSION['role'] == 'admin')){
 		$conn = new DatabaseTable('properties');
 		$connB = new DatabaseTable('bookings');
-		$data=$conn->findAll();
+		$data=$conn->orderOn('prop_id');
 		if(isset($_GET['did'])){
 			$book=$connB->find("prop_id",$_GET['did']);
 			$fetchbook=$book->fetch();

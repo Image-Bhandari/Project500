@@ -1,7 +1,7 @@
 <?php
 	$title = "Local Partners Pty Ltd";
 	$conn = new DatabaseTable('properties');
-	$data=$conn->findAll();
+	$data=$conn->orderOn('prop_id');
 	
 	if(isset($_POST['book_prop'])){
 		if(isset($_SESSION["login"]) && $_SESSION["login"]== True){

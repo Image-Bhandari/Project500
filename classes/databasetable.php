@@ -99,6 +99,14 @@ function booking($user_id){
 
 }
 
+function orderOn($givenid){
+    global $pdo;
+    $stmt = $pdo->prepare('SELECT * FROM '.$this->table.' ORDER BY '.$givenid.' DESC;');
+    $stmt->execute();
+    return $stmt;
+
+}
+
 function notifAll() {
     global $pdo;
         $stmt = $pdo->prepare('SELECT * FROM ' . $this->table .' ORDER BY notif_id DESC');//selects the value
