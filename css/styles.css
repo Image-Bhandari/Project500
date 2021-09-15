@@ -1096,7 +1096,6 @@ img {vertical-align: middle;}
 }
 
 .invalidbookopt {
-  display: none;
   width: 18rem;
   background: #f31911c7;;
   height: min-content;

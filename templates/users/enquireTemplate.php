@@ -76,28 +76,24 @@
                     <input type="hidden" name="status" value="Not-Confirmed">
                     <input type="hidden" name="user_id" value=<?php echo $uid;?>>
                     <input type="submit" class="login" name="book" value="Book">
-                    <?php
-        if($ermsg==1){
-            echo '<div class="error-msg">';
-            echo '<p>Sorry the booking for selected dates are currently unavailable. Please contact the support team for availabile date and times.</p>';
-            echo '</div>';?>
-            <?php
-        }
-        else {}
-             ?>
+                 
                 </form>
                 
-            </div>  
+            </div> 
         </div>
     </div>
-    <?php } ?>
-    
+    <?php } ?> 
 
     <div class="review_invalid-cont">
-        <div class="invalidbookopt">
-       
-        
-        </div>
+        <?php
+            if($ermsg==1){
+                echo '<div class="invalidbookopt">';
+                echo 'Sorry the booking for selected dates are currently unavailable. Please contact the support team for availabile date and times.';
+                echo '</div>';?>
+                <?php
+            }
+            else {}
+        ?>
 
         <div class="review-cont">
             <h2 id="feedbk">Reviews: </h2>
