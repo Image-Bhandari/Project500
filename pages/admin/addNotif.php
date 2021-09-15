@@ -1,7 +1,7 @@
 <?php
 	$title = "Add Notification";
 
-	if(isset($_SESSION['login']) && $_SESSION['login'] == 1 &&  $_SESSION['role'] == 'admin')){
+	if(isset($_SESSION['login']) && $_SESSION['login'] == 1 &&  $_SESSION['role'] == 'admin'){
 		$connToInsert = new DatabaseTable('notification');
 		
 		if(isset($_POST['addnotif'])){
