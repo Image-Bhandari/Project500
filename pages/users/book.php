@@ -28,7 +28,9 @@ if(isset($_SESSION['login']) && $_SESSION['login'] == 1 && $_SESSION['role']  ==
                     
                     (($packfrom >= $start_time && $end_time <= $packto) && ($packfrom < $end_time && $packto > $start_time )) ||
 
-                    (($packfrom >=$start_time && $packto <= $end_time) && ($packfrom < $end_time && $packto > $start_time))
+                    (($packfrom >=$start_time && $packto <= $end_time) && ($packfrom < $end_time && $packto > $start_time)) ||
+                    
+                    ($end_time <= $start_time)
                     
                     
                     
