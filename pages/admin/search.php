@@ -3,7 +3,8 @@
         if(isset($_POST['findproperty'])){
             $title = "Search Properties";
             $connP = new DatabaseTable('properties');
-            $results=$connP->search($_POST['query']);
+            $results=$connP->searchP($_POST['query']);
+            // var_dump($results);
             $content = loadTemplate('../templates/admin/managepropertyTemplate.php', ['data'=>$results]);
         }
         elseif (isset($_POST['findclients'])){

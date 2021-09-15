@@ -104,7 +104,20 @@ function orderOn($givenid){
     $stmt = $pdo->prepare('SELECT * FROM '.$this->table.' ORDER BY '.$givenid.' DESC;');
     $stmt->execute();
     return $stmt;
+}
 
+function searchP($searchProp){
+    global $pdo;
+    $stmt = $pdo->prepare('SELECT * FROM ' .$this->table. ' WHERE prop_name LIKE "'.$searchProp.'%" || prop_StreetName LIKE "'.$searchProp.'%" || prop_suburb LIKE "'.$searchProp.'%" || prop_state LIKE "'.$searchProp.'%" || prop_postCode LIKE "'.$searchProp.'%";');
+    $stmt->execute();
+    return $stmt;
+}
+
+function searchC($searchClient){
+    global $pdo;
+    $stmt = $pdo->prepare('SELECT * FROM ' .$this->table. ' WHERE role = "user" && (firstname LIKE "'.$searchClient.'%" || lastname LIKE "'.$searchClient.'%") ;');
+    $stmt->execute();
+    return $stmt;
 }
 
 function notifAll() {
