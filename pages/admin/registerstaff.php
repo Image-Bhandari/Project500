@@ -6,7 +6,6 @@
 		if(isset($_POST['registerstaff'])){
 			unset($_POST['registerstaff']);
 			$connToInsert-> insert($_POST);
-			var_dump($_POST);
 			header('location:index.php?page=staff'); 
 		}
 

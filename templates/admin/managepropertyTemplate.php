@@ -2,6 +2,12 @@
 
     <div class="add">
         <p> LIST OF PROPERTIES </p>
+        <div class="searchbar">
+            <form action="index.php?page=search" method="post">
+                <input type="text" name="query">
+                <input type="submit" name="findproperty" value="Search">
+            </form>
+        </div>
         <form method="post" action="index.php?page=addupdateproperty">
             <input type="submit" name="addpagerequest" value="Add Property">
         </form>

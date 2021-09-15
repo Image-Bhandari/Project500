@@ -2,6 +2,12 @@
 
     <div class="add">
         <p> LIST OF CLIENTS </p>
+        <div class="searchbar">
+            <form action="index.php?page=search" method="post">
+                <input type="text" name="query">
+                <input type="submit" name="findclients" value="Search">
+            </form>
+        </div>
     </div>
     <table id="listClients">
 
