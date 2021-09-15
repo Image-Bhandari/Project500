@@ -20,7 +20,7 @@ if(isset($_SESSION['login']) && $_SESSION['login'] == 1 && $_SESSION['role']  ==
         header('location:index.php?page=history');
     }
     $fedbk= new DatabaseTable('feedbacks');
-    $findfedbak=$fedbk->findPropFed($_SESSION['user_id']);
+    $findfedbak=$fedbk->find('user_id',$_SESSION['user_id']);
 
     $content = loadTemplate('../templates/users/bookTemplate.php',['findAllBook'=>$findAllBook,'findfedbak'=>$findfedbak]);
 }else {

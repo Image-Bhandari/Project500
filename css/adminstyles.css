@@ -311,6 +311,15 @@ article {
 	margin: 1rem 0;
 }
 
+.searchbar form{
+	display: flex;
+}
+
+.searchbar form input[type=submit] {
+	padding: 0px 20px;
+	margin: 0.5rem 12px 1rem 0.5rem;
+}
+
 /* property info in check availability page */
 .prname {grid-area: prname;}
 .pnamerval {grid-area: pnamerval;}

@@ -143,13 +143,6 @@ function report() {
         return $stmt;
 }
 
-function findPropFed($user){
-    global $pdo;
-    $stmt = $pdo->prepare('SELECT * FROM `feedbacks` where user_id='.$user);
-    $stmt->execute();//execute the criteria
-    return $stmt;
-}
-
 //find function
 function findmsg($field, $value) {//passed as array
     global $pdo;
