@@ -1,5 +1,17 @@
 <article class="property-listing">
-
+    <div class="searchcont">
+        <div class="countsearch">
+            <?php if (isset($countRes)){ ?>
+            <span>Total Search results: <?php echo $countRes;}?></span>
+        </div>
+    
+        <div class="searchbarProp">
+            <form action="index.php?page=searchProp" method="post">
+                <input type="text" name="query" required>
+                <input type="submit" name="findproperty" value="Search">
+            </form>
+        </div>
+    </div>
     <?php  
         foreach ($data as $value) {
             $pidjs = $value['prop_id'];
