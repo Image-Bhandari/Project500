@@ -102,6 +102,7 @@ nav a.active {
 .contactreq a {
 	text-decoration: none;
 	color: #000;
+	font-size: 1.3rem;
 }
 
 .contactreq a:hover {
