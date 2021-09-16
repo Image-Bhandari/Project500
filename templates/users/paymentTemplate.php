@@ -30,7 +30,7 @@
 
         <div class="exp-year">
             <label for="expyear">Exp Year</label>
-            <input type="number" id="expyear" name="exp_year" min="2021" max="2040" placeholder="2018">
+            <input type="number" id="expyear" name="exp_year" min="2021" max="2026" placeholder="2018">
         </div>
         
         <div class="cvv">
