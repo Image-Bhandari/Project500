@@ -4,7 +4,7 @@
         <p> LIST OF PROPERTIES </p>
         <div class="searchbar">
             <form action="index.php?page=search" method="post">
-                <input type="text" name="query">
+                <input type="text" name="query" required>
                 <input type="submit" name="findproperty" value="Search">
             </form>
         </div>
