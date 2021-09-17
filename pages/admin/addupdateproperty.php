@@ -54,9 +54,7 @@
 		}
 
 		}
-			/* end of script */
-
-				
+			/* end of script */	
 		}
 		
 		if(isset($_POST['val_update'])){

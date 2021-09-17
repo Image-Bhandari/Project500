@@ -31,21 +31,14 @@ if(isset($_SESSION['login']) && $_SESSION['login'] == 1 && $_SESSION['role']  ==
                     (($packfrom >=$start_time && $packto <= $end_time) && ($packfrom < $end_time && $packto > $start_time)) ||
                     
                     ($end_time <= $start_time)
-                    
-                    
-                    
-                    
+            
                     )
-                    
-                    
-                    
+              
                     {
                         $available="no";
-                        // echo "<script>alert('Sorry, this has already been booked in the time frame you selected.');</script>"
                     }
                     else{
                         $available="yes";
-                    // echo "<script>alert('Success');</script>";
                     }
                 }
                 else{
@@ -53,8 +46,7 @@ if(isset($_SESSION['login']) && $_SESSION['login'] == 1 && $_SESSION['role']  ==
                     header('location:index.php?page=history');
                 }
             }
-                }
-        
+                }   
         }
         else{
             $vari="chaina";

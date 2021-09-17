@@ -12,8 +12,6 @@
             '</td><td>';
             if($value['status']=="Not-Confirmed"){
                 echo "<button class='cancbook' onclick=\"bookCancel(".$value['book_id'].");\">Cancel Booking</button>";
-                //echo "<a href=index.php?page=history&action=cancel&bid=".$value['book_id'].">Cancel Booking</a>";
-                //echo "<a><button onclick=\"creditInfo(".$value['book_id'].");\">Confirm Booking</button></a>";
                 echo "<a class='cnfbook' href='index.php?page=payment&bid=".$value['book_id']."'>Confirm Booking</a>";
                 echo '</td><td> N/A </td></tr>';
     

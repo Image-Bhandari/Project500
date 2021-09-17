@@ -79,6 +79,7 @@ function gettingChat($person1,$person2){
     $stmt->execute();
     return $stmt;
 }
+
 //function delete
 function delete($field, $value) {//passed as array
     global $pdo;
@@ -176,7 +177,6 @@ function findmsg($field, $value) {//passed as array
         return $stmt;
 }
 
-
 //find customer support queries function
 function findcustsv($field, $value, $orderby) {//passed as array
     global $pdo;
@@ -188,9 +188,6 @@ function findcustsv($field, $value, $orderby) {//passed as array
 
         return $stmt;
 }
-
-
-// SELECT COUNT(staff_id)AS count FROM `contactform` WHERE staff_id="NotAssigned";
 
 //Count function
 function count($field, $value) {//passed as array
