@@ -1,4 +1,5 @@
 <section class="admin-stats">
+    <div style="background:url('../images/logo/logo.jpg'); opacity:40%; background-repeat:no-repeat;  background-position: center center;">
     <div class="admin-main">
         <div class="contactreq">
             <a href="index.php?page=customersupport" class="contactreqlink">
@@ -7,6 +8,7 @@
                     echo  $totcustreq['total']." new customer needs help";
                 } ?></span>
             </a>
+            <br><br><br><br><br><br>
         </div>
         <div class="restcontns">
 
@@ -37,4 +39,5 @@
 
     </div>
     <?php } ?>
+    </div>
 </section>
